@@ -1,6 +1,6 @@
 /* ==========================================================================
    BRIGHT SPROUT STUDIO — DIGITAL PORTFOLIO STYLESHEET
-   Creator: Mahnoor Mansoor
+   Creator: Mahnoor Mansoor (Speech-Language Pathologist)
    Purpose: Creative Fabrica Designer Application & Public Web Portfolio
    ========================================================================== */
 
@@ -53,8 +53,8 @@
   --radius-full: 9999px;
   
   --shadow-sm: 0 2px 8px rgba(36, 51, 66, 0.04);
-  --shadow-md: 0 8px 24px rgba(36, 51, 66, 0.07);
-  --shadow-lg: 0 16px 40px rgba(36, 51, 66, 0.10);
+  --shadow-md: 0 8px 24px rgba(36, 51, 66, 0.08);
+  --shadow-lg: 0 20px 50px rgba(36, 51, 66, 0.14);
 
   --transition-default: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -119,7 +119,7 @@ button {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(255, 253, 249, 0.92);
+  background: rgba(255, 253, 249, 0.94);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-soft);
@@ -165,7 +165,7 @@ button {
   display: flex;
   list-style: none;
   gap: 8px;
-  background: rgba(240, 237, 230, 0.5);
+  background: rgba(240, 237, 230, 0.6);
   padding: 4px 6px;
   border-radius: var(--radius-full);
 }
@@ -252,7 +252,7 @@ button {
    4. Page Section Common Structure
    -------------------------------------------------------------------------- */
 .portfolio-page {
-  padding: 80px 0;
+  padding: 85px 0;
   border-bottom: 1px dashed var(--border-soft);
   position: relative;
 }
@@ -695,7 +695,7 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   8. PAGE 4 — SELECTED WORKBOOK COLLECTION
+   8. PAGE 4 — SELECTED WORKBOOK COLLECTION (GALLERY)
    -------------------------------------------------------------------------- */
 .filter-bar {
   display: flex;
@@ -745,14 +745,15 @@ button {
 }
 
 .workbook-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-5px);
   box-shadow: var(--shadow-md);
+  border-color: #D4CDBC;
 }
 
 .workbook-frame {
   position: relative;
-  background: #F4F1EA;
-  padding: 16px;
+  background: #F2EFE8;
+  padding: 14px;
   border-bottom: 1px solid var(--border-soft);
 }
 
@@ -763,80 +764,84 @@ button {
   overflow: hidden;
   position: relative;
   background: #FFFFFF;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  cursor: pointer;
 }
 
 .real-cover-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.35s ease;
 }
 
-.cover-placeholder {
-  width: 100%;
-  height: 100%;
+.cover-slot:hover .real-cover-img {
+  transform: scale(1.03);
+}
+
+.cover-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(36, 51, 66, 0.4);
+  opacity: 0;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 16px 12px;
-  text-align: center;
-  background: linear-gradient(145deg, #FCFAF6, #F2EFE8);
-  border: 1px solid #E4DFD5;
+  transition: var(--transition-default);
+  backdrop-filter: blur(2px);
 }
 
-.placeholder-tag {
-  font-size: 0.68rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--color-sprout-green);
-  background: var(--color-sprout-light);
-  padding: 3px 8px;
-  border-radius: var(--radius-full);
-  margin-bottom: 12px;
+.cover-slot:hover .cover-overlay {
+  opacity: 1;
 }
 
-.placeholder-icon {
-  font-size: 2.4rem;
-  margin-bottom: 10px;
-}
-
-.placeholder-title {
-  font-family: var(--font-heading);
-  font-size: 0.92rem;
-  font-weight: 700;
+.overlay-btn {
+  background: #FFFFFF;
   color: var(--text-main);
-  line-height: 1.25;
-  margin-bottom: 6px;
-}
-
-.placeholder-sub {
-  font-size: 0.72rem;
-  color: var(--text-muted);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 .workbook-meta {
-  padding: 18px 16px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
 
+.meta-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
 .meta-tag {
   display: inline-block;
-  align-self: flex-start;
   font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
-  padding: 2px 8px;
+  padding: 3px 8px;
   border-radius: 4px;
-  margin-bottom: 8px;
 }
 
 .tag-drawing { background: var(--color-coral-light); color: var(--color-coral); }
 .tag-early { background: var(--color-butter-light); color: #B26A00; }
 .tag-motor { background: var(--color-teal-light); color: var(--color-teal); }
+.tag-speech { background: var(--color-pink-light); color: var(--color-pink); }
+
+.page-count-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-light);
+  background: var(--bg-card-subtle);
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-soft);
+}
 
 .workbook-title {
   font-family: var(--font-heading);
@@ -848,26 +853,30 @@ button {
 }
 
 .workbook-summary {
-  font-size: 0.84rem;
+  font-size: 0.83rem;
   color: var(--text-muted);
-  line-height: 1.5;
+  line-height: 1.48;
   margin-bottom: 14px;
   flex-grow: 1;
 }
 
-.btn-card-details {
+.card-action-row {
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-soft);
+}
+
+.btn-preview-samples {
   font-size: 0.82rem;
   font-weight: 700;
   color: var(--color-sprout-green);
-  text-align: left;
-  padding: 4px 0;
   display: inline-flex;
   align-items: center;
   gap: 4px;
   transition: var(--transition-default);
 }
 
-.btn-card-details:hover {
+.btn-preview-samples:hover {
   color: var(--color-sprout-hover);
   transform: translateX(3px);
 }
@@ -1170,48 +1179,214 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   11. Dialog / Modal
+   11. Dialog / Modal (Gallery & Lightbox)
    -------------------------------------------------------------------------- */
 .workbook-dialog {
   border: none;
   border-radius: var(--radius-lg);
   padding: 0;
-  max-width: 580px;
-  width: 90%;
+  max-width: 900px;
+  width: 92%;
   margin: auto;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+  box-shadow: var(--shadow-lg);
   background: var(--bg-card);
+  overflow: hidden;
 }
 
 .workbook-dialog::backdrop {
-  background: rgba(36, 51, 66, 0.5);
-  backdrop-filter: blur(4px);
+  background: rgba(26, 38, 50, 0.65);
+  backdrop-filter: blur(5px);
 }
 
 .modal-content {
   position: relative;
-  padding: 36px 30px;
+  padding: 36px 32px;
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
 .modal-close {
   position: absolute;
   top: 16px;
   right: 18px;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   line-height: 1;
   color: var(--text-light);
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: var(--transition-default);
+  z-index: 10;
 }
 
 .modal-close:hover {
   background: var(--bg-card-subtle);
   color: var(--text-main);
+}
+
+.modal-gallery-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.modal-gallery-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.modal-main-img-wrap {
+  width: 100%;
+  aspect-ratio: 1 / 1.35;
+  background: #F4F1EA;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-soft);
+  position: relative;
+  box-shadow: var(--shadow-sm);
+}
+
+.modal-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #FFFFFF;
+}
+
+.modal-img-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(36, 51, 66, 0.82);
+  color: #FFFFFF;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  text-align: center;
+}
+
+.modal-thumbnails-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.thumb-btn {
+  aspect-ratio: 1 / 1.3;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 2px solid transparent;
+  padding: 0;
+  background: #F0EDE6;
+  opacity: 0.7;
+  transition: var(--transition-default);
+}
+
+.thumb-btn:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.thumb-btn.active {
+  opacity: 1;
+  border-color: var(--color-sprout-green);
+  box-shadow: 0 2px 8px rgba(46, 139, 87, 0.3);
+}
+
+.thumb-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumbnail-hint {
+  font-size: 0.78rem;
+  color: var(--text-light);
+  text-align: center;
+  font-weight: 500;
+}
+
+.modal-gallery-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.modal-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.25;
+  margin-bottom: 4px;
+}
+
+.modal-subtitle {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.modal-desc-box {
+  background: var(--bg-card-subtle);
+  padding: 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-soft);
+  margin-bottom: 18px;
+}
+
+.modal-desc-box p {
+  font-size: 0.92rem;
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+.modal-pillars-box h4 {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 10px;
+}
+
+.pillars-checklist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.pillars-checklist li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.86rem;
+  color: var(--text-muted);
+}
+
+.check-bullet {
+  color: var(--color-sprout-green);
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.btn-store-link {
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 0.95rem;
 }
 
 /* --------------------------------------------------------------------------
@@ -1255,6 +1430,9 @@ button {
   }
   .brand-title {
     font-size: 2.6rem;
+  }
+  .modal-gallery-layout {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -1304,13 +1482,13 @@ button {
 @media print {
   @page {
     size: A4 portrait;
-    margin: 12mm 15mm;
+    margin: 10mm 12mm;
   }
 
   body {
     background: #FFFFFF !important;
     color: #1A202C !important;
-    font-size: 11pt;
+    font-size: 10pt;
   }
 
   .no-print {
@@ -1322,7 +1500,7 @@ button {
     break-after: page !important;
     page-break-inside: avoid !important;
     min-height: 96vh;
-    padding: 24px 0 !important;
+    padding: 18px 0 !important;
     border-bottom: none !important;
     display: flex;
     flex-direction: column;
@@ -1335,37 +1513,24 @@ button {
   }
 
   .section-header {
-    margin-bottom: 24px !important;
+    margin-bottom: 18px !important;
   }
 
   .section-title {
-    font-size: 1.8rem !important;
+    font-size: 1.7rem !important;
   }
 
   .brand-title {
-    font-size: 2.4rem !important;
+    font-size: 2.3rem !important;
   }
 
   .workbooks-grid {
     grid-template-columns: repeat(4, 1fr) !important;
-    gap: 12px !important;
+    gap: 10px !important;
   }
 
   .workbook-frame {
-    padding: 8px !important;
-  }
-
-  .cover-placeholder {
-    padding: 8px 4px !important;
-  }
-
-  .placeholder-icon {
-    font-size: 1.6rem !important;
-    margin-bottom: 4px !important;
-  }
-
-  .placeholder-title {
-    font-size: 0.76rem !important;
+    padding: 6px !important;
   }
 
   .categories-grid {
@@ -1380,19 +1545,19 @@ button {
   .about-grid,
   .approach-grid {
     grid-template-columns: 1fr 1fr !important;
-    gap: 16px !important;
+    gap: 14px !important;
   }
 
   .about-card-bio,
   .approach-pillars-card,
   .approach-audience-card,
   .connect-card-main {
-    padding: 20px !important;
+    padding: 18px !important;
     box-shadow: none !important;
     border: 1px solid #E2E8F0 !important;
   }
 
   .closing-statement-box {
-    padding: 16px !important;
+    padding: 14px !important;
   }
 }

@@ -1,60 +1,88 @@
 /**
  * Bright Sprout Studio — Digital Portfolio Application Script
- * Creator: Mahnoor Mansoor
+ * Creator: Mahnoor Mansoor (Speech-Language Pathologist)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Workbook Catalog Data for Details Dialog
-  const workbookDetails = {
-    "1": {
+  // 1. Full Real Workbook Catalog Data
+  const workbookCatalog = {
+    "birds": {
       title: "Let's Draw the Birds Together",
       category: "Drawing & Creative Activities",
+      tagClass: "tag-drawing",
       icon: "🐦",
       age: "Ages 3–7",
-      pages: "Printable Activity Pages",
-      description: "A step-by-step bird drawing workbook guiding children to draw charming garden and songbirds using simple geometric shapes, progressive lines, and coloring prompts.",
+      pages: "17 Printable Pages",
+      cover: "assets/images/workbooks/covers/birds_cover.jpg",
+      samples: [
+        { src: "assets/images/workbooks/samples/birds_sample_1.jpg", caption: "Step-by-Step Bird Construction" },
+        { src: "assets/images/workbooks/samples/birds_sample_2.jpg", caption: "Coloring & Feature Detailing" },
+        { src: "assets/images/workbooks/samples/birds_sample_3.jpg", caption: "Species Name & Word Practice" }
+      ],
+      description: "A step-by-step bird drawing workbook guiding young children to draw charming garden and songbirds using simple geometric shapes, progressive lines, and coloring prompts.",
       developmentPillars: [
-        "Visual-spatial awareness",
-        "Pencil grip & stroke control",
-        "Bird species recognition & curiosity",
+        "Visual-spatial awareness & shape decomposition",
+        "Pencil grip & controlled directional strokes",
+        "Bird species recognition & vocabulary",
         "Creative coloring & artistic confidence"
       ]
     },
-    "2": {
+    "sea_animals": {
       title: "Let's Draw the Sea Animals Together",
       category: "Drawing & Creative Activities",
+      tagClass: "tag-drawing",
       icon: "🐬",
       age: "Ages 3–7",
-      pages: "Printable Activity Pages",
-      description: "An ocean-themed drawing guide featuring dolphins, turtles, octopuses, and reef fish, breaking down aquatic shapes into intuitive steps.",
+      pages: "15 Printable Pages",
+      cover: "assets/images/workbooks/covers/sea_animals_cover.jpg",
+      samples: [
+        { src: "assets/images/workbooks/samples/sea_animals_sample_1.jpg", caption: "Ocean Creature Line Guide" },
+        { src: "assets/images/workbooks/samples/sea_animals_sample_2.jpg", caption: "Step-by-Step Marine Drawing" },
+        { src: "assets/images/workbooks/samples/sea_animals_sample_3.jpg", caption: "Sea Life Identification" }
+      ],
+      description: "An ocean-themed drawing guide featuring dolphins, turtles, octopuses, and reef fish, breaking down aquatic shapes into intuitive steps for little hands.",
       developmentPillars: [
         "Curved line tracing & fluid hand motions",
-        "Marine life exploration",
-        "Shape construction & proportion",
-        "Artistic self-expression"
+        "Marine life exploration & language enrichment",
+        "Shape construction & proportion calibration",
+        "Low-frustration artistic self-expression"
       ]
     },
-    "3": {
+    "pets": {
       title: "Let's Draw the Pet Animals Together",
       category: "Drawing & Creative Activities",
+      tagClass: "tag-drawing",
       icon: "🐶",
       age: "Ages 3–7",
-      pages: "Printable Activity Pages",
-      description: "Features beloved family pets (puppies, kittens, bunnies, hamsters) with engaging step-by-step drawing demonstrations.",
+      pages: "14 Printable Pages",
+      cover: "assets/images/workbooks/covers/pets_cover.jpg",
+      samples: [
+        { src: "assets/images/workbooks/samples/pets_sample_1.jpg", caption: "Puppy & Kitten Drawing Guides" },
+        { src: "assets/images/workbooks/samples/pets_sample_2.jpg", caption: "Facial Expressions & Paws" },
+        { src: "assets/images/workbooks/samples/pets_sample_3.jpg", caption: "Pet Name Learning Sheet" }
+      ],
+      description: "Features beloved family pets (puppies, kittens, bunnies, hamsters) with engaging step-by-step drawing demonstrations that build confidence.",
       developmentPillars: [
-        "Fine-motor coordination",
-        "Pet empathy & vocabulary",
-        "Hand-eye coordination",
-        "Low-frustration step mastery"
+        "Fine-motor coordination & precision",
+        "Empathy & animal vocabulary",
+        "Hand-eye coordination & boundary awareness",
+        "Encouraging positive drawing routines"
       ]
     },
-    "4": {
+    "body_parts": {
       title: "Let's Draw & Learn Body Parts Together",
-      category: "Body Parts & Early Learning",
+      category: "Body & Early Learning",
+      tagClass: "tag-early",
       icon: "👀",
       age: "Ages 3–6",
-      pages: "Printable Activity Pages",
-      description: "Combines fundamental anatomical vocabulary with guided drawing of facial features, hands, feet, and gestures to reinforce body schema.",
+      pages: "19 Printable Pages",
+      cover: "assets/images/workbooks/covers/body_parts_cover.jpg",
+      samples: [
+        { src: "assets/images/workbooks/samples/body_parts_sample_1.jpg", caption: "Facial Features & Symmetry" },
+        { src: "assets/images/workbooks/samples/body_parts_sample_2.jpg", caption: "Hands, Feet & Movement Lines" },
+        { src: "assets/images/workbooks/samples/body_parts_sample_3.jpg", caption: "Body Schema & Vocabulary" }
+      ],
+      description: "Combines fundamental anatomical vocabulary with guided drawing of facial features, hands, feet, and gestures to reinforce body schema and speech concepts.",
       developmentPillars: [
         "Self-concept & anatomical vocabulary",
         "Facial feature placement & symmetry",
@@ -62,40 +90,61 @@ document.addEventListener('DOMContentLoaded', () => {
         "Pre-writing motor control"
       ]
     },
-    "5": {
-      title: "Build-a-Face / Who Am I? Build My Face",
+    "build_a_face": {
+      title: "Make My Face — Cut, Create & Complete",
       category: "Cut & Paste / Social-Emotional",
+      tagClass: "tag-motor",
       icon: "🎭",
       age: "Ages 3–7",
-      pages: "Printable Cut-and-Paste Sheets",
-      description: "Hands-on cut-and-paste activity pages where children assemble different facial expressions, hair styles, and accessories.",
+      pages: "20 Printable Pages",
+      cover: "assets/images/workbooks/covers/build_a_face_cover.jpg",
+      samples: [
+        { src: "assets/images/workbooks/samples/build_a_face_sample_1.jpg", caption: "Cutout Face Base & Options" },
+        { src: "assets/images/workbooks/samples/build_a_face_sample_2.jpg", caption: "Emotion Eyes & Smile Cutouts" },
+        { src: "assets/images/workbooks/samples/build_a_face_sample_3.jpg", caption: "Custom Character Assembly" }
+      ],
+      description: "Hands-on cut-and-paste activity pages where children assemble different facial expressions, hair styles, and accessories to learn about emotions.",
       developmentPillars: [
         "Bilateral scissor coordination & safety",
         "Emotion identification & facial cues",
         "Spatial orientation & pasting accuracy",
-        "Creative storytelling & identity"
+        "Creative storytelling & personal identity"
       ]
     },
-    "6": {
-      title: "Count, Play and Learn",
-      category: "Counting & Numbers",
+    "count_play_learn": {
+      title: "Count, Play & Learn Numbers 1–10",
+      category: "Counting & Early Math",
+      tagClass: "tag-early",
       icon: "🔢",
       age: "Preschool & Kindergarten",
-      pages: "Printable Math Worksheets",
+      pages: "20 Printable Pages",
+      cover: "assets/images/workbooks/covers/count_play_learn_cover.jpg",
+      samples: [
+        { src: "assets/images/workbooks/samples/count_play_learn_sample_1.jpg", caption: "Number Tracing & Path Guidance" },
+        { src: "assets/images/workbooks/samples/count_play_learn_sample_2.jpg", caption: "Object Counting Challenges" },
+        { src: "assets/images/workbooks/samples/count_play_learn_sample_3.jpg", caption: "One-to-One Correspondence Games" }
+      ],
       description: "Visual math workbook introducing number recognition 1–10, one-to-one counting correspondence, and fun object grouping.",
       developmentPillars: [
         "Number formation & stroke order",
-        "One-to-one correspondence",
+        "One-to-one counting correspondence",
         "Visual quantity estimation",
         "Early math confidence"
       ]
     },
-    "7": {
-      title: "ABC Learning",
-      category: "Alphabet & Phonics",
+    "abc_learning": {
+      title: "ABC Little Learner A–Z Activity Book",
+      category: "ABC & Alphabet Learning",
+      tagClass: "tag-early",
       icon: "🔤",
       age: "Preschool & Kindergarten",
-      pages: "A–Z Printable Workbook",
+      pages: "27 Printable Pages",
+      cover: "assets/images/workbooks/covers/abc_learning_cover.jpg",
+      samples: [
+        { src: "assets/images/workbooks/samples/abc_learning_sample_1.jpg", caption: "Uppercase & Lowercase Tracing" },
+        { src: "assets/images/workbooks/samples/abc_learning_sample_2.jpg", caption: "Phonics Illustration & Coloring" },
+        { src: "assets/images/workbooks/samples/abc_learning_sample_3.jpg", caption: "Letter Search & Sound Match" }
+      ],
       description: "Complete alphabet learning workbook with large uppercase and lowercase letters, guided directional arrows, and cheerful phonics illustrations.",
       developmentPillars: [
         "Letter recognition & formation",
@@ -104,23 +153,114 @@ document.addEventListener('DOMContentLoaded', () => {
         "Pre-reading literacy foundation"
       ]
     },
-    "8": {
-      title: "Fine Motor Skills Tracing Workbook",
+    "fine_motor_tracing": {
+      title: "My First Fine Motor Skill Tracing Workbook",
       category: "Fine-Motor & Pre-Writing",
+      tagClass: "tag-motor",
       icon: "✍️",
       age: "Ages 2.5–6",
-      pages: "Graduated Tracing Paths",
+      pages: "36 Printable Pages",
+      cover: "assets/images/workbooks/covers/fine_motor_tracing_cover.jpg",
+      samples: [
+        { src: "assets/images/workbooks/samples/fine_motor_tracing_sample_1.jpg", caption: "Straight & Slanted Tracing Paths" },
+        { src: "assets/images/workbooks/samples/fine_motor_tracing_sample_2.jpg", caption: "Curves, Waves & Loop Exercises" },
+        { src: "assets/images/workbooks/samples/fine_motor_tracing_sample_3.jpg", caption: "Pencil Mazes & Hand Control" }
+      ],
       description: "Calibrated line tracing workbook featuring straight lines, zig-zags, waves, arches, and spiral patterns that prepare fingers for handwriting.",
       developmentPillars: [
         "Pencil pressure & grip stability",
-        "Controlled wrist movement",
+        "Controlled wrist and finger movement",
         "Visual-motor tracking",
         "Hand endurance for handwriting"
+      ]
+    },
+    "little_hearts": {
+      title: "Little Hearts, Big Feelings: Emotional Learning",
+      category: "Social-Emotional & Speech",
+      tagClass: "tag-speech",
+      icon: "💖",
+      age: "Ages 3–7",
+      pages: "22 Printable Pages",
+      cover: "assets/images/workbooks/covers/little_hearts_cover.jpg",
+      samples: [
+        { src: "assets/images/workbooks/samples/little_hearts_sample_1.jpg", caption: "Emotion Vocabulary & Identifying Feelings" },
+        { src: "assets/images/workbooks/samples/little_hearts_sample_2.jpg", caption: "What Makes Me Feel... Prompts" },
+        { src: "assets/images/workbooks/samples/little_hearts_sample_3.jpg", caption: "Calm Down Strategies & Reflection" }
+      ],
+      description: "Therapist-informed emotional learning workbook helping children recognize, express, and regulate emotions through meaningful scenarios and conversations.",
+      developmentPillars: [
+        "Emotional self-awareness & labeling",
+        "Empathy & understanding others",
+        "Expressive speech and language communication",
+        "Coping strategies for big emotions"
+      ]
+    },
+    "little_explorer": {
+      title: "My Curious World, Little Explorer",
+      category: "Preschool Early Learning",
+      tagClass: "tag-early",
+      icon: "🌍",
+      age: "Preschool & Kindergarten",
+      pages: "16 Printable Pages",
+      cover: "assets/images/workbooks/covers/little_explorer_cover.jpg",
+      samples: [
+        { src: "assets/images/workbooks/samples/little_explorer_sample_1.jpg", caption: "Nature & World Observation Sheet" },
+        { src: "assets/images/workbooks/samples/little_explorer_sample_2.jpg", caption: "Pattern Matching & Sorting" },
+        { src: "assets/images/workbooks/samples/little_explorer_sample_3.jpg", caption: "Creative Exploration Activities" }
+      ],
+      description: "Playful discovery workbook filled with interactive observation prompts, sorting games, and cognitive reasoning activities.",
+      developmentPillars: [
+        "Curiosity & observation skills",
+        "Cognitive classification & matching",
+        "Early vocabulary expansion",
+        "Engaging hands-on worksheets"
+      ]
+    },
+    "jungle_animals": {
+      title: "Wildlife & Jungle Animal Drawing Workbook",
+      category: "Drawing & Animal Learning",
+      tagClass: "tag-drawing",
+      icon: "🦁",
+      age: "Ages 4–8",
+      pages: "22 Printable Pages",
+      cover: "assets/images/workbooks/covers/jungle_animals_cover.jpg",
+      samples: [
+        { src: "assets/images/workbooks/samples/jungle_animals_sample_1.jpg", caption: "Lion & Tiger Step-by-Step Art" },
+        { src: "assets/images/workbooks/samples/jungle_animals_sample_2.jpg", caption: "Jungle Animals Habitat Coloring" },
+        { src: "assets/images/workbooks/samples/jungle_animals_sample_3.jpg", caption: "Animal Drawing & Pre-Writing Paths" }
+      ],
+      description: "Exciting safari and jungle animal drawing guides connecting animal anatomy with beginner-friendly art steps.",
+      developmentPillars: [
+        "Wildlife anatomy & creature recognition",
+        "Complex curve drawing mastery",
+        "Fine-motor grip refinement",
+        "Independent artistic accomplishment"
+      ]
+    },
+    "learning_colors": {
+      title: "Learning Colors & Creative Shapes Workbook",
+      category: "Early Preschool Learning",
+      tagClass: "tag-early",
+      icon: "🎨",
+      age: "Ages 2–5",
+      pages: "18 Printable Pages",
+      cover: "assets/images/workbooks/covers/learning_colors_cover.jpg",
+      samples: [
+        { src: "assets/images/workbooks/samples/learning_colors_sample_1.jpg", caption: "Primary & Secondary Colors Sheet" },
+        { src: "assets/images/workbooks/samples/learning_colors_sample_2.jpg", caption: "Color Sorting & Matching Game" },
+        { src: "assets/images/workbooks/samples/learning_colors_sample_3.jpg", caption: "Color By Number Practice" }
+      ],
+      description: "Visual recognition worksheets pairing basic color theory with playful illustration and sensory discovery.",
+      developmentPillars: [
+        "Color identification & discrimination",
+        "Basic geometric shape recognition",
+        "Visual perception & sorting",
+        "Early preschool cognitive readiness"
       ]
     }
   };
 
-  // 2. Filter Functionality
+  // 2. Category Filter Functionality
   const filterBtns = document.querySelectorAll('.filter-btn');
   const workbookCards = document.querySelectorAll('.workbook-card');
 
@@ -142,52 +282,108 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 3. Details Dialog / Modal
+  // 3. Interactive Gallery & Modal Lightbox
   const modal = document.getElementById('workbookModal');
   const modalBody = document.getElementById('modalBody');
   const modalCloseBtn = document.getElementById('modalCloseBtn');
-  const detailButtons = document.querySelectorAll('.btn-card-details');
 
-  detailButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const id = btn.getAttribute('data-item');
-      const item = workbookDetails[id];
-      if (!item) return;
+  function openWorkbookModal(id) {
+    const item = workbookCatalog[id];
+    if (!item) return;
 
-      modalBody.innerHTML = `
-        <div style="text-align: center; margin-bottom: 20px;">
-          <div style="font-size: 2.8rem; margin-bottom: 8px;">${item.icon}</div>
-          <span style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; color: var(--color-coral); background: var(--color-coral-light); padding: 3px 10px; border-radius: 9999px;">${item.category}</span>
-          <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; color: var(--text-main); margin-top: 10px;">${item.title}</h3>
-          <p style="font-size: 0.88rem; font-weight: 600; color: var(--text-muted);">${item.age} &bull; ${item.pages}</p>
-        </div>
+    const allImages = [
+      { src: item.cover, caption: "Official Cover" },
+      ...item.samples
+    ];
 
-        <div style="background: var(--bg-card-subtle); padding: 16px; border-radius: var(--radius-md); margin-bottom: 20px;">
-          <p style="font-size: 0.94rem; color: var(--text-main); line-height: 1.6;">${item.description}</p>
-        </div>
+    modalBody.innerHTML = `
+      <div class="modal-gallery-layout">
+        
+        <!-- Left: Image Viewer & Thumbnails -->
+        <div class="modal-gallery-visual">
+          <div class="modal-main-img-wrap">
+            <img id="modalMainImg" src="${item.cover}" alt="${item.title}" class="modal-main-img">
+            <div id="modalImgCaption" class="modal-img-caption">Official Cover</div>
+          </div>
 
-        <div>
-          <h4 style="font-family: var(--font-heading); font-size: 0.95rem; font-weight: 700; color: var(--text-main); margin-bottom: 10px;">🌱 Key Developmental Skills:</h4>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px;">
-            ${item.developmentPillars.map(p => `
-              <li style="display: flex; align-items: center; gap: 8px; font-size: 0.88rem; color: var(--text-muted);">
-                <span style="color: var(--color-sprout-green); font-weight: bold;">✓</span> ${p}
-              </li>
+          <div class="modal-thumbnails-strip">
+            ${allImages.map((img, idx) => `
+              <button class="thumb-btn ${idx === 0 ? 'active' : ''}" data-src="${img.src}" data-caption="${img.caption}">
+                <img src="${img.src}" alt="${img.caption}">
+              </button>
             `).join('')}
-          </ul>
+          </div>
+          <p class="thumbnail-hint">💡 Click any thumbnail above to inspect the real activity worksheets</p>
         </div>
 
-        <div style="margin-top: 24px; text-align: center;">
-          <a href="https://payhip.com/BrightSproutsStudio" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width: 100%;">
-            View in Payhip Store &rarr;
-          </a>
-        </div>
-      `;
+        <!-- Right: Educational Details -->
+        <div class="modal-gallery-info">
+          <div class="modal-badge-row">
+            <span class="meta-tag ${item.tagClass}">${item.category}</span>
+            <span class="page-count-badge">${item.pages}</span>
+          </div>
 
-      if (typeof modal.showModal === 'function') {
-        modal.showModal();
-      } else {
-        modal.setAttribute('open', 'true');
+          <h3 class="modal-title">${item.title}</h3>
+          <p class="modal-subtitle">Target: <strong>${item.age}</strong> &bull; Print-Ready PDF Format</p>
+
+          <div class="modal-desc-box">
+            <p>${item.description}</p>
+          </div>
+
+          <div class="modal-pillars-box">
+            <h4>🌱 Key Developmental &amp; Speech Milestones:</h4>
+            <ul class="pillars-checklist">
+              ${item.developmentPillars.map(p => `
+                <li><span class="check-bullet">✓</span> ${p}</li>
+              `).join('')}
+            </ul>
+          </div>
+
+          <div class="modal-cta-row">
+            <a href="https://payhip.com/BrightSproutsStudio" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-store-link">
+              <span>View in Payhip Store</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    `;
+
+    // Hook up thumbnail click events
+    const thumbBtns = modalBody.querySelectorAll('.thumb-btn');
+    const mainImg = modalBody.querySelector('#modalMainImg');
+    const mainCaption = modalBody.querySelector('#modalImgCaption');
+
+    thumbBtns.forEach(tb => {
+      tb.addEventListener('click', () => {
+        thumbBtns.forEach(b => b.classList.remove('active'));
+        tb.classList.add('active');
+        const newSrc = tb.getAttribute('data-src');
+        const newCaption = tb.getAttribute('data-caption');
+        mainImg.src = newSrc;
+        mainCaption.textContent = newCaption;
+      });
+    });
+
+    if (typeof modal.showModal === 'function') {
+      modal.showModal();
+    } else {
+      modal.setAttribute('open', 'true');
+    }
+  }
+
+  // Bind click on Preview buttons and Card frames
+  document.querySelectorAll('.btn-preview-samples, .workbook-card .cover-slot').forEach(el => {
+    el.addEventListener('click', (e) => {
+      const card = el.closest('.workbook-card');
+      if (card) {
+        const id = card.getAttribute('data-wb-id');
+        openWorkbookModal(id);
       }
     });
   });
@@ -202,7 +398,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Close modal when clicking outside
+  // Close modal when clicking outside dialog window
   modal.addEventListener('click', (e) => {
     const dialogDimensions = modal.getBoundingClientRect();
     if (
@@ -217,7 +413,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 4. Print / PDF Export Handler
+  // 4. PDF Export / Print Handler
   const printBtn = document.getElementById('printBtn');
   if (printBtn) {
     printBtn.addEventListener('click', () => {
