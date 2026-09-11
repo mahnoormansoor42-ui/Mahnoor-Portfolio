@@ -604,7 +604,7 @@ function startServer(portIndex = 0) {
     console.log(`=======================================================`);
   });
 
-  instance.listen(currentPort);
+  instance.listen(currentPort, '0.0.0.0');
 }
 
 startServer();
