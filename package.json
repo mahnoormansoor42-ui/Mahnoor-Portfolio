@@ -1,0 +1,24 @@
+{
+  "name": "bright-sprout-studio",
+  "version": "1.0.0",
+  "description": "Bright Sprout Studio - Children's Educational Printables Dynamic Web Storefront & Backend Admin Dashboard",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "educational-printables",
+    "speech-therapy",
+    "workbooks",
+    "admin-dashboard",
+    "ecommerce"
+  ],
+  "author": "Bright Sprout Studio",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "multer": "^1.4.5-lts.1"
+  }
+}

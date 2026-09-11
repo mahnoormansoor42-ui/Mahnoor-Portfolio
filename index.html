@@ -821,9 +821,15 @@
               Experience the quality of Bright Sprout Studio with sample drawing guides, tracing pathways, and preschool activity sheets ready to print right now.
             </p>
             <div class="freebies-action-group">
-              <button class="btn btn-freebie-download" id="freebieModalTrigger">
-                <span>Preview &amp; Download Free Pack 📥</span>
-              </button>
+              <form id="leadCaptureForm" class="lead-capture-form" style="display: flex; gap: 10px; width: 100%; max-width: 480px; margin-bottom: 10px; flex-wrap: wrap;">
+                <input type="email" id="leadEmailInput" placeholder="Enter your email for free printables..." required style="flex: 1; min-width: 220px; padding: 12px 18px; border-radius: 9999px; border: 1.5px solid #CBD5E1; font-size: 0.95rem; font-family: inherit; outline: none; background: #FFFFFF;">
+                <button type="submit" id="leadSubmitBtn" class="btn btn-freebie-download" style="white-space: nowrap;">
+                  <span>Get Free Pack 📥</span>
+                </button>
+              </form>
+              <div id="leadSuccessMsg" style="display: none; color: #16A34A; font-weight: 700; font-size: 0.92rem; margin-bottom: 8px;">
+                🎉 Thank you! Your free sample worksheets are ready below!
+              </div>
               <span class="freebie-note">✓ 100% Free &bull; Instant PDF &bull; No credit card needed</span>
             </div>
           </div>
@@ -981,6 +987,7 @@
           <a href="#shop">Shop All</a>
           <a href="#about-founder">About Founder</a>
           <a href="https://payhip.com/BrightSproutsStudio" target="_blank" rel="noopener noreferrer">Payhip Store</a>
+          <a href="admin/index.html" style="color: #16A34A; font-weight: 700;">⚙️ Admin Portal</a>
         </div>
       </div>
     </div>

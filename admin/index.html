@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio Admin Dashboard — Bright Sprout Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Quicksand:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       Sidebar Navigation
+       ======================================================================== -->
+  <aside class="admin-sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo-icon">🌱</div>
+      <div>
+        <div class="sidebar-title">Bright Sprout</div>
+        <span class="sidebar-badge">Admin Suite</span>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <button class="nav-item-btn active" data-tab="overview">
+        <div class="nav-item-left">
+          <span class="nav-item-icon">📊</span>
+          <span>Overview</span>
+        </div>
+      </button>
+
+      <button class="nav-item-btn" data-tab="workbooks">
+        <div class="nav-item-left">
+          <span class="nav-item-icon">📚</span>
+          <span>Workbooks Catalog</span>
+        </div>
+        <span class="nav-counter" id="navProductCount">0</span>
+      </button>
+
+      <button class="nav-item-btn" data-tab="categories">
+        <div class="nav-item-left">
+          <span class="nav-item-icon">🏷️</span>
+          <span>Categories</span>
+        </div>
+        <span class="nav-counter" id="navCategoryCount">0</span>
+      </button>
+
+      <button class="nav-item-btn" data-tab="reviews">
+        <div class="nav-item-left">
+          <span class="nav-item-icon">⭐</span>
+          <span>Reviews &amp; Proof</span>
+        </div>
+        <span class="nav-counter" id="navReviewCount">0</span>
+      </button>
+
+      <button class="nav-item-btn" data-tab="faqs">
+        <div class="nav-item-left">
+          <span class="nav-item-icon">❓</span>
+          <span>FAQ Manager</span>
+        </div>
+      </button>
+
+      <button class="nav-item-btn" data-tab="leads">
+        <div class="nav-item-left">
+          <span class="nav-item-icon">📬</span>
+          <span>Email Leads</span>
+        </div>
+        <span class="nav-counter" id="navLeadCount" style="background: rgba(249, 115, 22, 0.3); color: #FED7AA;">0</span>
+      </button>
+
+      <button class="nav-item-btn" data-tab="settings">
+        <div class="nav-item-left">
+          <span class="nav-item-icon">⚙️</span>
+          <span>Store Settings</span>
+        </div>
+      </button>
+    </nav>
+
+    <div class="sidebar-footer">
+      <a href="../index.html" target="_blank" class="btn-visit-site">
+        <span>🌐 View Live Storefront</span>
+        <span style="font-size: 0.8rem;">↗</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- ========================================================================
+       Main Content Area
+       ======================================================================== -->
+  <main class="admin-main">
+    
+    <!-- Topbar -->
+    <header class="admin-topbar">
+      <div class="topbar-left">
+        <h1 class="page-title" id="pageTitle">Dashboard Overview</h1>
+      </div>
+
+      <div class="topbar-right">
+        <button id="btnQuickAddProduct" class="btn-primary-action">
+          <span>+ Add New Workbook</span>
+        </button>
+
+        <div class="admin-user-pill">
+          <div class="admin-avatar">A</div>
+          <div class="admin-info">
+            <span class="admin-name" id="adminUsernameDisplay">Administrator</span>
+            <span class="admin-role">Store Owner</span>
+          </div>
+          <button id="btnLogout" class="btn-logout" title="Sign Out">🚪</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Tabs -->
+    <div class="admin-content">
+
+      <!-- ====================================================================
+           Tab 1: Overview
+           ==================================================================== -->
+      <section id="tab-overview" class="tab-panel active">
+        <!-- KPI Stat Cards -->
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-info">
+              <span class="kpi-label">Active Workbooks</span>
+              <span class="kpi-val" id="kpiProducts">0</span>
+              <span class="kpi-hint">Across 6 Categories</span>
+            </div>
+            <div class="kpi-icon-wrap kpi-icon-green">📚</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-info">
+              <span class="kpi-label">Email Leads Captured</span>
+              <span class="kpi-val" id="kpiLeads">0</span>
+              <span class="kpi-hint">Freebie sample downloads</span>
+            </div>
+            <div class="kpi-icon-wrap kpi-icon-coral">📬</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-info">
+              <span class="kpi-label">Customer Reviews</span>
+              <span class="kpi-val" id="kpiReviews">0</span>
+              <span class="kpi-hint">5.0 Star Average</span>
+            </div>
+            <div class="kpi-icon-wrap kpi-icon-purple">⭐</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-info">
+              <span class="kpi-label">Storefront Clicks</span>
+              <span class="kpi-val" id="kpiClicks">0</span>
+              <span class="kpi-hint">Look inside &amp; Payhip clicks</span>
+            </div>
+            <div class="kpi-icon-wrap kpi-icon-blue">📈</div>
+          </div>
+        </div>
+
+        <!-- Overview Split Section -->
+        <div class="dashboard-sections-grid">
+          <!-- Left: Recent Workbooks -->
+          <div class="dashboard-card">
+            <div class="dashboard-card-header">
+              <h3 class="card-title">Featured Workbook Printables</h3>
+              <button class="btn-secondary" onclick="switchTab('workbooks')">View All →</button>
+            </div>
+            <div class="table-wrapper">
+              <table class="data-table" id="overviewProductsTable">
+                <thead>
+                  <tr>
+                    <th>Workbook</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="overviewProductsTbody">
+                  <!-- Populated dynamically -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Right: Recent Email Leads & Quick Info -->
+          <div class="dashboard-card">
+            <div class="dashboard-card-header">
+              <h3 class="card-title">Latest Email Leads</h3>
+              <button class="btn-secondary" onclick="switchTab('leads')">Export CSV</button>
+            </div>
+            <div id="overviewLeadsList" style="display: flex; flex-direction: column; gap: 12px;">
+              <!-- Populated dynamically -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           Tab 2: Workbooks Catalog (CRUD)
+           ==================================================================== -->
+      <section id="tab-workbooks" class="tab-panel">
+        <div class="table-controls">
+          <div class="search-input-wrap">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="productSearchInput" class="search-input" placeholder="Search workbooks by title, age, or keyword...">
+          </div>
+
+          <select id="productCategoryFilter" class="filter-select">
+            <option value="all">All Categories</option>
+            <!-- Populated dynamically -->
+          </select>
+
+          <button id="btnAddNewProduct" class="btn-primary-action">
+            <span>+ Add New Workbook</span>
+          </button>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Cover &amp; Title</th>
+                <th>Category</th>
+                <th>Target Age / Pages</th>
+                <th>Price</th>
+                <th>Rating</th>
+                <th>Status</th>
+                <th style="text-align: right;">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="productsTableBody">
+              <!-- Populated dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           Tab 3: Categories Management
+           ==================================================================== -->
+      <section id="tab-categories" class="tab-panel">
+        <div class="table-controls">
+          <h2 style="font-size: 1.1rem; font-weight: 700;">Product Categories &amp; Filters</h2>
+          <button id="btnAddCategory" class="btn-primary-action">
+            <span>+ Add Category</span>
+          </button>
+        </div>
+
+        <div class="cards-grid-auto" id="categoriesGrid">
+          <!-- Populated dynamically -->
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           Tab 4: Reviews & Testimonials
+           ==================================================================== -->
+      <section id="tab-reviews" class="tab-panel">
+        <div class="table-controls">
+          <h2 style="font-size: 1.1rem; font-weight: 700;">Customer Testimonials &amp; Social Proof</h2>
+          <button id="btnAddReview" class="btn-primary-action">
+            <span>+ Add Testimonial</span>
+          </button>
+        </div>
+
+        <div class="cards-grid-auto" id="reviewsGrid">
+          <!-- Populated dynamically -->
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           Tab 5: FAQ Manager
+           ==================================================================== -->
+      <section id="tab-faqs" class="tab-panel">
+        <div class="table-controls">
+          <h2 style="font-size: 1.1rem; font-weight: 700;">Frequently Asked Questions</h2>
+          <button id="btnAddFaq" class="btn-primary-action">
+            <span>+ Add FAQ Item</span>
+          </button>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 14px;" id="faqsList">
+          <!-- Populated dynamically -->
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           Tab 6: Email Leads & Subscribers
+           ==================================================================== -->
+      <section id="tab-leads" class="tab-panel">
+        <div class="table-controls">
+          <div class="search-input-wrap">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="leadsSearchInput" class="search-input" placeholder="Search leads by email or name...">
+          </div>
+
+          <button id="btnExportLeadsCsv" class="btn-primary-action" style="background: #EA580C;">
+            <span>📥 Export to CSV</span>
+          </button>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Email Address</th>
+                <th>Subscriber Name</th>
+                <th>Source</th>
+                <th>Date Subscribed</th>
+              </tr>
+            </thead>
+            <tbody id="leadsTableBody">
+              <!-- Populated dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           Tab 7: Store Settings & Founder Profile
+           ==================================================================== -->
+      <section id="tab-settings" class="tab-panel">
+        <div class="settings-container">
+          <!-- Left Column: Announcement & Hero Copy -->
+          <div class="settings-card">
+            <div class="settings-card-header">
+              <h3 class="card-title">📢 Top Announcement Banner</h3>
+            </div>
+            
+            <div class="form-group-admin">
+              <label class="toggle-switch-row">
+                <span class="form-label-admin">Enable Announcement Ribbon</span>
+                <input type="checkbox" id="settingAnnounceEnabled" checked>
+              </label>
+            </div>
+
+            <div class="form-group-admin">
+              <label class="form-label-admin">Banner Text</label>
+              <input type="text" id="settingAnnounceText" class="form-input-admin" value="✨ Instant PDF Downloads • 100% Speech-Therapist Crafted • Print & Play at Home in Seconds!">
+            </div>
+
+            <div class="form-group-admin">
+              <label class="form-label-admin">Action Link Text &amp; URL</label>
+              <div style="display: flex; gap: 10px;">
+                <input type="text" id="settingAnnounceLinkText" class="form-input-admin" placeholder="Shop Store →" value="Shop Store →">
+                <input type="text" id="settingAnnounceLinkUrl" class="form-input-admin" placeholder="#shop" value="#shop">
+              </div>
+            </div>
+
+            <div class="settings-card-header" style="margin-top: 14px;">
+              <h3 class="card-title">🎨 Hero Banner Copy</h3>
+            </div>
+
+            <div class="form-group-admin">
+              <label class="form-label-admin">Main Headline</label>
+              <input type="text" id="settingHeroHeadline" class="form-input-admin">
+            </div>
+
+            <div class="form-group-admin">
+              <label class="form-label-admin">Sub-Headline Description</label>
+              <textarea id="settingHeroSubheadline" class="form-textarea-admin" rows="3"></textarea>
+            </div>
+
+            <button id="btnSaveStorefrontSettings" class="btn-primary-action" style="margin-top: 10px;">
+              <span>Save Storefront Settings 💾</span>
+            </button>
+          </div>
+
+          <!-- Right Column: Founder Info & Admin Password -->
+          <div class="settings-card">
+            <div class="settings-card-header">
+              <h3 class="card-title">👩‍⚕️ Founder Story &amp; Payhip Links</h3>
+            </div>
+
+            <div class="form-group-admin">
+              <label class="form-label-admin">Founder Name &amp; Title</label>
+              <input type="text" id="settingFounderName" class="form-input-admin" value="Mahnoor Mansoor">
+              <input type="text" id="settingFounderTitle" class="form-input-admin" style="margin-top: 6px;" value="Speech-Language Pathologist & Early Childhood Specialist">
+            </div>
+
+            <div class="form-group-admin">
+              <label class="form-label-admin">Clinical Experience Tag</label>
+              <input type="text" id="settingFounderExp" class="form-input-admin" value="9+ Years Clinical Practice">
+            </div>
+
+            <div class="form-group-admin">
+              <label class="form-label-admin">Founder Bio Story</label>
+              <textarea id="settingFounderBio" class="form-textarea-admin" rows="4"></textarea>
+            </div>
+
+            <div class="form-group-admin">
+              <label class="form-label-admin">Contact Email &amp; Payhip Store URL</label>
+              <input type="email" id="settingFounderEmail" class="form-input-admin" value="mahnoormansoor42@gmail.com">
+              <input type="url" id="settingFounderStoreUrl" class="form-input-admin" style="margin-top: 6px;" value="https://payhip.com/BrightSproutsStudio">
+            </div>
+
+            <div class="settings-card-header" style="margin-top: 14px;">
+              <h3 class="card-title">🔒 Change Admin Password</h3>
+            </div>
+
+            <div class="form-group-admin">
+              <label class="form-label-admin">Current Password</label>
+              <input type="password" id="currentAdminPass" class="form-input-admin" placeholder="Current password">
+            </div>
+
+            <div class="form-group-admin">
+              <label class="form-label-admin">New Password</label>
+              <input type="password" id="newAdminPass" class="form-input-admin" placeholder="New strong password">
+            </div>
+
+            <button id="btnUpdatePassword" class="btn-secondary" style="margin-top: 6px;">
+              <span>Update Credentials 🔑</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ========================================================================
+       MODALS
+       ======================================================================== -->
+
+  <!-- 1. Add / Edit Workbook Modal -->
+  <div id="productModal" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title-text" id="productModalTitle">Add New Workbook</h3>
+        <button class="modal-close-btn" onclick="closeModal('productModal')">&times;</button>
+      </div>
+
+      <form id="productForm">
+        <div class="modal-body">
+          <input type="hidden" id="prodEditId">
+
+          <div class="form-group-admin">
+            <label class="form-label-admin">Workbook Title *</label>
+            <input type="text" id="prodTitle" class="form-input-admin" placeholder="e.g. Let's Draw the Sea Animals Together" required>
+          </div>
+
+          <div class="modal-grid-2">
+            <div class="form-group-admin">
+              <label class="form-label-admin">Category *</label>
+              <select id="prodCategory" class="form-select-admin" required>
+                <!-- Populated dynamically -->
+              </select>
+            </div>
+
+            <div class="form-group-admin">
+              <label class="form-label-admin">Badge Tag Text</label>
+              <input type="text" id="prodBadgeText" class="form-input-admin" placeholder="⭐ Bestseller / 🐬 Popular / 🩺 Speech Focus">
+            </div>
+          </div>
+
+          <div class="modal-grid-2">
+            <div class="form-group-admin">
+              <label class="form-label-admin">Target Age Range</label>
+              <input type="text" id="prodAge" class="form-input-admin" placeholder="Ages 3–7 / Pre-K &amp; Kindergarten">
+            </div>
+
+            <div class="form-group-admin">
+              <label class="form-label-admin">Page Count</label>
+              <input type="text" id="prodPages" class="form-input-admin" placeholder="18 Printable Pages">
+            </div>
+          </div>
+
+          <div class="modal-grid-2">
+            <div class="form-group-admin">
+              <label class="form-label-admin">Price (Sale)</label>
+              <input type="text" id="prodPrice" class="form-input-admin" placeholder="$4.99">
+            </div>
+
+            <div class="form-group-admin">
+              <label class="form-label-admin">Regular Price</label>
+              <input type="text" id="prodOriginalPrice" class="form-input-admin" placeholder="$8.99">
+            </div>
+          </div>
+
+          <div class="form-group-admin">
+            <label class="form-label-admin">Direct Payhip Checkout URL</label>
+            <input type="url" id="prodPayhipUrl" class="form-input-admin" placeholder="https://payhip.com/b/xxxx or https://payhip.com/BrightSproutsStudio" value="https://payhip.com/BrightSproutsStudio">
+          </div>
+
+          <!-- Cover Image Upload -->
+          <div class="form-group-admin">
+            <label class="form-label-admin">Cover Image</label>
+            <div class="image-upload-zone" onclick="document.getElementById('coverFileInput').click()">
+              <p>📸 Click or drag &amp; drop to upload Workbook Cover</p>
+              <input type="file" id="coverFileInput" accept="image/*" style="display: none;">
+            </div>
+            <div class="upload-preview-wrap">
+              <img id="coverPreviewImg" src="" alt="Preview" class="upload-preview-img" style="display: none;">
+              <input type="text" id="prodCoverUrl" class="form-input-admin" placeholder="assets/images/workbooks/covers/birds_cover.jpg">
+            </div>
+          </div>
+
+          <div class="form-group-admin">
+            <label class="form-label-admin">Description</label>
+            <textarea id="prodDescription" class="form-textarea-admin" rows="3" placeholder="Engaging step-by-step drawing workbook guiding young children..."></textarea>
+          </div>
+
+          <div class="form-group-admin">
+            <label class="form-label-admin">Key Learning &amp; Speech Milestones (1 per line)</label>
+            <textarea id="prodPillars" class="form-textarea-admin" rows="4" placeholder="Visual-spatial awareness &amp; shape breakdown&#10;Pencil grip &amp; controlled directional strokes&#10;Vocabulary enrichment&#10;Fine-motor coordination"></textarea>
+          </div>
+
+          <div class="modal-grid-2">
+            <div class="form-group-admin">
+              <label class="form-label-admin">Status</label>
+              <select id="prodStatus" class="form-select-admin">
+                <option value="active">Active (Visible in Store)</option>
+                <option value="draft">Draft (Hidden)</option>
+              </select>
+            </div>
+
+            <div class="form-group-admin">
+              <label class="form-label-admin">Review Score Text</label>
+              <input type="text" id="prodReviews" class="form-input-admin" placeholder="5.0 (28 reviews)">
+            </div>
+          </div>
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn-secondary" onclick="closeModal('productModal')">Cancel</button>
+          <button type="submit" id="btnSaveProduct" class="btn-primary-action">Save Workbook 💾</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 2. Add / Edit Category Modal -->
+  <div id="categoryModal" class="modal-overlay">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3 class="modal-title-text" id="categoryModalTitle">Add Category</h3>
+        <button class="modal-close-btn" onclick="closeModal('categoryModal')">&times;</button>
+      </div>
+
+      <form id="categoryForm">
+        <div class="modal-body">
+          <input type="hidden" id="catEditId">
+          <div class="form-group-admin">
+            <label class="form-label-admin">Category Name *</label>
+            <input type="text" id="catName" class="form-input-admin" placeholder="e.g. Fine-Motor &amp; Tracing" required>
+          </div>
+
+          <div class="modal-grid-2">
+            <div class="form-group-admin">
+              <label class="form-label-admin">Emoji Icon</label>
+              <input type="text" id="catIcon" class="form-input-admin" placeholder="🎨" value="🎨">
+            </div>
+
+            <div class="form-group-admin">
+              <label class="form-label-admin">Filter Identifier</label>
+              <input type="text" id="catFilter" class="form-input-admin" placeholder="e.g. fine-motor">
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn-secondary" onclick="closeModal('categoryModal')">Cancel</button>
+          <button type="submit" class="btn-primary-action">Save Category</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 3. Add / Edit Review Modal -->
+  <div id="reviewModal" class="modal-overlay">
+    <div class="modal-card" style="max-width: 520px;">
+      <div class="modal-header">
+        <h3 class="modal-title-text" id="reviewModalTitle">Add Testimonial</h3>
+        <button class="modal-close-btn" onclick="closeModal('reviewModal')">&times;</button>
+      </div>
+
+      <form id="reviewForm">
+        <div class="modal-body">
+          <input type="hidden" id="revEditId">
+          <div class="modal-grid-2">
+            <div class="form-group-admin">
+              <label class="form-label-admin">Author Name *</label>
+              <input type="text" id="revAuthor" class="form-input-admin" placeholder="Sarah M." required>
+            </div>
+            <div class="form-group-admin">
+              <label class="form-label-admin">Avatar Emoji</label>
+              <input type="text" id="revAvatar" class="form-input-admin" placeholder="👩‍🏫" value="👩‍🏫">
+            </div>
+          </div>
+
+          <div class="form-group-admin">
+            <label class="form-label-admin">Role / Subtitle</label>
+            <input type="text" id="revRole" class="form-input-admin" placeholder="Preschool Educator &amp; Parent of 4yo">
+          </div>
+
+          <div class="form-group-admin">
+            <label class="form-label-admin">Reviewed Workbook</label>
+            <input type="text" id="revWorkbook" class="form-input-admin" placeholder="Let's Draw Birds Workbook">
+          </div>
+
+          <div class="form-group-admin">
+            <label class="form-label-admin">Testimonial Comment *</label>
+            <textarea id="revComment" class="form-textarea-admin" rows="3" required></textarea>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn-secondary" onclick="closeModal('reviewModal')">Cancel</button>
+          <button type="submit" class="btn-primary-action">Save Review</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 4. Add / Edit FAQ Modal -->
+  <div id="faqModal" class="modal-overlay">
+    <div class="modal-card" style="max-width: 540px;">
+      <div class="modal-header">
+        <h3 class="modal-title-text" id="faqModalTitle">Add FAQ Item</h3>
+        <button class="modal-close-btn" onclick="closeModal('faqModal')">&times;</button>
+      </div>
+
+      <form id="faqForm">
+        <div class="modal-body">
+          <input type="hidden" id="faqEditId">
+          <div class="form-group-admin">
+            <label class="form-label-admin">Question *</label>
+            <input type="text" id="faqQuestion" class="form-input-admin" placeholder="e.g. How do I receive my workbooks?" required>
+          </div>
+
+          <div class="form-group-admin">
+            <label class="form-label-admin">Answer *</label>
+            <textarea id="faqAnswer" class="form-textarea-admin" rows="4" placeholder="Instantly! Immediately after completing checkout..." required></textarea>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn-secondary" onclick="closeModal('faqModal')">Cancel</button>
+          <button type="submit" class="btn-primary-action">Save FAQ</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 5. Delete Confirm Modal -->
+  <div id="deleteModal" class="modal-overlay">
+    <div class="modal-card" style="max-width: 440px;">
+      <div class="modal-header">
+        <h3 class="modal-title-text" style="color: var(--danger);">Confirm Deletion</h3>
+        <button class="modal-close-btn" onclick="closeModal('deleteModal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p id="deleteConfirmText">Are you sure you want to permanently delete this item?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-secondary" onclick="closeModal('deleteModal')">Cancel</button>
+        <button type="button" id="btnConfirmDelete" class="btn-primary-action" style="background: var(--danger);">Delete Permanently</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="admin.js"></script>
+</body>
+</html>

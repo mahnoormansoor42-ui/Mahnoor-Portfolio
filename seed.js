@@ -1,13 +1,10 @@
-/**
- * Bright Sprout Studio — Dynamic Brand Storefront Application Script
- * Creator: Mahnoor Mansoor (Speech-Language Pathologist)
- * Hybrid Dynamic API & Offline Fallback Architecture
- */
+const fs = require('fs');
+const path = require('path');
 
-document.addEventListener('DOMContentLoaded', async () => {
-  // 1. Base Fallback Catalog Data (Ensures static host compatibility)
-  let workbookCatalog = {
-    "birds": {
+const initialData = {
+  products: [
+    {
+      id: "birds",
       title: "Let's Draw the Birds Together",
       category: "Drawing & Creative Art",
       categoryId: "drawing",
@@ -15,7 +12,11 @@ document.addEventListener('DOMContentLoaded', async () => {
       badgeText: "⭐ Bestseller",
       age: "Ages 3–7",
       pages: "17 Printable Pages",
+      price: "$4.99",
+      originalPrice: "$8.99",
       reviews: "5.0 (28 reviews)",
+      rating: 5.0,
+      reviewCount: 28,
       cover: "assets/images/workbooks/covers/birds_cover.jpg",
       payhipUrl: "https://payhip.com/BrightSproutsStudio",
       samples: [
@@ -29,9 +30,14 @@ document.addEventListener('DOMContentLoaded', async () => {
         "Pencil grip & controlled directional strokes",
         "Bird species recognition & vocabulary enrichment",
         "Creative coloring & artistic confidence"
-      ]
+      ],
+      featured: true,
+      status: "active",
+      order: 1,
+      createdAt: new Date().toISOString()
     },
-    "sea_animals": {
+    {
+      id: "sea_animals",
       title: "Let's Draw the Sea Animals Together",
       category: "Drawing & Creative Art",
       categoryId: "drawing",
@@ -39,7 +45,11 @@ document.addEventListener('DOMContentLoaded', async () => {
       badgeText: "🐬 Popular",
       age: "Ages 3–7",
       pages: "15 Printable Pages",
+      price: "$4.99",
+      originalPrice: "$8.99",
       reviews: "5.0 (34 reviews)",
+      rating: 5.0,
+      reviewCount: 34,
       cover: "assets/images/workbooks/covers/sea_animals_cover.jpg",
       payhipUrl: "https://payhip.com/BrightSproutsStudio",
       samples: [
@@ -53,9 +63,14 @@ document.addEventListener('DOMContentLoaded', async () => {
         "Marine life exploration & vocabulary expansion",
         "Shape construction & proportion calibration",
         "Low-frustration artistic self-expression"
-      ]
+      ],
+      featured: true,
+      status: "active",
+      order: 2,
+      createdAt: new Date().toISOString()
     },
-    "pets": {
+    {
+      id: "pets",
       title: "Let's Draw the Pet Animals Together",
       category: "Drawing & Creative Art",
       categoryId: "drawing",
@@ -63,7 +78,11 @@ document.addEventListener('DOMContentLoaded', async () => {
       badgeText: "🐶 Kids Favorite",
       age: "Ages 3–7",
       pages: "14 Printable Pages",
+      price: "$4.99",
+      originalPrice: "$8.99",
       reviews: "5.0 (19 reviews)",
+      rating: 5.0,
+      reviewCount: 19,
       cover: "assets/images/workbooks/covers/pets_cover.jpg",
       payhipUrl: "https://payhip.com/BrightSproutsStudio",
       samples: [
@@ -77,9 +96,14 @@ document.addEventListener('DOMContentLoaded', async () => {
         "Empathy & animal vocabulary",
         "Hand-eye coordination & boundary awareness",
         "Encouraging positive daily drawing routines"
-      ]
+      ],
+      featured: true,
+      status: "active",
+      order: 3,
+      createdAt: new Date().toISOString()
     },
-    "body_parts": {
+    {
+      id: "body_parts",
       title: "Let's Draw & Learn Body Parts Together",
       category: "Speech & Early Learning",
       categoryId: "speech",
@@ -87,7 +111,11 @@ document.addEventListener('DOMContentLoaded', async () => {
       badgeText: "🩺 Speech Focus",
       age: "Ages 3–6",
       pages: "19 Printable Pages",
+      price: "$5.49",
+      originalPrice: "$9.99",
       reviews: "5.0 (22 reviews)",
+      rating: 5.0,
+      reviewCount: 22,
       cover: "assets/images/workbooks/covers/body_parts_cover.jpg",
       payhipUrl: "https://payhip.com/BrightSproutsStudio",
       samples: [
@@ -101,17 +129,26 @@ document.addEventListener('DOMContentLoaded', async () => {
         "Facial feature placement & symmetry",
         "Speech therapy language reinforcement",
         "Pre-writing motor control"
-      ]
+      ],
+      featured: true,
+      status: "active",
+      order: 4,
+      createdAt: new Date().toISOString()
     },
-    "build_a_face": {
+    {
+      id: "build_a_face",
       title: "Make My Face — Cut, Create & Complete",
       category: "Fine-Motor & Social Skills",
-      categoryId: "motor",
+      categoryId: "fine-motor",
       tagClass: "badge-craft",
       badgeText: "✂️ Cut & Paste",
       age: "Ages 3–7",
       pages: "20 Printable Pages",
+      price: "$5.49",
+      originalPrice: "$9.99",
       reviews: "5.0 (41 reviews)",
+      rating: 5.0,
+      reviewCount: 41,
       cover: "assets/images/workbooks/covers/build_a_face_cover.jpg",
       payhipUrl: "https://payhip.com/BrightSproutsStudio",
       samples: [
@@ -125,17 +162,26 @@ document.addEventListener('DOMContentLoaded', async () => {
         "Emotion identification & facial cues",
         "Spatial orientation & pasting accuracy",
         "Creative storytelling & personal identity"
-      ]
+      ],
+      featured: true,
+      status: "active",
+      order: 5,
+      createdAt: new Date().toISOString()
     },
-    "count_play_learn": {
+    {
+      id: "count_play_learn",
       title: "Count, Play & Learn Numbers 1–10",
       category: "Numbers & Early Math",
-      categoryId: "math",
+      categoryId: "numbers",
       tagClass: "badge-math",
       badgeText: "🔢 Early Math",
       age: "Pre-K & Kindergarten",
       pages: "20 Printable Pages",
+      price: "$4.99",
+      originalPrice: "$8.99",
       reviews: "4.9 (30 reviews)",
+      rating: 4.9,
+      reviewCount: 30,
       cover: "assets/images/workbooks/covers/count_play_learn_cover.jpg",
       payhipUrl: "https://payhip.com/BrightSproutsStudio",
       samples: [
@@ -149,17 +195,26 @@ document.addEventListener('DOMContentLoaded', async () => {
         "One-to-one counting correspondence",
         "Visual quantity estimation",
         "Early math confidence"
-      ]
+      ],
+      featured: true,
+      status: "active",
+      order: 6,
+      createdAt: new Date().toISOString()
     },
-    "abc_learning": {
+    {
+      id: "abc_learning",
       title: "ABC Little Learner A–Z Activity Book",
       category: "ABC & Alphabet Learning",
-      categoryId: "early",
+      categoryId: "abc",
       tagClass: "badge-bestseller",
       badgeText: "⭐ Top Seller",
       age: "Pre-K & Kindergarten",
       pages: "27 Printable Pages",
+      price: "$5.99",
+      originalPrice: "$11.99",
       reviews: "5.0 (52 reviews)",
+      rating: 5.0,
+      reviewCount: 52,
       cover: "assets/images/workbooks/covers/abc_learning_cover.jpg",
       payhipUrl: "https://payhip.com/BrightSproutsStudio",
       samples: [
@@ -173,17 +228,26 @@ document.addEventListener('DOMContentLoaded', async () => {
         "Initial letter sound associations",
         "Phonological awareness",
         "Pre-reading literacy foundation"
-      ]
+      ],
+      featured: true,
+      status: "active",
+      order: 7,
+      createdAt: new Date().toISOString()
     },
-    "fine_motor_tracing": {
+    {
+      id: "fine_motor_tracing",
       title: "My First Fine Motor Skill Tracing Workbook",
       category: "Fine-Motor & Pre-Writing",
-      categoryId: "motor",
+      categoryId: "fine-motor",
       tagClass: "badge-bestseller",
       badgeText: "🔥 36 Pages",
       age: "Ages 2.5–6",
       pages: "36 Printable Pages",
+      price: "$6.49",
+      originalPrice: "$12.99",
       reviews: "5.0 (46 reviews)",
+      rating: 5.0,
+      reviewCount: 46,
       cover: "assets/images/workbooks/covers/fine_motor_tracing_cover.jpg",
       payhipUrl: "https://payhip.com/BrightSproutsStudio",
       samples: [
@@ -197,17 +261,26 @@ document.addEventListener('DOMContentLoaded', async () => {
         "Controlled wrist and finger movement",
         "Visual-motor tracking",
         "Hand endurance for handwriting"
-      ]
+      ],
+      featured: true,
+      status: "active",
+      order: 8,
+      createdAt: new Date().toISOString()
     },
-    "little_hearts": {
+    {
+      id: "little_hearts",
       title: "Little Hearts, Big Feelings: Emotional Learning",
       category: "Social-Emotional & Speech",
-      categoryId: "speech",
+      categoryId: "emotional",
       tagClass: "badge-therapy",
       badgeText: "💖 Emotional Skills",
       age: "Ages 3–7",
       pages: "22 Printable Pages",
+      price: "$5.49",
+      originalPrice: "$9.99",
       reviews: "5.0 (38 reviews)",
+      rating: 5.0,
+      reviewCount: 38,
       cover: "assets/images/workbooks/covers/little_hearts_cover.jpg",
       payhipUrl: "https://payhip.com/BrightSproutsStudio",
       samples: [
@@ -221,17 +294,26 @@ document.addEventListener('DOMContentLoaded', async () => {
         "Empathy & understanding others",
         "Expressive speech and language communication",
         "Coping strategies for big emotions"
-      ]
+      ],
+      featured: true,
+      status: "active",
+      order: 9,
+      createdAt: new Date().toISOString()
     },
-    "little_explorer": {
+    {
+      id: "little_explorer",
       title: "My Curious World, Little Explorer",
       category: "Preschool Discovery",
-      categoryId: "early",
+      categoryId: "discovery",
       tagClass: "badge-popular",
       badgeText: "🌍 Explorer",
       age: "Pre-K & Kindergarten",
       pages: "16 Printable Pages",
+      price: "$4.99",
+      originalPrice: "$8.99",
       reviews: "4.9 (17 reviews)",
+      rating: 4.9,
+      reviewCount: 17,
       cover: "assets/images/workbooks/covers/little_explorer_cover.jpg",
       payhipUrl: "https://payhip.com/BrightSproutsStudio",
       samples: [
@@ -245,9 +327,14 @@ document.addEventListener('DOMContentLoaded', async () => {
         "Cognitive classification & matching",
         "Early vocabulary expansion",
         "Engaging hands-on worksheets"
-      ]
+      ],
+      featured: true,
+      status: "active",
+      order: 10,
+      createdAt: new Date().toISOString()
     },
-    "jungle_animals": {
+    {
+      id: "jungle_animals",
       title: "Wildlife & Jungle Animal Drawing Workbook",
       category: "Drawing & Creative Art",
       categoryId: "drawing",
@@ -255,7 +342,11 @@ document.addEventListener('DOMContentLoaded', async () => {
       badgeText: "🦁 Safari Art",
       age: "Ages 4–8",
       pages: "22 Printable Pages",
+      price: "$5.49",
+      originalPrice: "$9.99",
       reviews: "5.0 (25 reviews)",
+      rating: 5.0,
+      reviewCount: 25,
       cover: "assets/images/workbooks/covers/jungle_animals_cover.jpg",
       payhipUrl: "https://payhip.com/BrightSproutsStudio",
       samples: [
@@ -269,17 +360,26 @@ document.addEventListener('DOMContentLoaded', async () => {
         "Complex curve drawing mastery",
         "Fine-motor grip refinement",
         "Independent artistic accomplishment"
-      ]
+      ],
+      featured: true,
+      status: "active",
+      order: 11,
+      createdAt: new Date().toISOString()
     },
-    "learning_colors": {
+    {
+      id: "learning_colors",
       title: "Learning Colors & Creative Shapes Workbook",
       category: "Preschool Discovery",
-      categoryId: "early",
+      categoryId: "discovery",
       tagClass: "badge-math",
       badgeText: "🎨 Colors & Shapes",
       age: "Ages 2–5",
       pages: "18 Printable Pages",
+      price: "$4.99",
+      originalPrice: "$8.99",
       reviews: "4.9 (18 reviews)",
+      rating: 4.9,
+      reviewCount: 18,
       cover: "assets/images/workbooks/covers/learning_colors_cover.jpg",
       payhipUrl: "https://payhip.com/BrightSproutsStudio",
       samples: [
@@ -293,314 +393,125 @@ document.addEventListener('DOMContentLoaded', async () => {
         "Basic geometric shape recognition",
         "Visual perception & sorting",
         "Early preschool cognitive readiness"
-      ]
+      ],
+      featured: true,
+      status: "active",
+      order: 12,
+      createdAt: new Date().toISOString()
     }
-  };
-
-  // 2. Fetch Live Dynamic Products from API if running backend
-  try {
-    const apiProducts = await fetch('/api/products').then(r => r.ok ? r.json() : null);
-    if (Array.isArray(apiProducts) && apiProducts.length > 0) {
-      const dynamicCatalog = {};
-      apiProducts.forEach(p => {
-        dynamicCatalog[p.id] = p;
-      });
-      workbookCatalog = dynamicCatalog;
+  ],
+  categories: [
+    { id: "drawing", name: "Drawing & Art", icon: "🎨", accent: "#FFF2F2", count: "4 Workbooks", filter: "drawing" },
+    { id: "fine-motor", name: "Fine-Motor & Tracing", icon: "✂️", accent: "#F0F9FF", count: "2 Workbooks", filter: "fine-motor" },
+    { id: "abc", name: "Alphabet & ABC", icon: "🔤", accent: "#FEF9EE", count: "1 Workbook", filter: "abc" },
+    { id: "numbers", name: "Numbers & Math", icon: "🔢", accent: "#F5F3FF", count: "1 Workbook", filter: "numbers" },
+    { id: "emotional", name: "Social & Emotional", icon: "💖", accent: "#FFF1F2", count: "1 Workbook", filter: "emotional" },
+    { id: "discovery", name: "Preschool Discovery", icon: "🌍", accent: "#ECFDF5", count: "3 Workbooks", filter: "discovery" }
+  ],
+  reviews: [
+    {
+      id: "rev-1",
+      author: "Sarah M.",
+      role: "Preschool Educator & Parent of 4yo",
+      rating: 5,
+      comment: "As both an educator and mom, I am blown away by the intentional design. The step-by-step drawing workbook broke down shapes in a way that actually gave my 4-year-old confidence without tears!",
+      workbook: "Let's Draw Birds Workbook",
+      avatar: "👩‍🏫",
+      approved: true,
+      createdAt: new Date().toISOString()
+    },
+    {
+      id: "rev-2",
+      author: "Dr. Emily Vance",
+      role: "Pediatric Occupational Therapist",
+      rating: 5,
+      comment: "The fine-motor tracing paths are calibrated with genuine clinical care. Line thickness, directional arrows, and wrist stabilization cues are top notch.",
+      workbook: "Fine-Motor Tracing Pack",
+      avatar: "🩺",
+      approved: true,
+      createdAt: new Date().toISOString()
+    },
+    {
+      id: "rev-3",
+      author: "Jessica T.",
+      role: "Homeschooling Mom of 3",
+      rating: 5,
+      comment: "Instant download and crystal-clear prints on my regular home inkjet! My kids ask for 'Bright Sprout time' every morning after breakfast.",
+      workbook: "Complete Learning Bundle",
+      avatar: "🏡",
+      approved: true,
+      createdAt: new Date().toISOString()
     }
-  } catch (e) {
-    // Graceful offline fallback
-  }
-
-  // Track Page View
-  try {
-    fetch('/api/analytics/track', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ event: 'pageview' })
-    }).catch(() => {});
-  } catch (e) {}
-
-  // 3. Category Filter Handling
-  const filterTabs = document.querySelectorAll('.filter-tab');
-  const productCards = document.querySelectorAll('.product-card');
-
-  function applyFilter(filterValue) {
-    filterTabs.forEach(t => {
-      if (t.getAttribute('data-filter') === filterValue) {
-        t.classList.add('active');
-      } else {
-        t.classList.remove('active');
-      }
-    });
-
-    productCards.forEach(card => {
-      const categories = card.getAttribute('data-category').split(' ');
-      if (filterValue === 'all' || categories.includes(filterValue)) {
-        card.style.display = 'flex';
-      } else {
-        card.style.display = 'none';
-      }
-    });
-  }
-
-  filterTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      const filterValue = tab.getAttribute('data-filter');
-      applyFilter(filterValue);
-    });
-  });
-
-  // Category Cards Click to filter & scroll
-  document.querySelectorAll('.cat-pill-card').forEach(card => {
-    card.addEventListener('click', () => {
-      const filter = card.getAttribute('data-filter-trigger');
-      applyFilter(filter);
-      const shopSection = document.getElementById('shop');
-      if (shopSection) {
-        shopSection.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-  });
-
-  // 4. Look Inside Modal / Lightbox
-  const modal = document.getElementById('workbookModal');
-  const modalBody = document.getElementById('modalBody');
-  const modalCloseBtn = document.getElementById('modalCloseBtn');
-
-  function openLookInsideModal(id) {
-    const item = workbookCatalog[id];
-    if (!item) return;
-
-    // Track look inside analytics
-    try {
-      fetch('/api/analytics/track', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ event: 'look_inside', targetId: id })
-      }).catch(() => {});
-    } catch (e) {}
-
-    const allImages = [
-      { src: item.cover, caption: "Official Cover Preview" },
-      ...(item.samples || [])
-    ];
-
-    modalBody.innerHTML = `
-      <div class="modal-gallery-layout">
-        
-        <!-- Left: Image Viewer & Thumbnails -->
-        <div class="modal-gallery-visual">
-          <div class="modal-main-img-wrap">
-            <img id="modalMainImg" src="${item.cover}" alt="${item.title}" class="modal-main-img">
-            <div id="modalImgCaption" class="modal-img-caption">Official Cover Preview</div>
-          </div>
-
-          <div class="modal-thumbnails-strip">
-            ${allImages.map((img, idx) => `
-              <button class="thumb-btn ${idx === 0 ? 'active' : ''}" data-src="${img.src}" data-caption="${img.caption}">
-                <img src="${img.src}" alt="${img.caption}">
-              </button>
-            `).join('')}
-          </div>
-          <p class="thumbnail-hint">💡 Click any thumbnail above to inspect actual activity pages</p>
-        </div>
-
-        <!-- Right: Product & Educational Details -->
-        <div class="modal-gallery-info">
-          <div class="modal-badge-row">
-            <span class="product-badge ${item.tagClass || 'badge-bestseller'}">${item.badgeText || '⭐ Recommended'}</span>
-            <span class="meta-pill">${item.category}</span>
-          </div>
-
-          <h3 class="modal-title">${item.title}</h3>
-          <p class="modal-subtitle">Target Age: <strong>${item.age}</strong> &bull; <strong>${item.pages}</strong> &bull; ★★★★★ ${item.reviews || '5.0'}</p>
-
-          <div class="modal-desc-box">
-            <p>${item.description}</p>
-          </div>
-
-          <div class="modal-pillars-box">
-            <h4>🌱 Key Learning &amp; Speech Milestones:</h4>
-            <ul class="pillars-checklist">
-              ${(item.developmentPillars || []).map(p => `
-                <li><span class="check-bullet">✓</span> ${p}</li>
-              `).join('')}
-            </ul>
-          </div>
-
-          <div class="modal-cta-row">
-            <a href="${item.payhipUrl || 'https://payhip.com/BrightSproutsStudio'}" target="_blank" rel="noopener noreferrer" class="btn btn-store-modal btn-track-payhip">
-              <span>Get Instant PDF Download on Payhip 🛍️</span>
-            </a>
-          </div>
-        </div>
-
-      </div>
-    `;
-
-    // Hook up thumbnail click events
-    const thumbBtns = modalBody.querySelectorAll('.thumb-btn');
-    const mainImg = modalBody.querySelector('#modalMainImg');
-    const mainCaption = modalBody.querySelector('#modalImgCaption');
-
-    thumbBtns.forEach(tb => {
-      tb.addEventListener('click', () => {
-        thumbBtns.forEach(b => b.classList.remove('active'));
-        tb.classList.add('active');
-        const newSrc = tb.getAttribute('data-src');
-        const newCaption = tb.getAttribute('data-caption');
-        mainImg.src = newSrc;
-        mainCaption.textContent = newCaption;
-      });
-    });
-
-    if (typeof modal.showModal === 'function') {
-      modal.showModal();
-    } else {
-      modal.setAttribute('open', 'true');
+  ],
+  faqs: [
+    {
+      id: "faq-1",
+      question: "How do I receive my workbooks after purchase?",
+      answer: "Instantly! Immediately after completing checkout on Payhip, you will receive a secure download link on screen and via email to download high-resolution, print-ready PDF files.",
+      order: 1
+    },
+    {
+      id: "faq-2",
+      question: "Can I print these files multiple times for my classroom or siblings?",
+      answer: "Yes! Personal and classroom licenses allow you to print unlimited copies for your own children or students in a single classroom.",
+      order: 2
+    },
+    {
+      id: "faq-3",
+      question: "What age groups are Bright Sprout Studio workbooks designed for?",
+      answer: "Our workbooks are created specifically for children ages 2 to 8 (toddlers, preschoolers, pre-K, kindergarten, and early elementary), with clear developmental milestone indicators.",
+      order: 3
+    },
+    {
+      id: "faq-4",
+      question: "What makes these different from ordinary coloring books?",
+      answer: "Every page is intentionally crafted by Mahnoor Mansoor, a licensed Speech-Language Pathologist, to target speech clarity, shape breakdown, hand-eye coordination, emotional awareness, and pre-writing strength.",
+      order: 4
     }
-  }
-
-  // Bind click on "Look Inside" buttons and Quick View overlay
-  document.querySelectorAll('.btn-look-inside, .quick-view-overlay-btn').forEach(el => {
-    el.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const id = el.getAttribute('data-id');
-      openLookInsideModal(id);
-    });
-  });
-
-  // Track Payhip Clicks
-  document.addEventListener('click', (e) => {
-    const payhipBtn = e.target.closest('.btn-track-payhip, .btn-buy-payhip, .btn-store-header, .btn-store-primary');
-    if (payhipBtn) {
-      try {
-        fetch('/api/analytics/track', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ event: 'payhip_click' })
-        }).catch(() => {});
-      } catch (err) {}
+  ],
+  settings: {
+    announcement: {
+      enabled: true,
+      text: "✨ Instant PDF Downloads • 100% Speech-Therapist Crafted • Print & Play at Home in Seconds!",
+      linkText: "Shop Store →",
+      linkUrl: "#shop"
+    },
+    hero: {
+      headline: "Joyful Learning & Creative Printables for Little Minds 🎨",
+      subheadline: "Speech-language pathologist crafted activity workbooks and step-by-step drawing printables designed to build early literacy, pencil grip, fine-motor coordination, and joyful artistic confidence in children ages 2 to 8.",
+      ratingText: "4.9 / 5.0 Parent & Teacher Rated",
+      trustText: "Instant PDF Download • Print Anywhere"
+    },
+    founder: {
+      name: "Mahnoor Mansoor",
+      title: "Speech-Language Pathologist & Early Childhood Specialist",
+      experience: "9+ Years Clinical Practice",
+      bio: "With over 9 years of direct clinical experience guiding young children through developmental milestones, speech articulation, and fine-motor progression, every single printable workbook at Bright Sprout Studio is intentionally designed to be engaging, low-frustration, and developmentally rich.",
+      email: "mahnoormansoor42@gmail.com",
+      storeUrl: "https://payhip.com/BrightSproutsStudio"
+    },
+    auth: {
+      adminUsername: "admin",
+      adminPassword: "password123"
     }
-  });
-
-  // 5. Lead Capture (Freebie Form)
-  const leadForm = document.getElementById('leadCaptureForm');
-  const leadInput = document.getElementById('leadEmailInput');
-  const leadSuccess = document.getElementById('leadSuccessMsg');
-  const leadBtn = document.getElementById('leadSubmitBtn');
-
-  if (leadForm) {
-    leadForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const email = leadInput.value.trim();
-      if (!email) return;
-
-      if (leadBtn) leadBtn.disabled = true;
-
-      try {
-        await fetch('/api/leads', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email: email, source: 'Freebie Sample Pack' })
-        });
-      } catch (err) {
-        // Continue even if offline
-      }
-
-      if (leadSuccess) leadSuccess.style.display = 'block';
-      if (leadBtn) leadBtn.innerHTML = '<span>Downloaded! 🎉</span>';
-      
-      // Open sample preview modal immediately
-      setTimeout(() => {
-        openLookInsideModal('birds');
-      }, 400);
-    });
-  }
-
-  if (modalCloseBtn) {
-    modalCloseBtn.addEventListener('click', () => {
-      if (typeof modal.close === 'function') {
-        modal.close();
-      } else {
-        modal.removeAttribute('open');
-      }
-    });
-  }
-
-  // Close modal when clicking on the backdrop
-  modal.addEventListener('click', (e) => {
-    const dialogDimensions = modal.getBoundingClientRect();
-    if (
-      e.clientX < dialogDimensions.left ||
-      e.clientX > dialogDimensions.right ||
-      e.clientY < dialogDimensions.top ||
-      e.clientY > dialogDimensions.bottom
-    ) {
-      if (typeof modal.close === 'function') {
-        modal.close();
-      }
+  },
+  leads: [
+    {
+      id: "lead-1",
+      email: "parent.sample@example.com",
+      name: "Sample Parent",
+      source: "Freebie Sample Pack",
+      createdAt: new Date().toISOString()
     }
-  });
-
-  // 6. FAQ Accordion Interaction
-  const faqItems = document.querySelectorAll('.faq-item');
-  faqItems.forEach(item => {
-    const questionBtn = item.querySelector('.faq-question');
-    const icon = item.querySelector('.faq-toggle-icon');
-
-    questionBtn.addEventListener('click', () => {
-      const isOpen = item.classList.contains('active');
-
-      faqItems.forEach(i => {
-        i.classList.remove('active');
-        const iIcon = i.querySelector('.faq-toggle-icon');
-        if (iIcon) iIcon.innerHTML = '&#43;';
-      });
-
-      if (!isOpen) {
-        item.classList.add('active');
-        if (icon) icon.innerHTML = '&minus;';
-      }
-    });
-  });
-
-  // 7. Mobile Menu Toggle
-  const mobileToggle = document.getElementById('mobileToggle');
-  const navMenu = document.getElementById('navMenu');
-  if (mobileToggle && navMenu) {
-    mobileToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('open');
-    });
-
-    document.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('open');
-      });
-    });
+  ],
+  analytics: {
+    pageViews: 142,
+    lookInsideViews: 68,
+    payhipClicks: 35,
+    leadsCount: 1,
+    events: []
   }
+};
 
-  // 8. Active Nav Link on Scroll Spy
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-link');
-
-  window.addEventListener('scroll', () => {
-    let current = '';
-    const scrollPosition = window.pageYOffset + 250;
-
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.clientHeight;
-      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-        current = section.getAttribute('id');
-      }
-    });
-
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${current}`) {
-        link.classList.add('active');
-      }
-    });
-  });
-});
+fs.writeFileSync(path.join(__dirname, 'data', 'database.json'), JSON.stringify(initialData, null, 2), 'utf8');
+console.log('SUCCESS: database.json successfully seeded with ' + initialData.products.length + ' products!');
