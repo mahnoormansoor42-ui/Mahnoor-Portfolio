@@ -1,11 +1,10 @@
 /* ==========================================================================
-   BRIGHT SPROUT STUDIO — BRAND STOREFRONT STYLESHEET
-   Inspired by modern educational brand platforms (JunoToys style)
+   BRIGHT SPROUT STUDIO — MODERN BRAND STOREFRONT STYLESHEET
    Creator: Mahnoor Mansoor (Speech-Language Pathologist)
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   1. Design Tokens & CSS Custom Properties
+   1. Design Tokens & CSS Variables
    -------------------------------------------------------------------------- */
 :root {
   /* Canvas & Cards */
@@ -111,7 +110,7 @@ button {
 
 .container {
   width: 100%;
-  max-width: 1220px;
+  max-width: 1240px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 24px;
@@ -163,17 +162,17 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   4. Header & Navigation
+   4. Header & Navigation (Optimized for Laptops & Desktops)
    -------------------------------------------------------------------------- */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(255, 253, 249, 0.94);
+  background: rgba(255, 253, 249, 0.95);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border-soft);
-  padding: 16px 0;
+  padding: 14px 0;
   transition: var(--transition-default);
 }
 
@@ -181,26 +180,29 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 16px;
+  max-width: 1280px;
 }
 
 .brand-logo {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+  flex-shrink: 0;
 }
 
 .logo-bubble {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
+  width: 42px;
+  height: 42px;
   background: var(--color-sprout-light);
-  border-radius: 14px;
-  font-size: 1.5rem;
+  border-radius: 13px;
+  font-size: 1.45rem;
   border: 1px solid #C4EED1;
   box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
 }
 
 .logo-text-group {
@@ -210,10 +212,11 @@ button {
 
 .brand-name {
   font-family: var(--font-heading);
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   font-weight: 800;
   color: var(--text-primary);
   line-height: 1.15;
+  white-space: nowrap;
 }
 
 .brand-name strong {
@@ -221,28 +224,38 @@ button {
 }
 
 .brand-sub {
-  font-size: 0.75rem;
+  font-size: 0.74rem;
   font-weight: 600;
   color: var(--color-coral);
   letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
 }
 
 .nav-list {
   display: flex;
+  align-items: center;
   list-style: none;
-  gap: 6px;
+  gap: 4px;
   background: rgba(243, 239, 232, 0.7);
-  padding: 5px 8px;
+  padding: 4px 6px;
   border-radius: var(--radius-full);
+  border: 1px solid var(--border-soft);
 }
 
 .nav-link {
   display: inline-block;
-  padding: 7px 16px;
-  font-size: 0.92rem;
+  padding: 7px 14px;
+  font-size: 0.9rem;
   font-weight: 700;
   color: var(--text-secondary);
   border-radius: var(--radius-full);
+  white-space: nowrap; /* CRITICAL: Prevents words from breaking onto two lines */
+  transition: var(--transition-default);
 }
 
 .nav-link:hover {
@@ -263,6 +276,7 @@ button {
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-shrink: 0;
 }
 
 .btn-store-header {
@@ -271,11 +285,13 @@ button {
   gap: 8px;
   background: var(--color-sprout-green);
   color: #FFFFFF;
-  padding: 10px 20px;
+  padding: 9px 18px;
   border-radius: var(--radius-full);
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   font-weight: 700;
   box-shadow: 0 4px 14px rgba(22, 163, 74, 0.25);
+  white-space: nowrap; /* CRITICAL: Keeps store button on one line */
+  flex-shrink: 0;
 }
 
 .btn-store-header:hover {
@@ -1593,6 +1609,10 @@ button {
   font-size: 1.05rem;
   font-weight: 800;
   border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
 .btn-store-modal:hover {
@@ -1713,9 +1733,51 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   16. Responsive Breakpoints
+   16. Laptop & Responsive Breakpoints
    -------------------------------------------------------------------------- */
+/* Large Laptops (1200px - 1366px) */
+@media (max-width: 1366px) {
+  .header-container {
+    gap: 14px;
+  }
+  .nav-link {
+    padding: 7px 12px;
+    font-size: 0.88rem;
+  }
+  .btn-store-header {
+    padding: 8px 16px;
+    font-size: 0.86rem;
+  }
+}
+
+/* Standard Laptops (1080px - 1200px) */
+@media (max-width: 1200px) {
+  .brand-name {
+    font-size: 1.18rem;
+  }
+  .nav-link {
+    padding: 6px 10px;
+    font-size: 0.84rem;
+  }
+  .nav-list {
+    gap: 2px;
+    padding: 3px 5px;
+  }
+  .btn-store-header {
+    padding: 8px 14px;
+    font-size: 0.84rem;
+  }
+}
+
+/* Small Laptops & Large Tablets (992px - 1080px) */
 @media (max-width: 1080px) {
+  .brand-sub {
+    display: none; /* Hide subtitle so logo stays compact */
+  }
+  .nav-link {
+    padding: 5px 8px;
+    font-size: 0.82rem;
+  }
   .hero-container {
     grid-template-columns: 1fr;
     text-align: center;
@@ -1742,7 +1804,8 @@ button {
   }
 }
 
-@media (max-width: 768px) {
+/* Tablets & Mobile (< 992px) */
+@media (max-width: 991px) {
   .nav-menu {
     display: none;
     position: absolute;
@@ -1760,13 +1823,19 @@ button {
   .nav-list {
     flex-direction: column;
     background: none;
+    border: none;
     gap: 6px;
+  }
+  .nav-link {
+    width: 100%;
+    padding: 10px 16px;
+    font-size: 1rem;
   }
   .mobile-toggle {
     display: flex;
   }
   .hero-headline {
-    font-size: 2.5rem;
+    font-size: 2.6rem;
   }
   .products-grid,
   .categories-cards-grid,
