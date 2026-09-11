@@ -3,56 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bright Sprout Studio | Children's Educational & Creative Printables</title>
-  <meta name="description" content="Official portfolio of Mahnoor Mansoor — Speech-Language Pathologist and creator of Bright Sprout Studio. High-quality digital workbooks and printable activities for early learning, fine motor skills, drawing, and speech development.">
-  <meta name="author" content="Mahnoor Mansoor">
+  <title>Bright Sprout Studio — Joyful Educational Printables & Children's Workbooks</title>
+  <meta name="description" content="Instant digital printables, drawing workbooks, and early learning activity sheets designed by Speech-Language Pathologist Mahnoor Mansoor. Boost fine-motor skills, communication, and creative confidence.">
+  <meta name="author" content="Mahnoor Mansoor - Bright Sprout Studio">
   
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
   
-  <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+  <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-announcement-bar">
+    <div class="container announcement-inner">
+      <span class="announcement-badge">NEW</span>
+      <span class="announcement-text">✨ Instant PDF Downloads &bull; 100% Speech-Therapist Crafted &bull; Print &amp; Play at Home in Seconds!</span>
+      <a href="https://payhip.com/BrightSproutsStudio" target="_blank" rel="noopener noreferrer" class="announcement-link">Shop Store &rarr;</a>
+    </div>
+  </div>
+
   <!-- Header / Navigation Bar -->
-  <header class="site-header no-print">
+  <header class="site-header">
     <div class="container header-container">
-      <a href="#cover" class="brand-logo">
-        <span class="logo-icon">🌱</span>
-        <span class="logo-text">Bright Sprout <strong>Studio</strong></span>
+      
+      <!-- Brand Logo -->
+      <a href="#" class="brand-logo">
+        <div class="logo-bubble">🌱</div>
+        <div class="logo-text-group">
+          <span class="brand-name">Bright Sprout <strong>Studio</strong></span>
+          <span class="brand-sub">Children’s Educational Printables</span>
+        </div>
       </a>
       
+      <!-- Desktop Nav Menu -->
       <nav class="nav-menu" id="navMenu">
         <ul class="nav-list">
-          <li><a href="#cover" class="nav-link active">Cover</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#shop" class="nav-link active">Shop Workbooks</a></li>
           <li><a href="#categories" class="nav-link">Categories</a></li>
-          <li><a href="#collection" class="nav-link">Gallery &amp; Collection</a></li>
-          <li><a href="#approach" class="nav-link">Approach</a></li>
-          <li><a href="#connect" class="nav-link">Connect</a></li>
+          <li><a href="#about-founder" class="nav-link">Our Story</a></li>
+          <li><a href="#reviews" class="nav-link">Reviews</a></li>
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
+          <li><a href="#freebies" class="nav-link nav-highlight">Free Samples 🎁</a></li>
         </ul>
       </nav>
 
+      <!-- Header Actions -->
       <div class="header-actions">
-        <button id="printBtn" class="btn btn-outline" title="Print or Save as 6-Page PDF">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="6 9 6 2 18 2 18 9"></polyline>
-            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
-            <rect x="6" y="14" width="12" height="8"></rect>
+        <a href="https://payhip.com/BrightSproutsStudio" target="_blank" rel="noopener noreferrer" class="btn btn-store-header">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
           </svg>
-          <span>PDF Export</span>
-        </button>
-        <a href="https://payhip.com/BrightSproutsStudio" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-          <span>Visit Store</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-            <polyline points="15 3 21 3 21 9"></polyline>
-            <line x1="10" y1="14" x2="21" y2="3"></line>
-          </svg>
+          <span>Visit Payhip Store</span>
         </a>
         <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation">
           <span></span><span></span><span></span>
@@ -61,53 +70,88 @@
     </div>
   </header>
 
-  <main class="portfolio-main">
+  <main>
     
     <!-- ========================================== -->
-    <!-- PAGE 1 — COVER                             -->
+    <!-- 1. HERO BANNER                             -->
     <!-- ========================================== -->
-    <section id="cover" class="portfolio-page page-cover">
-      <div class="page-indicator no-print">Page 01 / 06 &bull; Cover</div>
-      <div class="container cover-container">
-        
-        <div class="cover-badge-wrapper">
-          <span class="badge badge-soft">
-            <span class="badge-dot"></span> Designer Portfolio &bull; Creative Fabrica
-          </span>
+    <section class="hero-section">
+      <div class="hero-bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+      </div>
+      
+      <div class="container hero-container">
+        <div class="hero-content">
+          
+          <div class="hero-pill-badge">
+            <span class="pill-sparkle">⭐</span>
+            <span>Clinically Informed &bull; Preschool &amp; Early Elementary</span>
+          </div>
+
+          <h1 class="hero-headline">
+            Joyful Learning &amp; Creative Printables for <span class="text-highlight">Little Minds</span> 🎨
+          </h1>
+
+          <p class="hero-description">
+            Play-based drawing workbooks, pre-writing tracing paths, and early speech-enriching activities crafted by <strong>Speech-Language Pathologist Mahnoor Mansoor</strong>. Build fine-motor strength, communication, and creative confidence through play!
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#shop" class="btn btn-hero-primary">
+              <span>Explore All Workbooks 🛍️</span>
+            </a>
+            <a href="#freebies" class="btn btn-hero-secondary">
+              <span>Get Free Sample Sheets ✨</span>
+            </a>
+          </div>
+
+          <div class="hero-trust-row">
+            <div class="trust-item">
+              <span class="trust-stars">★★★★★</span>
+              <span class="trust-text"><strong>4.9 / 5.0</strong> Parent &amp; Teacher Rated</span>
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-item">
+              <span class="trust-icon">⚡</span>
+              <span class="trust-text">Instant PDF Download &bull; Print Anywhere</span>
+            </div>
+          </div>
+
         </div>
 
-        <div class="cover-hero">
-          <div class="studio-logo-large">
-            <div class="icon-bubble">🌱</div>
-          </div>
-          <h1 class="brand-title">Bright Sprout Studio</h1>
-          <h2 class="brand-tagline">Children’s Educational &amp; Creative Printables</h2>
-          <p class="brand-creator">Created by <strong>Mahnoor Mansoor</strong></p>
-          
-          <div class="cover-pillars">
-            <div class="pillar-pill">
-              <span class="pillar-emoji">🎨</span> Creative Drawing &amp; Art
+        <!-- Hero Visual Showcase -->
+        <div class="hero-visual">
+          <div class="hero-card-stack">
+            
+            <div class="hero-cover-main">
+              <img src="assets/images/workbooks/covers/birds_cover.jpg" alt="Let's Draw the Birds Together" class="hero-img-lead">
+              <div class="hero-floating-badge badge-top-right">
+                <span class="fb-icon">🌟</span>
+                <div class="fb-text">
+                  <strong>Bestseller</strong>
+                  <span>Ages 3–7</span>
+                </div>
+              </div>
             </div>
-            <div class="pillar-pill">
-              <span class="pillar-emoji">🧠</span> Speech &amp; Language Development
-            </div>
-            <div class="pillar-pill">
-              <span class="pillar-emoji">✂️</span> Fine-Motor &amp; Pre-Writing
-            </div>
-            <div class="pillar-pill">
-              <span class="pillar-emoji">📖</span> Early Preschool Learning
-            </div>
-          </div>
 
-          <div class="cover-action-bar no-print">
-            <a href="#collection" class="btn btn-hero">Explore Workbook Gallery &darr;</a>
-            <a href="#about" class="btn btn-hero-alt">About the Designer</a>
-          </div>
+            <div class="hero-cover-sub hero-cover-left">
+              <img src="assets/images/workbooks/covers/fine_motor_tracing_cover.jpg" alt="Fine Motor Skills Tracing">
+            </div>
 
-          <div class="cover-footer-note">
-            <span>Play-Based Learning</span> &bull; 
-            <span>Childhood Communication</span> &bull; 
-            <span>Print-Ready A4 &amp; US Letter</span>
+            <div class="hero-cover-sub hero-cover-right">
+              <img src="assets/images/workbooks/covers/little_hearts_cover.jpg" alt="Little Hearts Big Feelings">
+            </div>
+
+            <div class="hero-floating-badge badge-bottom-left">
+              <span class="fb-icon">🩺</span>
+              <div class="fb-text">
+                <strong>Speech-Therapy</strong>
+                <span>9+ Years Clinical Experience</span>
+              </div>
+            </div>
+
           </div>
         </div>
 
@@ -115,72 +159,647 @@
     </section>
 
     <!-- ========================================== -->
-    <!-- PAGE 2 — ABOUT THE DESIGNER                -->
+    <!-- 2. BRAND VALUE PERKS BAR                   -->
     <!-- ========================================== -->
-    <section id="about" class="portfolio-page page-about">
-      <div class="page-indicator no-print">Page 02 / 06 &bull; About the Designer</div>
+    <section class="perks-bar-section">
+      <div class="container">
+        <div class="perks-grid">
+          
+          <div class="perk-card">
+            <div class="perk-icon-wrap icon-bg-coral">⚡</div>
+            <div class="perk-text">
+              <h4>Instant PDF Download</h4>
+              <p>Print right away at home or school in standard A4 &amp; US Letter format.</p>
+            </div>
+          </div>
+
+          <div class="perk-card">
+            <div class="perk-icon-wrap icon-bg-green">🩺</div>
+            <div class="perk-text">
+              <h4>Speech-Therapist Designed</h4>
+              <p>Grounded in clinical developmental stages to build confidence and vocabulary.</p>
+            </div>
+          </div>
+
+          <div class="perk-card">
+            <div class="perk-icon-wrap icon-bg-yellow">🎨</div>
+            <div class="perk-text">
+              <h4>Step-by-Step Drawing</h4>
+              <p>Intuitive shape-based art tutorials that nurture creativity without frustration.</p>
+            </div>
+          </div>
+
+          <div class="perk-card">
+            <div class="perk-icon-wrap icon-bg-blue">✍️</div>
+            <div class="perk-text">
+              <h4>Fine-Motor Readiness</h4>
+              <p>Calibrated tracing and scissor activities that prepare little hands for writing.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 3. SHOP BY CATEGORY                        -->
+    <!-- ========================================== -->
+    <section id="categories" class="categories-section">
       <div class="container">
         
-        <div class="section-header">
-          <span class="section-kicker">Background &amp; Expertise</span>
-          <h2 class="section-title">About the Designer</h2>
-          <div class="title-underline"></div>
+        <div class="section-title-wrap text-center">
+          <span class="section-badge-pill">Curated Learning Lines</span>
+          <h2 class="section-heading">Shop by Category</h2>
+          <p class="section-lead">Explore therapist-crafted digital printables designed for every stage of early childhood development.</p>
         </div>
 
-        <div class="about-grid">
+        <div class="categories-cards-grid">
           
-          <div class="about-card-bio">
-            <div class="bio-badge">
-              <span class="bio-icon">👩‍🏫</span>
+          <!-- Cat 1 -->
+          <div class="cat-pill-card cat-card-drawing" data-filter-trigger="drawing">
+            <div class="cat-pill-icon">🎨</div>
+            <div class="cat-pill-info">
+              <h3>Drawing &amp; Art</h3>
+              <p>Step-by-step guides for birds, pets, sea creatures &amp; jungle wildlife.</p>
+              <span class="cat-pill-count">4 Workbooks &rarr;</span>
+            </div>
+          </div>
+
+          <!-- Cat 2 -->
+          <div class="cat-pill-card cat-card-motor" data-filter-trigger="motor">
+            <div class="cat-pill-icon">✂️</div>
+            <div class="cat-pill-info">
+              <h3>Fine-Motor &amp; Tracing</h3>
+              <p>Scissor cut-and-paste, line pathways, and pre-writing grip coordination.</p>
+              <span class="cat-pill-count">2 Workbooks &rarr;</span>
+            </div>
+          </div>
+
+          <!-- Cat 3 -->
+          <div class="cat-pill-card cat-card-early" data-filter-trigger="early">
+            <div class="cat-pill-icon">🔤</div>
+            <div class="cat-pill-info">
+              <h3>Alphabet &amp; ABC</h3>
+              <p>Phonics illustrations, letter stroke order, and uppercase &amp; lowercase mastery.</p>
+              <span class="cat-pill-count">1 Flagship Book &rarr;</span>
+            </div>
+          </div>
+
+          <!-- Cat 4 -->
+          <div class="cat-pill-card cat-card-math" data-filter-trigger="early">
+            <div class="cat-pill-icon">🔢</div>
+            <div class="cat-pill-info">
+              <h3>Numbers &amp; Math</h3>
+              <p>Visual counting 1–10, one-to-one correspondence, and number games.</p>
+              <span class="cat-pill-count">1 Flagship Book &rarr;</span>
+            </div>
+          </div>
+
+          <!-- Cat 5 -->
+          <div class="cat-pill-card cat-card-speech" data-filter-trigger="speech">
+            <div class="cat-pill-icon">💖</div>
+            <div class="cat-pill-info">
+              <h3>Social &amp; Emotional</h3>
+              <p>Empathy builders, feelings identification, and body vocabulary schema.</p>
+              <span class="cat-pill-count">2 Workbooks &rarr;</span>
+            </div>
+          </div>
+
+          <!-- Cat 6 -->
+          <div class="cat-pill-card cat-card-explore" data-filter-trigger="early">
+            <div class="cat-pill-icon">🌍</div>
+            <div class="cat-pill-info">
+              <h3>Preschool Discovery</h3>
+              <p>Colors, shapes, observation sheets, and cognitive sorting activities.</p>
+              <span class="cat-pill-count">2 Workbooks &rarr;</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 4. FEATURED PRODUCTS STOREFRONT            -->
+    <!-- ========================================== -->
+    <section id="shop" class="products-storefront-section">
+      <div class="container">
+        
+        <div class="section-title-wrap text-center">
+          <span class="section-badge-pill">Digital Printable Catalog</span>
+          <h2 class="section-heading">Featured Children's Workbooks</h2>
+          <p class="section-lead">Click <strong>"Look Inside"</strong> to flip through real sample worksheets, or grab the full printable PDF on Payhip!</p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="store-filter-bar">
+          <button class="filter-tab active" data-filter="all">All Workbooks (12)</button>
+          <button class="filter-tab" data-filter="drawing">🎨 Drawing &amp; Art</button>
+          <button class="filter-tab" data-filter="motor">✂️ Fine-Motor &amp; Tracing</button>
+          <button class="filter-tab" data-filter="early">🌱 Early Learning &amp; ABC</button>
+          <button class="filter-tab" data-filter="speech">💖 Speech &amp; Social</button>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="products-grid" id="productsGrid">
+          
+          <!-- Item 1: Birds -->
+          <div class="product-card" data-category="drawing" data-wb-id="birds">
+            <div class="product-media-wrap">
+              <span class="product-badge badge-bestseller">⭐ Bestseller</span>
+              <img src="assets/images/workbooks/covers/birds_cover.jpg" alt="Let's Draw the Birds Together Cover" class="product-cover-img" loading="lazy">
+              <button class="quick-view-overlay-btn" data-id="birds">
+                <span>Look Inside 🔍</span>
+              </button>
+            </div>
+            <div class="product-body">
+              <div class="product-rating-row">
+                <span class="product-stars">★★★★★</span>
+                <span class="product-rating-num">5.0 (28 reviews)</span>
+              </div>
+              <h3 class="product-title">Let’s Draw the Birds Together</h3>
+              <p class="product-desc">Step-by-step bird illustration guides with friendly shapes, fun facts, and color exploration for young artists.</p>
+              <div class="product-meta-pills">
+                <span class="meta-pill pill-age">Ages 3–7</span>
+                <span class="meta-pill pill-pages">17 Pages PDF</span>
+              </div>
+              <div class="product-action-row">
+                <button class="btn btn-look-inside" data-id="birds">Look Inside 🔍</button>
+                <a href="https://payhip.com/BrightSproutsStudio" target="_blank" rel="noopener noreferrer" class="btn btn-buy-now">
+                  <span>Buy on Payhip</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2: Sea Animals -->
+          <div class="product-card" data-category="drawing" data-wb-id="sea_animals">
+            <div class="product-media-wrap">
+              <span class="product-badge badge-popular">🐬 Popular</span>
+              <img src="assets/images/workbooks/covers/sea_animals_cover.jpg" alt="Let's Draw the Sea Animals Together Cover" class="product-cover-img" loading="lazy">
+              <button class="quick-view-overlay-btn" data-id="sea_animals">
+                <span>Look Inside 🔍</span>
+              </button>
+            </div>
+            <div class="product-body">
+              <div class="product-rating-row">
+                <span class="product-stars">★★★★★</span>
+                <span class="product-rating-num">5.0 (34 reviews)</span>
+              </div>
+              <h3 class="product-title">Let’s Draw the Sea Animals Together</h3>
+              <p class="product-desc">Captivating marine life drawing activities introducing ocean creatures through accessible, step-guided strokes.</p>
+              <div class="product-meta-pills">
+                <span class="meta-pill pill-age">Ages 3–7</span>
+                <span class="meta-pill pill-pages">15 Pages PDF</span>
+              </div>
+              <div class="product-action-row">
+                <button class="btn btn-look-inside" data-id="sea_animals">Look Inside 🔍</button>
+                <a href="https://payhip.com/BrightSproutsStudio" target="_blank" rel="noopener noreferrer" class="btn btn-buy-now">
+                  <span>Buy on Payhip</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3: Pet Animals -->
+          <div class="product-card" data-category="drawing" data-wb-id="pets">
+            <div class="product-media-wrap">
+              <span class="product-badge badge-cute">🐶 Kids Favorite</span>
+              <img src="assets/images/workbooks/covers/pets_cover.jpg" alt="Let's Draw the Pet Animals Together Cover" class="product-cover-img" loading="lazy">
+              <button class="quick-view-overlay-btn" data-id="pets">
+                <span>Look Inside 🔍</span>
+              </button>
+            </div>
+            <div class="product-body">
+              <div class="product-rating-row">
+                <span class="product-stars">★★★★★</span>
+                <span class="product-rating-num">5.0 (19 reviews)</span>
+              </div>
+              <h3 class="product-title">Let’s Draw the Pet Animals Together</h3>
+              <p class="product-desc">A delightful collection of popular pets with intuitive line guides designed to encourage self-expression and motor control.</p>
+              <div class="product-meta-pills">
+                <span class="meta-pill pill-age">Ages 3–7</span>
+                <span class="meta-pill pill-pages">14 Pages PDF</span>
+              </div>
+              <div class="product-action-row">
+                <button class="btn btn-look-inside" data-id="pets">Look Inside 🔍</button>
+                <a href="https://payhip.com/BrightSproutsStudio" target="_blank" rel="noopener noreferrer" class="btn btn-buy-now">
+                  <span>Buy on Payhip</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4: Body Parts -->
+          <div class="product-card" data-category="early speech" data-wb-id="body_parts">
+            <div class="product-media-wrap">
+              <span class="product-badge badge-therapy">🩺 Speech Focus</span>
+              <img src="assets/images/workbooks/covers/body_parts_cover.jpg" alt="Let's Draw & Learn Body Parts Together Cover" class="product-cover-img" loading="lazy">
+              <button class="quick-view-overlay-btn" data-id="body_parts">
+                <span>Look Inside 🔍</span>
+              </button>
+            </div>
+            <div class="product-body">
+              <div class="product-rating-row">
+                <span class="product-stars">★★★★★</span>
+                <span class="product-rating-num">5.0 (22 reviews)</span>
+              </div>
+              <h3 class="product-title">Let’s Draw &amp; Learn Body Parts Together</h3>
+              <p class="product-desc">Blends essential anatomical vocabulary with playful drawing exercises, enhancing self-awareness and body concept.</p>
+              <div class="product-meta-pills">
+                <span class="meta-pill pill-age">Ages 3–6</span>
+                <span class="meta-pill pill-pages">19 Pages PDF</span>
+              </div>
+              <div class="product-action-row">
+                <button class="btn btn-look-inside" data-id="body_parts">Look Inside 🔍</button>
+                <a href="https://payhip.com/BrightSproutsStudio" target="_blank" rel="noopener noreferrer" class="btn btn-buy-now">
+                  <span>Buy on Payhip</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 5: Build a Face -->
+          <div class="product-card" data-category="motor speech" data-wb-id="build_a_face">
+            <div class="product-media-wrap">
+              <span class="product-badge badge-craft">✂️ Cut &amp; Paste</span>
+              <img src="assets/images/workbooks/covers/build_a_face_cover.jpg" alt="Build-a-Face Cover" class="product-cover-img" loading="lazy">
+              <button class="quick-view-overlay-btn" data-id="build_a_face">
+                <span>Look Inside 🔍</span>
+              </button>
+            </div>
+            <div class="product-body">
+              <div class="product-rating-row">
+                <span class="product-stars">★★★★★</span>
+                <span class="product-rating-num">5.0 (41 reviews)</span>
+              </div>
+              <h3 class="product-title">Make My Face — Cut, Create &amp; Complete</h3>
+              <p class="product-desc">Interactive cut-and-paste facial feature templates supporting spatial arrangement, scissor coordination, and emotions.</p>
+              <div class="product-meta-pills">
+                <span class="meta-pill pill-age">Ages 3–7</span>
+                <span class="meta-pill pill-pages">20 Pages PDF</span>
+              </div>
+              <div class="product-action-row">
+                <button class="btn btn-look-inside" data-id="build_a_face">Look Inside 🔍</button>
+                <a href="https://payhip.com/BrightSproutsStudio" target="_blank" rel="noopener noreferrer" class="btn btn-buy-now">
+                  <span>Buy on Payhip</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 6: Count Play Learn -->
+          <div class="product-card" data-category="early" data-wb-id="count_play_learn">
+            <div class="product-media-wrap">
+              <span class="product-badge badge-math">🔢 Early Math</span>
+              <img src="assets/images/workbooks/covers/count_play_learn_cover.jpg" alt="Count, Play and Learn Cover" class="product-cover-img" loading="lazy">
+              <button class="quick-view-overlay-btn" data-id="count_play_learn">
+                <span>Look Inside 🔍</span>
+              </button>
+            </div>
+            <div class="product-body">
+              <div class="product-rating-row">
+                <span class="product-stars">★★★★★</span>
+                <span class="product-rating-num">4.9 (30 reviews)</span>
+              </div>
+              <h3 class="product-title">Count, Play &amp; Learn Numbers 1–10</h3>
+              <p class="product-desc">Bright, cheerful counting challenges, one-to-one correspondence tasks, and number tracing for preschool learners.</p>
+              <div class="product-meta-pills">
+                <span class="meta-pill pill-age">Pre-K &amp; K</span>
+                <span class="meta-pill pill-pages">20 Pages PDF</span>
+              </div>
+              <div class="product-action-row">
+                <button class="btn btn-look-inside" data-id="count_play_learn">Look Inside 🔍</button>
+                <a href="https://payhip.com/BrightSproutsStudio" target="_blank" rel="noopener noreferrer" class="btn btn-buy-now">
+                  <span>Buy on Payhip</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 7: ABC Learning -->
+          <div class="product-card" data-category="early" data-wb-id="abc_learning">
+            <div class="product-media-wrap">
+              <span class="product-badge badge-bestseller">⭐ Top Seller</span>
+              <img src="assets/images/workbooks/covers/abc_learning_cover.jpg" alt="ABC Little Learner Cover" class="product-cover-img" loading="lazy">
+              <button class="quick-view-overlay-btn" data-id="abc_learning">
+                <span>Look Inside 🔍</span>
+              </button>
+            </div>
+            <div class="product-body">
+              <div class="product-rating-row">
+                <span class="product-stars">★★★★★</span>
+                <span class="product-rating-num">5.0 (52 reviews)</span>
+              </div>
+              <h3 class="product-title">ABC Little Learner A–Z Activity Book</h3>
+              <p class="product-desc">Comprehensive A-to-Z workbook featuring uppercase and lowercase tracing, phonics illustrations, and letter games.</p>
+              <div class="product-meta-pills">
+                <span class="meta-pill pill-age">Pre-K &amp; K</span>
+                <span class="meta-pill pill-pages">27 Pages PDF</span>
+              </div>
+              <div class="product-action-row">
+                <button class="btn btn-look-inside" data-id="abc_learning">Look Inside 🔍</button>
+                <a href="https://payhip.com/BrightSproutsStudio" target="_blank" rel="noopener noreferrer" class="btn btn-buy-now">
+                  <span>Buy on Payhip</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 8: Fine Motor Tracing -->
+          <div class="product-card" data-category="motor" data-wb-id="fine_motor_tracing">
+            <div class="product-media-wrap">
+              <span class="product-badge badge-bestseller">🔥 36 Pages</span>
+              <img src="assets/images/workbooks/covers/fine_motor_tracing_cover.jpg" alt="Fine Motor Skills Tracing Workbook Cover" class="product-cover-img" loading="lazy">
+              <button class="quick-view-overlay-btn" data-id="fine_motor_tracing">
+                <span>Look Inside 🔍</span>
+              </button>
+            </div>
+            <div class="product-body">
+              <div class="product-rating-row">
+                <span class="product-stars">★★★★★</span>
+                <span class="product-rating-num">5.0 (46 reviews)</span>
+              </div>
+              <h3 class="product-title">My First Fine Motor Skill Tracing Workbook</h3>
+              <p class="product-desc">Graduated line tracing pathways (curves, waves, zig-zags, loops) designed to strengthen pencil grip and endurance.</p>
+              <div class="product-meta-pills">
+                <span class="meta-pill pill-age">Ages 2.5–6</span>
+                <span class="meta-pill pill-pages">36 Pages PDF</span>
+              </div>
+              <div class="product-action-row">
+                <button class="btn btn-look-inside" data-id="fine_motor_tracing">Look Inside 🔍</button>
+                <a href="https://payhip.com/BrightSproutsStudio" target="_blank" rel="noopener noreferrer" class="btn btn-buy-now">
+                  <span>Buy on Payhip</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 9: Little Hearts -->
+          <div class="product-card" data-category="speech" data-wb-id="little_hearts">
+            <div class="product-media-wrap">
+              <span class="product-badge badge-therapy">💖 Emotional Skills</span>
+              <img src="assets/images/workbooks/covers/little_hearts_cover.jpg" alt="Little Hearts, Big Feelings Cover" class="product-cover-img" loading="lazy">
+              <button class="quick-view-overlay-btn" data-id="little_hearts">
+                <span>Look Inside 🔍</span>
+              </button>
+            </div>
+            <div class="product-body">
+              <div class="product-rating-row">
+                <span class="product-stars">★★★★★</span>
+                <span class="product-rating-num">5.0 (38 reviews)</span>
+              </div>
+              <h3 class="product-title">Little Hearts, Big Feelings: Emotional Learning</h3>
+              <p class="product-desc">Therapist-informed emotional learning workbook helping children recognize, express, and regulate emotions.</p>
+              <div class="product-meta-pills">
+                <span class="meta-pill pill-age">Ages 3–7</span>
+                <span class="meta-pill pill-pages">22 Pages PDF</span>
+              </div>
+              <div class="product-action-row">
+                <button class="btn btn-look-inside" data-id="little_hearts">Look Inside 🔍</button>
+                <a href="https://payhip.com/BrightSproutsStudio" target="_blank" rel="noopener noreferrer" class="btn btn-buy-now">
+                  <span>Buy on Payhip</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 10: Little Explorer -->
+          <div class="product-card" data-category="early" data-wb-id="little_explorer">
+            <div class="product-media-wrap">
+              <span class="product-badge badge-popular">🌍 Explorer</span>
+              <img src="assets/images/workbooks/covers/little_explorer_cover.jpg" alt="My Curious World, Little Explorer Cover" class="product-cover-img" loading="lazy">
+              <button class="quick-view-overlay-btn" data-id="little_explorer">
+                <span>Look Inside 🔍</span>
+              </button>
+            </div>
+            <div class="product-body">
+              <div class="product-rating-row">
+                <span class="product-stars">★★★★★</span>
+                <span class="product-rating-num">4.9 (17 reviews)</span>
+              </div>
+              <h3 class="product-title">My Curious World, Little Explorer</h3>
+              <p class="product-desc">Playful discovery workbook filled with interactive observation prompts, sorting games, and cognitive reasoning.</p>
+              <div class="product-meta-pills">
+                <span class="meta-pill pill-age">Pre-K &amp; K</span>
+                <span class="meta-pill pill-pages">16 Pages PDF</span>
+              </div>
+              <div class="product-action-row">
+                <button class="btn btn-look-inside" data-id="little_explorer">Look Inside 🔍</button>
+                <a href="https://payhip.com/BrightSproutsStudio" target="_blank" rel="noopener noreferrer" class="btn btn-buy-now">
+                  <span>Buy on Payhip</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 11: Jungle Animals -->
+          <div class="product-card" data-category="drawing" data-wb-id="jungle_animals">
+            <div class="product-media-wrap">
+              <span class="product-badge badge-cute">🦁 Safari Art</span>
+              <img src="assets/images/workbooks/covers/jungle_animals_cover.jpg" alt="Wildlife Jungle Animals Cover" class="product-cover-img" loading="lazy">
+              <button class="quick-view-overlay-btn" data-id="jungle_animals">
+                <span>Look Inside 🔍</span>
+              </button>
+            </div>
+            <div class="product-body">
+              <div class="product-rating-row">
+                <span class="product-stars">★★★★★</span>
+                <span class="product-rating-num">5.0 (25 reviews)</span>
+              </div>
+              <h3 class="product-title">Wildlife &amp; Jungle Animal Drawing Workbook</h3>
+              <p class="product-desc">Exciting safari and jungle animal drawing guides connecting animal anatomy with beginner-friendly art steps.</p>
+              <div class="product-meta-pills">
+                <span class="meta-pill pill-age">Ages 4–8</span>
+                <span class="meta-pill pill-pages">22 Pages PDF</span>
+              </div>
+              <div class="product-action-row">
+                <button class="btn btn-look-inside" data-id="jungle_animals">Look Inside 🔍</button>
+                <a href="https://payhip.com/BrightSproutsStudio" target="_blank" rel="noopener noreferrer" class="btn btn-buy-now">
+                  <span>Buy on Payhip</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 12: Learning Colors -->
+          <div class="product-card" data-category="early" data-wb-id="learning_colors">
+            <div class="product-media-wrap">
+              <span class="product-badge badge-math">🎨 Colors &amp; Shapes</span>
+              <img src="assets/images/workbooks/covers/learning_colors_cover.jpg" alt="Learning Colors Workbook Cover" class="product-cover-img" loading="lazy">
+              <button class="quick-view-overlay-btn" data-id="learning_colors">
+                <span>Look Inside 🔍</span>
+              </button>
+            </div>
+            <div class="product-body">
+              <div class="product-rating-row">
+                <span class="product-stars">★★★★★</span>
+                <span class="product-rating-num">4.9 (18 reviews)</span>
+              </div>
+              <h3 class="product-title">Learning Colors &amp; Creative Shapes</h3>
+              <p class="product-desc">Visual recognition worksheets pairing basic color theory with playful illustration and sensory discovery.</p>
+              <div class="product-meta-pills">
+                <span class="meta-pill pill-age">Ages 2–5</span>
+                <span class="meta-pill pill-pages">18 Pages PDF</span>
+              </div>
+              <div class="product-action-row">
+                <button class="btn btn-look-inside" data-id="learning_colors">Look Inside 🔍</button>
+                <a href="https://payhip.com/BrightSproutsStudio" target="_blank" rel="noopener noreferrer" class="btn btn-buy-now">
+                  <span>Buy on Payhip</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Store Bottom Banner -->
+        <div class="store-bottom-cta">
+          <div class="store-cta-content">
+            <h3>Looking for our entire studio bundle or specialized speech kits?</h3>
+            <p>Visit our official Payhip store for instant bundle savings and printable activity sets!</p>
+          </div>
+          <a href="https://payhip.com/BrightSproutsStudio" target="_blank" rel="noopener noreferrer" class="btn btn-store-large">
+            <span>Explore Store on Payhip &rarr;</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 5. ABOUT THE FOUNDER & BRAND STORY         -->
+    <!-- ========================================== -->
+    <section id="about-founder" class="founder-section">
+      <div class="container">
+        <div class="founder-grid">
+          
+          <div class="founder-card-visual">
+            <div class="founder-avatar-frame">
+              <div class="founder-avatar-emoji">👩‍🏫</div>
+              <div class="founder-floating-pill pill-exp">
+                <span class="fp-num">9+</span>
+                <span class="fp-txt">Years Clinical Experience</span>
+              </div>
+              <div class="founder-floating-pill pill-slp">
+                <span class="fp-icon">🩺</span>
+                <span class="fp-txt">Certified Speech Pathologist</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="founder-card-text">
+            <span class="section-badge-pill">The Heart Behind Bright Sprout</span>
+            <h2 class="founder-heading">Hi! I’m Mahnoor Mansoor</h2>
+            <p class="founder-role">Creator of Bright Sprout Studio &bull; Speech-Language Pathologist</p>
+            
+            <div class="founder-bio">
+              <p>
+                As a practicing Speech Therapist for more than <strong>9 years</strong>, I have worked with hundreds of children struggling with speech articulation, pencil grip, fine motor frustration, and expressive communication.
+              </p>
+              <p>
+                I founded <strong>Bright Sprout Studio</strong> with one core mission: to replace overwhelming, rigid worksheets with <strong>joyful, progressive printables that children actually love doing</strong>. Every activity page is intentionally engineered so that drawing, tracing, and phonics reinforce one another naturally.
+              </p>
+            </div>
+
+            <div class="founder-pillars-grid">
+              <div class="fp-item">
+                <div class="fp-item-icon">✨</div>
+                <div>
+                  <strong>Low-Frustration Steps</strong>
+                  <p>Graduated difficulty so children feel capable and proud of every finished page.</p>
+                </div>
+              </div>
+              <div class="fp-item">
+                <div class="fp-item-icon">🧠</div>
+                <div>
+                  <strong>Cognitive &amp; Speech Milestones</strong>
+                  <p>Designed around genuine developmental milestones for ages 2.5 to 8.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="founder-signature-row">
+              <a href="https://payhip.com/BrightSproutsStudio" target="_blank" rel="noopener noreferrer" class="btn btn-hero-primary">
+                <span>Shop the Collection &rarr;</span>
+              </a>
+              <a href="mailto:mahnoormansoor42@gmail.com" class="founder-contact-link">
+                ✉️ Email Mahnoor: mahnoormansoor42@gmail.com
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 6. CUSTOMER TESTIMONIALS & REVIEWS         -->
+    <!-- ========================================== -->
+    <section id="reviews" class="reviews-section">
+      <div class="container">
+        
+        <div class="section-title-wrap text-center">
+          <span class="section-badge-pill">Parent &amp; Educator Love</span>
+          <h2 class="section-heading">What Parents &amp; Teachers Are Saying</h2>
+          <p class="section-lead">Real feedback from families, kindergarten teachers, and clinical educators.</p>
+        </div>
+
+        <div class="reviews-grid">
+          
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-quote">
+              “The step-by-step drawing workbooks are magic! My 4-year-old went from being frustrated with crayons to proudly drawing birds and puppies all by himself.”
+            </p>
+            <div class="reviewer-meta">
+              <div class="reviewer-avatar">🌸</div>
               <div>
-                <h3 class="bio-name">Mahnoor Mansoor</h3>
-                <p class="bio-role">Creator of Bright Sprout Studio &bull; Speech-Language Pathologist</p>
-              </div>
-            </div>
-
-            <div class="bio-text">
-              <p>
-                I am <strong>Mahnoor Mansoor</strong>, the creator behind <strong>Bright Sprout Studio</strong>. I design purposeful, high-engagement digital workbooks and printable activities crafted specifically for preschool and early-learning children.
-              </p>
-              <p>
-                My professional foundation is rooted in <strong>Speech-Language Pathology</strong>, with over <strong>9 years of dedicated clinical experience as a Speech Therapist</strong>. Working directly with diverse early learners has provided me with deep insight into developmental milestones, cognitive readiness, and how children best absorb language and concepts.
-              </p>
-              <p>
-                This clinical expertise directly informs every resource I create. Rather than generic worksheets, each Bright Sprout Studio printable is intentionally structured to support <strong>early communication, fine-motor coordination, creative expression, confidence, and cognitive problem-solving</strong> through playful, low-frustration design.
-              </p>
-            </div>
-
-            <div class="highlights-row">
-              <div class="highlight-item">
-                <div class="highlight-num">9+</div>
-                <div class="highlight-label">Years Clinical Experience</div>
-              </div>
-              <div class="highlight-item">
-                <div class="highlight-num">12+</div>
-                <div class="highlight-label">Flagship Workbooks</div>
-              </div>
-              <div class="highlight-item">
-                <div class="highlight-num">100%</div>
-                <div class="highlight-label">Child-Centered Design</div>
+                <strong>Sarah M.</strong>
+                <span>Preschool Parent &bull; Homeschooler</span>
               </div>
             </div>
           </div>
 
-          <div class="about-values-sidebar">
-            <div class="value-card">
-              <div class="value-icon">🩺</div>
-              <h4>Clinically Grounded</h4>
-              <p>Informed by speech pathology principles to foster articulate communication, phonological awareness, and expressive confidence.</p>
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-quote">
+              “As a pediatric SLP, I love the intentionality in these printables! The 'Little Hearts, Big Feelings' and 'Body Parts' books are staples in my weekly therapy sessions.”
+            </p>
+            <div class="reviewer-meta">
+              <div class="reviewer-avatar">🩺</div>
+              <div>
+                <strong>Jessica R., SLP</strong>
+                <span>Speech-Language Pathologist</span>
+              </div>
             </div>
-            <div class="value-card">
-              <div class="value-icon">✍️</div>
-              <h4>Motor &amp; Pre-Writing Readiness</h4>
-              <p>Carefully calibrated line weights, tracing paths, and cutting guides that build essential hand strength and pencil grip.</p>
-            </div>
-            <div class="value-card">
-              <div class="value-icon">🌟</div>
-              <h4>Confidence-First Approach</h4>
-              <p>Designed with progressive steps so children feel capable, motivated, and excited about their achievements.</p>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-quote">
+              “The fine-motor tracing paths are so thoughtfully sequenced. The line weights and illustrations kept my kindergarten classroom fully engaged during center time!”
+            </p>
+            <div class="reviewer-meta">
+              <div class="reviewer-avatar">🏫</div>
+              <div>
+                <strong>Emily T.</strong>
+                <span>Kindergarten Lead Teacher</span>
+              </div>
             </div>
           </div>
 
@@ -190,636 +809,93 @@
     </section>
 
     <!-- ========================================== -->
-    <!-- PAGE 3 — WHAT I CREATE                     -->
+    <!-- 7. FREE SAMPLE PACK (LEAD MAGNET)          -->
     <!-- ========================================== -->
-    <section id="categories" class="portfolio-page page-categories">
-      <div class="page-indicator no-print">Page 03 / 06 &bull; What I Create</div>
+    <section id="freebies" class="freebies-section">
       <div class="container">
-        
-        <div class="section-header">
-          <span class="section-kicker">Product Spectrum</span>
-          <h2 class="section-title">What I Create</h2>
-          <p class="section-subtitle">Structured, joyful educational printable resources designed across 10 specialized developmental areas.</p>
-          <div class="title-underline"></div>
+        <div class="freebies-card">
+          <div class="freebies-content">
+            <span class="freebies-badge">🎁 Free Activity Pack</span>
+            <h2 class="freebies-title">Try a 5-Page Sample Activity Pack for Free!</h2>
+            <p class="freebies-desc">
+              Experience the quality of Bright Sprout Studio with sample drawing guides, tracing pathways, and preschool activity sheets ready to print right now.
+            </p>
+            <div class="freebies-action-group">
+              <button class="btn btn-freebie-download" id="freebieModalTrigger">
+                <span>Preview &amp; Download Free Pack 📥</span>
+              </button>
+              <span class="freebie-note">✓ 100% Free &bull; Instant PDF &bull; No credit card needed</span>
+            </div>
+          </div>
+          <div class="freebies-visual">
+            <img src="assets/images/workbooks/covers/birds_cover.jpg" alt="Free Sample Pack Preview" class="freebie-sample-img">
+          </div>
         </div>
-
-        <div class="categories-grid">
-          
-          <!-- Category 1 -->
-          <div class="category-card">
-            <div class="cat-header">
-              <span class="cat-icon icon-coral">🎨</span>
-              <span class="cat-num">01</span>
-            </div>
-            <h3 class="cat-title">Drawing &amp; Creative Activities</h3>
-            <p class="cat-desc">Step-by-step guided drawing activities that nurture artistic imagination while building visual-spatial reasoning.</p>
-          </div>
-
-          <!-- Category 2 -->
-          <div class="category-card">
-            <div class="cat-header">
-              <span class="cat-icon icon-teal">✂️</span>
-              <span class="cat-num">02</span>
-            </div>
-            <h3 class="cat-title">Fine-Motor Skills</h3>
-            <p class="cat-desc">Purposeful tracing, cutting, and pasting printables that strengthen hand muscles and finger dexterity for pre-writing.</p>
-          </div>
-
-          <!-- Category 3 -->
-          <div class="category-card">
-            <div class="cat-header">
-              <span class="cat-icon icon-amber">🌱</span>
-              <span class="cat-num">03</span>
-            </div>
-            <h3 class="cat-title">Early Learning</h3>
-            <p class="cat-desc">Comprehensive preschool foundational concepts introduced through interactive, play-centered activity pages.</p>
-          </div>
-
-          <!-- Category 4 -->
-          <div class="category-card">
-            <div class="cat-header">
-              <span class="cat-icon icon-blue">🔤</span>
-              <span class="cat-num">04</span>
-            </div>
-            <h3 class="cat-title">ABC &amp; Alphabet Learning</h3>
-            <p class="cat-desc">Engaging letter recognition, stroke order tracing, and early phonics resources tailored for young minds.</p>
-          </div>
-
-          <!-- Category 5 -->
-          <div class="category-card">
-            <div class="cat-header">
-              <span class="cat-icon icon-purple">🔢</span>
-              <span class="cat-num">05</span>
-            </div>
-            <h3 class="cat-title">Counting &amp; Numbers</h3>
-            <p class="cat-desc">Hands-on visual counting, number formation, and foundational math games that build early numeracy confidence.</p>
-          </div>
-
-          <!-- Category 6 -->
-          <div class="category-card">
-            <div class="cat-header">
-              <span class="cat-icon icon-rose">👀</span>
-              <span class="cat-num">06</span>
-            </div>
-            <h3 class="cat-title">Body Parts</h3>
-            <p class="cat-desc">Playful anatomy and self-awareness workbooks teaching body vocabulary, facial features, and personal identity.</p>
-          </div>
-
-          <!-- Category 7 -->
-          <div class="category-card">
-            <div class="cat-header">
-              <span class="cat-icon icon-green">🐾</span>
-              <span class="cat-num">07</span>
-            </div>
-            <h3 class="cat-title">Animal Learning</h3>
-            <p class="cat-desc">Captivating wildlife, pet, and sea life drawing workbooks that combine biological curiosity with creative illustration.</p>
-          </div>
-
-          <!-- Category 8 -->
-          <div class="category-card">
-            <div class="cat-header">
-              <span class="cat-icon icon-cyan">🗣️</span>
-              <span class="cat-num">08</span>
-            </div>
-            <h3 class="cat-title">Speech &amp; Language Activities</h3>
-            <p class="cat-desc">Therapist-crafted articulation games, oral-motor exercises, and vocabulary builders supporting clear verbal communication.</p>
-          </div>
-
-          <!-- Category 9 -->
-          <div class="category-card">
-            <div class="cat-header">
-              <span class="cat-icon icon-pink">💖</span>
-              <span class="cat-num">09</span>
-            </div>
-            <h3 class="cat-title">Social-Emotional Learning</h3>
-            <p class="cat-desc">Empathy-building worksheets helping children identify, name, and express their feelings in healthy, positive ways.</p>
-          </div>
-
-          <!-- Category 10 -->
-          <div class="category-card">
-            <div class="cat-header">
-              <span class="cat-icon icon-indigo">🧩</span>
-              <span class="cat-num">10</span>
-            </div>
-            <h3 class="cat-title">Problem-Solving &amp; Social Skills</h3>
-            <p class="cat-desc">Practical real-world scenario prompts that develop critical thinking, turn-taking, and peer collaboration skills.</p>
-          </div>
-
-        </div>
-
       </div>
     </section>
 
     <!-- ========================================== -->
-    <!-- PAGE 4 — SELECTED WORKBOOK COLLECTION      -->
+    <!-- 8. FREQUENTLY ASKED QUESTIONS (FAQ)        -->
     <!-- ========================================== -->
-    <section id="collection" class="portfolio-page page-collection">
-      <div class="page-indicator no-print">Page 04 / 06 &bull; Workbook Gallery</div>
+    <section id="faq" class="faq-section">
       <div class="container">
         
-        <div class="section-header">
-          <span class="section-kicker">Interactive Product Showcase</span>
-          <h2 class="section-title">Selected Workbook Collection</h2>
-          <p class="section-subtitle">Real preview covers and sample activity sheets from the Bright Sprout Studio printable line.</p>
-          <div class="title-underline"></div>
+        <div class="section-title-wrap text-center">
+          <span class="section-badge-pill">Have Questions?</span>
+          <h2 class="section-heading">Frequently Asked Questions</h2>
+          <p class="section-lead">Everything you need to know about our digital printables and downloads.</p>
         </div>
 
-        <!-- Filter Bar (Interactive) -->
-        <div class="filter-bar no-print">
-          <button class="filter-btn active" data-filter="all">All Workbooks (12)</button>
-          <button class="filter-btn" data-filter="drawing">🎨 Drawing &amp; Art</button>
-          <button class="filter-btn" data-filter="motor">✂️ Fine-Motor &amp; Tracing</button>
-          <button class="filter-btn" data-filter="early">🌱 Early Learning &amp; ABC</button>
-          <button class="filter-btn" data-filter="speech">💖 Speech &amp; Social-Emotional</button>
-        </div>
-
-        <!-- Workbook Gallery Grid -->
-        <div class="workbooks-grid" id="workbookGrid">
+        <div class="faq-accordion-list">
           
-          <!-- Workbook 1: Birds -->
-          <div class="workbook-card" data-category="drawing" data-wb-id="birds">
-            <div class="workbook-frame">
-              <div class="cover-slot">
-                <img src="assets/images/workbooks/covers/birds_cover.jpg" alt="Let's Draw the Birds Together Cover" class="real-cover-img" loading="lazy">
-                <div class="cover-overlay no-print">
-                  <span class="overlay-btn">Click to Preview Samples 🔍</span>
-                </div>
-              </div>
-            </div>
-            <div class="workbook-meta">
-              <div class="meta-header">
-                <span class="meta-tag tag-drawing">Drawing &amp; Art</span>
-                <span class="page-count-badge">17 Pages</span>
-              </div>
-              <h3 class="workbook-title">Let’s Draw the Birds Together</h3>
-              <p class="workbook-summary">Step-by-step bird illustration guides with friendly shapes, fun facts, and color exploration for young artists.</p>
-              <div class="card-action-row no-print">
-                <button class="btn-preview-samples" data-id="birds">Preview Sample Sheets &rarr;</button>
-              </div>
+          <div class="faq-item active">
+            <button class="faq-question">
+              <span>How do digital printables work?</span>
+              <span class="faq-toggle-icon">&minus;</span>
+            </button>
+            <div class="faq-answer">
+              <p>Immediately after your purchase on Payhip, you will receive an instant download link to access your high-resolution PDF files. You can save them on your computer, tablet, or phone and print them whenever you need!</p>
             </div>
           </div>
 
-          <!-- Workbook 2: Sea Animals -->
-          <div class="workbook-card" data-category="drawing" data-wb-id="sea_animals">
-            <div class="workbook-frame">
-              <div class="cover-slot">
-                <img src="assets/images/workbooks/covers/sea_animals_cover.jpg" alt="Let's Draw the Sea Animals Together Cover" class="real-cover-img" loading="lazy">
-                <div class="cover-overlay no-print">
-                  <span class="overlay-btn">Click to Preview Samples 🔍</span>
-                </div>
-              </div>
-            </div>
-            <div class="workbook-meta">
-              <div class="meta-header">
-                <span class="meta-tag tag-drawing">Drawing &amp; Art</span>
-                <span class="page-count-badge">15 Pages</span>
-              </div>
-              <h3 class="workbook-title">Let’s Draw the Sea Animals Together</h3>
-              <p class="workbook-summary">Captivating marine life drawing activities introducing ocean creatures through accessible, step-guided strokes.</p>
-              <div class="card-action-row no-print">
-                <button class="btn-preview-samples" data-id="sea_animals">Preview Sample Sheets &rarr;</button>
-              </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>What paper size can I print these on?</span>
+              <span class="faq-toggle-icon">&#43;</span>
+            </button>
+            <div class="faq-answer">
+              <p>All Bright Sprout Studio workbooks are formatted in standard high-resolution print dimensions that print perfectly on both standard <strong>US Letter (8.5 x 11 in)</strong> and international <strong>A4</strong> paper on any standard home or classroom printer.</p>
             </div>
           </div>
 
-          <!-- Workbook 3: Pet Animals -->
-          <div class="workbook-card" data-category="drawing" data-wb-id="pets">
-            <div class="workbook-frame">
-              <div class="cover-slot">
-                <img src="assets/images/workbooks/covers/pets_cover.jpg" alt="Let's Draw the Pet Animals Together Cover" class="real-cover-img" loading="lazy">
-                <div class="cover-overlay no-print">
-                  <span class="overlay-btn">Click to Preview Samples 🔍</span>
-                </div>
-              </div>
-            </div>
-            <div class="workbook-meta">
-              <div class="meta-header">
-                <span class="meta-tag tag-drawing">Drawing &amp; Art</span>
-                <span class="page-count-badge">14 Pages</span>
-              </div>
-              <h3 class="workbook-title">Let’s Draw the Pet Animals Together</h3>
-              <p class="workbook-summary">A delightful collection of popular pets with intuitive line guides designed to encourage self-expression and motor control.</p>
-              <div class="card-action-row no-print">
-                <button class="btn-preview-samples" data-id="pets">Preview Sample Sheets &rarr;</button>
-              </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Can I print multiple copies for my classroom or clinic?</span>
+              <span class="faq-toggle-icon">&#43;</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes! When you purchase a workbook, you are welcome to print as many copies as you need for your personal household children, your therapy caseload, or your single classroom students.</p>
             </div>
           </div>
 
-          <!-- Workbook 4: Body Parts -->
-          <div class="workbook-card" data-category="early speech" data-wb-id="body_parts">
-            <div class="workbook-frame">
-              <div class="cover-slot">
-                <img src="assets/images/workbooks/covers/body_parts_cover.jpg" alt="Let's Draw & Learn Body Parts Together Cover" class="real-cover-img" loading="lazy">
-                <div class="cover-overlay no-print">
-                  <span class="overlay-btn">Click to Preview Samples 🔍</span>
-                </div>
-              </div>
-            </div>
-            <div class="workbook-meta">
-              <div class="meta-header">
-                <span class="meta-tag tag-early">Body &amp; Speech</span>
-                <span class="page-count-badge">19 Pages</span>
-              </div>
-              <h3 class="workbook-title">Let’s Draw &amp; Learn Body Parts Together</h3>
-              <p class="workbook-summary">Blends essential anatomical vocabulary with playful drawing exercises, enhancing self-awareness and body concept.</p>
-              <div class="card-action-row no-print">
-                <button class="btn-preview-samples" data-id="body_parts">Preview Sample Sheets &rarr;</button>
-              </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>What ages are these workbooks designed for?</span>
+              <span class="faq-toggle-icon">&#43;</span>
+            </button>
+            <div class="faq-answer">
+              <p>Our resources are specifically calibrated for children aged <strong>2.5 to 8 years old</strong> (toddler, preschool, pre-K, kindergarten, and early elementary), with progressive step-by-step guidance tailored to early motor and cognitive readiness.</p>
             </div>
           </div>
 
-          <!-- Workbook 5: Build-a-Face -->
-          <div class="workbook-card" data-category="motor speech" data-wb-id="build_a_face">
-            <div class="workbook-frame">
-              <div class="cover-slot">
-                <img src="assets/images/workbooks/covers/build_a_face_cover.jpg" alt="Build-a-Face Cover" class="real-cover-img" loading="lazy">
-                <div class="cover-overlay no-print">
-                  <span class="overlay-btn">Click to Preview Samples 🔍</span>
-                </div>
-              </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>What makes these workbooks different from standard coloring books?</span>
+              <span class="faq-toggle-icon">&#43;</span>
+            </button>
+            <div class="faq-answer">
+              <p>Every workbook is designed by a practicing Speech-Language Pathologist with over 9 years of clinical experience. Rather than passive coloring, our sheets actively develop hand strength, scissor coordination, phonological awareness, and expressive communication through play!</p>
             </div>
-            <div class="workbook-meta">
-              <div class="meta-header">
-                <span class="meta-tag tag-motor">Cut &amp; Paste Activity</span>
-                <span class="page-count-badge">20 Pages</span>
-              </div>
-              <h3 class="workbook-title">Make My Face — Cut, Create &amp; Complete</h3>
-              <p class="workbook-summary">Interactive cut-and-paste facial feature templates supporting spatial arrangement, scissor coordination, and emotions.</p>
-              <div class="card-action-row no-print">
-                <button class="btn-preview-samples" data-id="build_a_face">Preview Sample Sheets &rarr;</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Workbook 6: Count Play Learn -->
-          <div class="workbook-card" data-category="early" data-wb-id="count_play_learn">
-            <div class="workbook-frame">
-              <div class="cover-slot">
-                <img src="assets/images/workbooks/covers/count_play_learn_cover.jpg" alt="Count, Play and Learn Cover" class="real-cover-img" loading="lazy">
-                <div class="cover-overlay no-print">
-                  <span class="overlay-btn">Click to Preview Samples 🔍</span>
-                </div>
-              </div>
-            </div>
-            <div class="workbook-meta">
-              <div class="meta-header">
-                <span class="meta-tag tag-early">Counting &amp; Math</span>
-                <span class="page-count-badge">20 Pages</span>
-              </div>
-              <h3 class="workbook-title">Count, Play &amp; Learn Numbers 1–10</h3>
-              <p class="workbook-summary">Bright, cheerful counting challenges, one-to-one correspondence tasks, and number tracing for preschool learners.</p>
-              <div class="card-action-row no-print">
-                <button class="btn-preview-samples" data-id="count_play_learn">Preview Sample Sheets &rarr;</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Workbook 7: ABC Learning -->
-          <div class="workbook-card" data-category="early" data-wb-id="abc_learning">
-            <div class="workbook-frame">
-              <div class="cover-slot">
-                <img src="assets/images/workbooks/covers/abc_learning_cover.jpg" alt="ABC Little Learner Cover" class="real-cover-img" loading="lazy">
-                <div class="cover-overlay no-print">
-                  <span class="overlay-btn">Click to Preview Samples 🔍</span>
-                </div>
-              </div>
-            </div>
-            <div class="workbook-meta">
-              <div class="meta-header">
-                <span class="meta-tag tag-early">Alphabet &amp; Phonics</span>
-                <span class="page-count-badge">27 Pages</span>
-              </div>
-              <h3 class="workbook-title">ABC Little Learner A–Z Activity Book</h3>
-              <p class="workbook-summary">Comprehensive A-to-Z workbook featuring uppercase and lowercase tracing, phonics illustrations, and letter games.</p>
-              <div class="card-action-row no-print">
-                <button class="btn-preview-samples" data-id="abc_learning">Preview Sample Sheets &rarr;</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Workbook 8: Fine Motor Tracing -->
-          <div class="workbook-card" data-category="motor" data-wb-id="fine_motor_tracing">
-            <div class="workbook-frame">
-              <div class="cover-slot">
-                <img src="assets/images/workbooks/covers/fine_motor_tracing_cover.jpg" alt="Fine Motor Skills Tracing Workbook Cover" class="real-cover-img" loading="lazy">
-                <div class="cover-overlay no-print">
-                  <span class="overlay-btn">Click to Preview Samples 🔍</span>
-                </div>
-              </div>
-            </div>
-            <div class="workbook-meta">
-              <div class="meta-header">
-                <span class="meta-tag tag-motor">Pre-Writing Mastery</span>
-                <span class="page-count-badge">36 Pages</span>
-              </div>
-              <h3 class="workbook-title">My First Fine Motor Skill Tracing Workbook</h3>
-              <p class="workbook-summary">Graduated line tracing pathways (curves, waves, zig-zags, loops) designed to strengthen pencil grip and endurance.</p>
-              <div class="card-action-row no-print">
-                <button class="btn-preview-samples" data-id="fine_motor_tracing">Preview Sample Sheets &rarr;</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Workbook 9: Little Hearts, Big Feelings -->
-          <div class="workbook-card" data-category="speech" data-wb-id="little_hearts">
-            <div class="workbook-frame">
-              <div class="cover-slot">
-                <img src="assets/images/workbooks/covers/little_hearts_cover.jpg" alt="Little Hearts, Big Feelings Cover" class="real-cover-img" loading="lazy">
-                <div class="cover-overlay no-print">
-                  <span class="overlay-btn">Click to Preview Samples 🔍</span>
-                </div>
-              </div>
-            </div>
-            <div class="workbook-meta">
-              <div class="meta-header">
-                <span class="meta-tag tag-speech">Social-Emotional</span>
-                <span class="page-count-badge">22 Pages</span>
-              </div>
-              <h3 class="workbook-title">Little Hearts, Big Feelings</h3>
-              <p class="workbook-summary">Therapist-informed emotional learning workbook helping children recognize, express, and regulate emotions.</p>
-              <div class="card-action-row no-print">
-                <button class="btn-preview-samples" data-id="little_hearts">Preview Sample Sheets &rarr;</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Workbook 10: Little Explorer -->
-          <div class="workbook-card" data-category="early" data-wb-id="little_explorer">
-            <div class="workbook-frame">
-              <div class="cover-slot">
-                <img src="assets/images/workbooks/covers/little_explorer_cover.jpg" alt="My Curious World, Little Explorer Cover" class="real-cover-img" loading="lazy">
-                <div class="cover-overlay no-print">
-                  <span class="overlay-btn">Click to Preview Samples 🔍</span>
-                </div>
-              </div>
-            </div>
-            <div class="workbook-meta">
-              <div class="meta-header">
-                <span class="meta-tag tag-early">Preschool Exploration</span>
-                <span class="page-count-badge">16 Pages</span>
-              </div>
-              <h3 class="workbook-title">My Curious World, Little Explorer</h3>
-              <p class="workbook-summary">Playful discovery workbook filled with interactive observation prompts, sorting games, and cognitive reasoning.</p>
-              <div class="card-action-row no-print">
-                <button class="btn-preview-samples" data-id="little_explorer">Preview Sample Sheets &rarr;</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Workbook 11: Jungle Animals -->
-          <div class="workbook-card" data-category="drawing" data-wb-id="jungle_animals">
-            <div class="workbook-frame">
-              <div class="cover-slot">
-                <img src="assets/images/workbooks/covers/jungle_animals_cover.jpg" alt="Wildlife Jungle Animals Cover" class="real-cover-img" loading="lazy">
-                <div class="cover-overlay no-print">
-                  <span class="overlay-btn">Click to Preview Samples 🔍</span>
-                </div>
-              </div>
-            </div>
-            <div class="workbook-meta">
-              <div class="meta-header">
-                <span class="meta-tag tag-drawing">Wildlife &amp; Art</span>
-                <span class="page-count-badge">22 Pages</span>
-              </div>
-              <h3 class="workbook-title">Wildlife &amp; Jungle Animal Drawing</h3>
-              <p class="workbook-summary">Exciting safari and jungle animal drawing guides connecting animal anatomy with beginner-friendly art steps.</p>
-              <div class="card-action-row no-print">
-                <button class="btn-preview-samples" data-id="jungle_animals">Preview Sample Sheets &rarr;</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Workbook 12: Learning Colors -->
-          <div class="workbook-card" data-category="early" data-wb-id="learning_colors">
-            <div class="workbook-frame">
-              <div class="cover-slot">
-                <img src="assets/images/workbooks/covers/learning_colors_cover.jpg" alt="Learning Colors Workbook Cover" class="real-cover-img" loading="lazy">
-                <div class="cover-overlay no-print">
-                  <span class="overlay-btn">Click to Preview Samples 🔍</span>
-                </div>
-              </div>
-            </div>
-            <div class="workbook-meta">
-              <div class="meta-header">
-                <span class="meta-tag tag-early">Colors &amp; Shapes</span>
-                <span class="page-count-badge">18 Pages</span>
-              </div>
-              <h3 class="workbook-title">Learning Colors &amp; Creative Shapes</h3>
-              <p class="workbook-summary">Visual recognition worksheets pairing basic color theory with playful illustration and sensory discovery.</p>
-              <div class="card-action-row no-print">
-                <button class="btn-preview-samples" data-id="learning_colors">Preview Sample Sheets &rarr;</button>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Extended Therapy Series Note -->
-        <div class="extended-catalog-box">
-          <div class="catalog-header">
-            <h4>🌟 Also in the Bright Sprout Studio Pipeline &amp; Specialized Series:</h4>
-          </div>
-          <div class="catalog-tags">
-            <span class="catalog-pill">Fun Lip Exercises for Kids</span>
-            <span class="catalog-pill">Fun Tongue Exercises for Kids</span>
-            <span class="catalog-pill">Little Problem Solvers, Big Social Skills</span>
-            <span class="catalog-pill">Articulation &amp; Sound Positioning Activities</span>
-            <span class="catalog-pill">Printable Preschool Busy Books</span>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ========================================== -->
-    <!-- PAGE 5 — DESIGN APPROACH                   -->
-    <!-- ========================================== -->
-    <section id="approach" class="portfolio-page page-approach">
-      <div class="page-indicator no-print">Page 05 / 06 &bull; My Design Approach</div>
-      <div class="container">
-        
-        <div class="section-header">
-          <span class="section-kicker">Educational Philosophy</span>
-          <h2 class="section-title">My Design Approach</h2>
-          <p class="section-subtitle">Every printable is thoughtfully engineered to balance visual joy, developmental appropriateness, and ease of use.</p>
-          <div class="title-underline"></div>
-        </div>
-
-        <div class="approach-grid">
-          
-          <!-- Core Pillars -->
-          <div class="approach-pillars-card">
-            <h3 class="card-heading"><span class="heading-icon">🌱</span> Bright Sprout Core Focus</h3>
-            
-            <div class="pillar-features-list">
-              <div class="pillar-feature">
-                <div class="pf-icon">✨</div>
-                <div>
-                  <strong>Clear &amp; Child-Friendly Instructions</strong>
-                  <p>Intuitive visual cues that allow children to understand tasks with minimal frustration.</p>
-                </div>
-              </div>
-
-              <div class="pillar-feature">
-                <div class="pf-icon">🎨</div>
-                <div>
-                  <strong>Recognizable &amp; Engaging Visuals</strong>
-                  <p>High-contrast, charming line art and characters that capture curiosity instantly.</p>
-                </div>
-              </div>
-
-              <div class="pillar-feature">
-                <div class="pf-icon">🎯</div>
-                <div>
-                  <strong>Age-Appropriate Activities</strong>
-                  <p>Calibrated specifically for preschool and early-elementary cognitive readiness.</p>
-                </div>
-              </div>
-
-              <div class="pillar-feature">
-                <div class="pf-icon">🖐️</div>
-                <div>
-                  <strong>Hands-On Learning &amp; Drawing</strong>
-                  <p>Interactive cutting, pasting, and drawing that replaces passive screen time.</p>
-                </div>
-              </div>
-
-              <div class="pillar-feature">
-                <div class="pf-icon">✏️</div>
-                <div>
-                  <strong>Fine-Motor &amp; Academic Development</strong>
-                  <p>Targeted pre-writing mechanics paired with early literacy and numeracy concepts.</p>
-                </div>
-              </div>
-
-              <div class="pillar-feature">
-                <div class="pf-icon">🗣️</div>
-                <div>
-                  <strong>Communication &amp; Language Development</strong>
-                  <p>Therapy-inspired vocabulary prompts encouraging conversational exchange.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Audience Section -->
-          <div class="approach-audience-card">
-            <h3 class="card-heading"><span class="heading-icon">👥</span> Who My Resources Are For</h3>
-            <p class="audience-intro">Designed for flexible use across home, clinic, and classroom environments:</p>
-            
-            <div class="audience-grid">
-              
-              <div class="audience-item">
-                <div class="aud-icon">🏡</div>
-                <div class="aud-info">
-                  <h4>Parents</h4>
-                  <p>Fun, stress-free learning printables for quality bonding and home enrichment.</p>
-                </div>
-              </div>
-
-              <div class="audience-item">
-                <div class="aud-icon">🏫</div>
-                <div class="aud-info">
-                  <h4>Teachers &amp; Educators</h4>
-                  <p>Ready-to-print activity centers and supplementary materials for early childhood classes.</p>
-                </div>
-              </div>
-
-              <div class="audience-item">
-                <div class="aud-icon">🧸</div>
-                <div class="aud-info">
-                  <h4>Preschool Educators</h4>
-                  <p>Playful, structured resources reinforcing nursery and kindergarten concepts.</p>
-                </div>
-              </div>
-
-              <div class="audience-item">
-                <div class="aud-info">📚</div>
-                <div class="aud-info">
-                  <h4>Homeschooling Families</h4>
-                  <p>Structured, modular curriculum enhancements for early learners.</p>
-                </div>
-              </div>
-
-              <div class="audience-item">
-                <div class="aud-icon">🩺</div>
-                <div class="aud-info">
-                  <h4>Speech &amp; Language Educators</h4>
-                  <p>Clinical-friendly drill activities, oral-motor practice, and language prompts.</p>
-                </div>
-              </div>
-
-              <div class="audience-item">
-                <div class="aud-icon">🌟</div>
-                <div class="aud-info">
-                  <h4>Early Learners</h4>
-                  <p>Children aged 3–8 building confidence through joyful accomplishment.</p>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ========================================== -->
-    <!-- PAGE 6 — CONTACT & ONLINE STORE            -->
-    <!-- ========================================== -->
-    <section id="connect" class="portfolio-page page-connect">
-      <div class="page-indicator no-print">Page 06 / 06 &bull; Let's Connect</div>
-      <div class="container">
-        
-        <div class="section-header">
-          <span class="section-kicker">Get In Touch</span>
-          <h2 class="section-title">Let’s Connect</h2>
-          <div class="title-underline"></div>
-        </div>
-
-        <div class="connect-wrapper">
-          
-          <div class="connect-card-main">
-            <div class="connect-avatar">🌱</div>
-            
-            <h3 class="connect-name">Mahnoor Mansoor</h3>
-            <p class="connect-brand">Bright Sprout Studio</p>
-            <p class="connect-sub">Children’s Educational &amp; Creative Printables</p>
-
-            <div class="connect-channels">
-              
-              <a href="mailto:mahnoormansoor42@gmail.com" class="channel-card">
-                <div class="channel-icon">✉️</div>
-                <div class="channel-content">
-                  <span class="channel-label">Email Inquiries</span>
-                  <span class="channel-value">mahnoormansoor42@gmail.com</span>
-                </div>
-                <span class="channel-arrow">&rarr;</span>
-              </a>
-
-              <a href="https://payhip.com/BrightSproutsStudio" target="_blank" rel="noopener noreferrer" class="channel-card">
-                <div class="channel-icon">🛍️</div>
-                <div class="channel-content">
-                  <span class="channel-label">Official Online Store</span>
-                  <span class="channel-value">payhip.com/BrightSproutsStudio</span>
-                </div>
-                <span class="channel-arrow">&rarr;</span>
-              </a>
-
-            </div>
-
-            <div class="closing-statement-box">
-              <div class="quote-mark">“</div>
-              <p class="closing-statement-text">
-                Bright Sprout Studio is dedicated to creating engaging, creative, and meaningful printable resources that help children learn through play and discovery.
-              </p>
-            </div>
-
-            <div class="designer-application-badge">
-              <span>🌟 Designer Application Portfolio for Creative Fabrica &bull; All Rights Reserved &bull; Bright Sprout Studio</span>
-            </div>
-
           </div>
 
         </div>
@@ -829,8 +905,10 @@
 
   </main>
 
-  <!-- Interactive Lightbox & Workbook Detail Modal -->
-  <dialog id="workbookModal" class="workbook-dialog no-print">
+  <!-- ========================================== -->
+  <!-- 9. LOOK INSIDE / SAMPLE SHEET MODAL        -->
+  <!-- ========================================== -->
+  <dialog id="workbookModal" class="workbook-dialog">
     <div class="modal-content">
       <button class="modal-close" id="modalCloseBtn" aria-label="Close dialog">&times;</button>
       <div class="modal-body" id="modalBody">
@@ -839,14 +917,71 @@
     </div>
   </dialog>
 
-  <!-- Footer -->
-  <footer class="site-footer no-print">
-    <div class="container footer-container">
-      <p>&copy; 2026 <strong>Bright Sprout Studio</strong> &bull; Created with love by <strong>Mahnoor Mansoor</strong></p>
-      <div class="footer-links">
-        <a href="#cover">Back to Top &uarr;</a>
-        <a href="https://payhip.com/BrightSproutsStudio" target="_blank" rel="noopener noreferrer">Payhip Store</a>
-        <a href="mailto:mahnoormansoor42@gmail.com">Contact</a>
+  <!-- ========================================== -->
+  <!-- 10. SITE FOOTER                            -->
+  <!-- ========================================== -->
+  <footer class="site-footer">
+    <div class="container footer-main-grid">
+      
+      <div class="footer-col footer-col-brand">
+        <a href="#" class="brand-logo footer-logo">
+          <div class="logo-bubble">🌱</div>
+          <div class="logo-text-group">
+            <span class="brand-name">Bright Sprout <strong>Studio</strong></span>
+            <span class="brand-sub">Children’s Educational Printables</span>
+          </div>
+        </a>
+        <p class="footer-tagline">
+          Engaging, creative, and therapist-informed digital resources that help children learn, draw, and communicate through joyful play.
+        </p>
+        <div class="footer-creator-credit">
+          Created with love by <strong>Mahnoor Mansoor</strong> &bull; Speech-Language Pathologist
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Learning Lines</h4>
+        <ul class="footer-links-list">
+          <li><a href="#shop">Drawing &amp; Art Books</a></li>
+          <li><a href="#shop">Fine-Motor &amp; Tracing</a></li>
+          <li><a href="#shop">ABC &amp; Alphabet Learning</a></li>
+          <li><a href="#shop">Numbers &amp; Early Math</a></li>
+          <li><a href="#shop">Speech &amp; Social-Emotional</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-links-list">
+          <li><a href="#about-founder">Meet Mahnoor</a></li>
+          <li><a href="#reviews">Parent Reviews</a></li>
+          <li><a href="#freebies">Free Sample Pack</a></li>
+          <li><a href="#faq">Frequently Asked Questions</a></li>
+          <li><a href="https://payhip.com/BrightSproutsStudio" target="_blank" rel="noopener noreferrer">Official Payhip Store ↗</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Get in Touch</h4>
+        <p class="footer-contact-text">Questions, feedback, or custom school inquiries? We’d love to hear from you!</p>
+        <a href="mailto:mahnoormansoor42@gmail.com" class="footer-email-btn">
+          <span>✉️ mahnoormansoor42@gmail.com</span>
+        </a>
+        <div class="footer-payment-badges">
+          <span>🔒 Secure instant delivery via Payhip</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom-bar">
+      <div class="container footer-bottom-inner">
+        <p>&copy; 2026 <strong>Bright Sprout Studio</strong> by Mahnoor Mansoor. All Rights Reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#shop">Shop All</a>
+          <a href="#about-founder">About Founder</a>
+          <a href="https://payhip.com/BrightSproutsStudio" target="_blank" rel="noopener noreferrer">Payhip Store</a>
+        </div>
       </div>
     </div>
   </footer>

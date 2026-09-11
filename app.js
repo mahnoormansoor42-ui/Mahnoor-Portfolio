@@ -1,5 +1,5 @@
 /**
- * Bright Sprout Studio — Digital Portfolio Application Script
+ * Bright Sprout Studio — Modern Brand Storefront Application Script
  * Creator: Mahnoor Mansoor (Speech-Language Pathologist)
  */
 
@@ -8,12 +8,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const workbookCatalog = {
     "birds": {
       title: "Let's Draw the Birds Together",
-      category: "Drawing & Creative Activities",
-      tagClass: "tag-drawing",
-      icon: "🐦",
+      category: "Drawing & Creative Art",
+      tagClass: "badge-bestseller",
+      badgeText: "⭐ Bestseller",
       age: "Ages 3–7",
       pages: "17 Printable Pages",
+      reviews: "5.0 (28 reviews)",
       cover: "assets/images/workbooks/covers/birds_cover.jpg",
+      payhipUrl: "https://payhip.com/BrightSproutsStudio",
       samples: [
         { src: "assets/images/workbooks/samples/birds_sample_1.jpg", caption: "Step-by-Step Bird Construction" },
         { src: "assets/images/workbooks/samples/birds_sample_2.jpg", caption: "Coloring & Feature Detailing" },
@@ -21,20 +23,22 @@ document.addEventListener('DOMContentLoaded', () => {
       ],
       description: "A step-by-step bird drawing workbook guiding young children to draw charming garden and songbirds using simple geometric shapes, progressive lines, and coloring prompts.",
       developmentPillars: [
-        "Visual-spatial awareness & shape decomposition",
+        "Visual-spatial awareness & shape breakdown",
         "Pencil grip & controlled directional strokes",
-        "Bird species recognition & vocabulary",
+        "Bird species recognition & vocabulary enrichment",
         "Creative coloring & artistic confidence"
       ]
     },
     "sea_animals": {
       title: "Let's Draw the Sea Animals Together",
-      category: "Drawing & Creative Activities",
-      tagClass: "tag-drawing",
-      icon: "🐬",
+      category: "Drawing & Creative Art",
+      tagClass: "badge-popular",
+      badgeText: "🐬 Popular",
       age: "Ages 3–7",
       pages: "15 Printable Pages",
+      reviews: "5.0 (34 reviews)",
       cover: "assets/images/workbooks/covers/sea_animals_cover.jpg",
+      payhipUrl: "https://payhip.com/BrightSproutsStudio",
       samples: [
         { src: "assets/images/workbooks/samples/sea_animals_sample_1.jpg", caption: "Ocean Creature Line Guide" },
         { src: "assets/images/workbooks/samples/sea_animals_sample_2.jpg", caption: "Step-by-Step Marine Drawing" },
@@ -43,19 +47,21 @@ document.addEventListener('DOMContentLoaded', () => {
       description: "An ocean-themed drawing guide featuring dolphins, turtles, octopuses, and reef fish, breaking down aquatic shapes into intuitive steps for little hands.",
       developmentPillars: [
         "Curved line tracing & fluid hand motions",
-        "Marine life exploration & language enrichment",
+        "Marine life exploration & vocabulary expansion",
         "Shape construction & proportion calibration",
         "Low-frustration artistic self-expression"
       ]
     },
     "pets": {
       title: "Let's Draw the Pet Animals Together",
-      category: "Drawing & Creative Activities",
-      tagClass: "tag-drawing",
-      icon: "🐶",
+      category: "Drawing & Creative Art",
+      tagClass: "badge-cute",
+      badgeText: "🐶 Kids Favorite",
       age: "Ages 3–7",
       pages: "14 Printable Pages",
+      reviews: "5.0 (19 reviews)",
       cover: "assets/images/workbooks/covers/pets_cover.jpg",
+      payhipUrl: "https://payhip.com/BrightSproutsStudio",
       samples: [
         { src: "assets/images/workbooks/samples/pets_sample_1.jpg", caption: "Puppy & Kitten Drawing Guides" },
         { src: "assets/images/workbooks/samples/pets_sample_2.jpg", caption: "Facial Expressions & Paws" },
@@ -66,17 +72,19 @@ document.addEventListener('DOMContentLoaded', () => {
         "Fine-motor coordination & precision",
         "Empathy & animal vocabulary",
         "Hand-eye coordination & boundary awareness",
-        "Encouraging positive drawing routines"
+        "Encouraging positive daily drawing routines"
       ]
     },
     "body_parts": {
       title: "Let's Draw & Learn Body Parts Together",
-      category: "Body & Early Learning",
-      tagClass: "tag-early",
-      icon: "👀",
+      category: "Speech & Early Learning",
+      tagClass: "badge-therapy",
+      badgeText: "🩺 Speech Focus",
       age: "Ages 3–6",
       pages: "19 Printable Pages",
+      reviews: "5.0 (22 reviews)",
       cover: "assets/images/workbooks/covers/body_parts_cover.jpg",
+      payhipUrl: "https://payhip.com/BrightSproutsStudio",
       samples: [
         { src: "assets/images/workbooks/samples/body_parts_sample_1.jpg", caption: "Facial Features & Symmetry" },
         { src: "assets/images/workbooks/samples/body_parts_sample_2.jpg", caption: "Hands, Feet & Movement Lines" },
@@ -92,12 +100,14 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     "build_a_face": {
       title: "Make My Face — Cut, Create & Complete",
-      category: "Cut & Paste / Social-Emotional",
-      tagClass: "tag-motor",
-      icon: "🎭",
+      category: "Fine-Motor & Social Skills",
+      tagClass: "badge-craft",
+      badgeText: "✂️ Cut & Paste",
       age: "Ages 3–7",
       pages: "20 Printable Pages",
+      reviews: "5.0 (41 reviews)",
       cover: "assets/images/workbooks/covers/build_a_face_cover.jpg",
+      payhipUrl: "https://payhip.com/BrightSproutsStudio",
       samples: [
         { src: "assets/images/workbooks/samples/build_a_face_sample_1.jpg", caption: "Cutout Face Base & Options" },
         { src: "assets/images/workbooks/samples/build_a_face_sample_2.jpg", caption: "Emotion Eyes & Smile Cutouts" },
@@ -113,12 +123,14 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     "count_play_learn": {
       title: "Count, Play & Learn Numbers 1–10",
-      category: "Counting & Early Math",
-      tagClass: "tag-early",
-      icon: "🔢",
-      age: "Preschool & Kindergarten",
+      category: "Numbers & Early Math",
+      tagClass: "badge-math",
+      badgeText: "🔢 Early Math",
+      age: "Pre-K & Kindergarten",
       pages: "20 Printable Pages",
+      reviews: "4.9 (30 reviews)",
       cover: "assets/images/workbooks/covers/count_play_learn_cover.jpg",
+      payhipUrl: "https://payhip.com/BrightSproutsStudio",
       samples: [
         { src: "assets/images/workbooks/samples/count_play_learn_sample_1.jpg", caption: "Number Tracing & Path Guidance" },
         { src: "assets/images/workbooks/samples/count_play_learn_sample_2.jpg", caption: "Object Counting Challenges" },
@@ -135,11 +147,13 @@ document.addEventListener('DOMContentLoaded', () => {
     "abc_learning": {
       title: "ABC Little Learner A–Z Activity Book",
       category: "ABC & Alphabet Learning",
-      tagClass: "tag-early",
-      icon: "🔤",
-      age: "Preschool & Kindergarten",
+      tagClass: "badge-bestseller",
+      badgeText: "⭐ Top Seller",
+      age: "Pre-K & Kindergarten",
       pages: "27 Printable Pages",
+      reviews: "5.0 (52 reviews)",
       cover: "assets/images/workbooks/covers/abc_learning_cover.jpg",
+      payhipUrl: "https://payhip.com/BrightSproutsStudio",
       samples: [
         { src: "assets/images/workbooks/samples/abc_learning_sample_1.jpg", caption: "Uppercase & Lowercase Tracing" },
         { src: "assets/images/workbooks/samples/abc_learning_sample_2.jpg", caption: "Phonics Illustration & Coloring" },
@@ -156,11 +170,13 @@ document.addEventListener('DOMContentLoaded', () => {
     "fine_motor_tracing": {
       title: "My First Fine Motor Skill Tracing Workbook",
       category: "Fine-Motor & Pre-Writing",
-      tagClass: "tag-motor",
-      icon: "✍️",
+      tagClass: "badge-bestseller",
+      badgeText: "🔥 36 Pages",
       age: "Ages 2.5–6",
       pages: "36 Printable Pages",
+      reviews: "5.0 (46 reviews)",
       cover: "assets/images/workbooks/covers/fine_motor_tracing_cover.jpg",
+      payhipUrl: "https://payhip.com/BrightSproutsStudio",
       samples: [
         { src: "assets/images/workbooks/samples/fine_motor_tracing_sample_1.jpg", caption: "Straight & Slanted Tracing Paths" },
         { src: "assets/images/workbooks/samples/fine_motor_tracing_sample_2.jpg", caption: "Curves, Waves & Loop Exercises" },
@@ -177,11 +193,13 @@ document.addEventListener('DOMContentLoaded', () => {
     "little_hearts": {
       title: "Little Hearts, Big Feelings: Emotional Learning",
       category: "Social-Emotional & Speech",
-      tagClass: "tag-speech",
-      icon: "💖",
+      tagClass: "badge-therapy",
+      badgeText: "💖 Emotional Skills",
       age: "Ages 3–7",
       pages: "22 Printable Pages",
+      reviews: "5.0 (38 reviews)",
       cover: "assets/images/workbooks/covers/little_hearts_cover.jpg",
+      payhipUrl: "https://payhip.com/BrightSproutsStudio",
       samples: [
         { src: "assets/images/workbooks/samples/little_hearts_sample_1.jpg", caption: "Emotion Vocabulary & Identifying Feelings" },
         { src: "assets/images/workbooks/samples/little_hearts_sample_2.jpg", caption: "What Makes Me Feel... Prompts" },
@@ -197,12 +215,14 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     "little_explorer": {
       title: "My Curious World, Little Explorer",
-      category: "Preschool Early Learning",
-      tagClass: "tag-early",
-      icon: "🌍",
-      age: "Preschool & Kindergarten",
+      category: "Preschool Discovery",
+      tagClass: "badge-popular",
+      badgeText: "🌍 Explorer",
+      age: "Pre-K & Kindergarten",
       pages: "16 Printable Pages",
+      reviews: "4.9 (17 reviews)",
       cover: "assets/images/workbooks/covers/little_explorer_cover.jpg",
+      payhipUrl: "https://payhip.com/BrightSproutsStudio",
       samples: [
         { src: "assets/images/workbooks/samples/little_explorer_sample_1.jpg", caption: "Nature & World Observation Sheet" },
         { src: "assets/images/workbooks/samples/little_explorer_sample_2.jpg", caption: "Pattern Matching & Sorting" },
@@ -218,12 +238,14 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     "jungle_animals": {
       title: "Wildlife & Jungle Animal Drawing Workbook",
-      category: "Drawing & Animal Learning",
-      tagClass: "tag-drawing",
-      icon: "🦁",
+      category: "Drawing & Creative Art",
+      tagClass: "badge-cute",
+      badgeText: "🦁 Safari Art",
       age: "Ages 4–8",
       pages: "22 Printable Pages",
+      reviews: "5.0 (25 reviews)",
       cover: "assets/images/workbooks/covers/jungle_animals_cover.jpg",
+      payhipUrl: "https://payhip.com/BrightSproutsStudio",
       samples: [
         { src: "assets/images/workbooks/samples/jungle_animals_sample_1.jpg", caption: "Lion & Tiger Step-by-Step Art" },
         { src: "assets/images/workbooks/samples/jungle_animals_sample_2.jpg", caption: "Jungle Animals Habitat Coloring" },
@@ -239,12 +261,14 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     "learning_colors": {
       title: "Learning Colors & Creative Shapes Workbook",
-      category: "Early Preschool Learning",
-      tagClass: "tag-early",
-      icon: "🎨",
+      category: "Preschool Discovery",
+      tagClass: "badge-math",
+      badgeText: "🎨 Colors & Shapes",
       age: "Ages 2–5",
       pages: "18 Printable Pages",
+      reviews: "4.9 (18 reviews)",
       cover: "assets/images/workbooks/covers/learning_colors_cover.jpg",
+      payhipUrl: "https://payhip.com/BrightSproutsStudio",
       samples: [
         { src: "assets/images/workbooks/samples/learning_colors_sample_1.jpg", caption: "Primary & Secondary Colors Sheet" },
         { src: "assets/images/workbooks/samples/learning_colors_sample_2.jpg", caption: "Color Sorting & Matching Game" },
@@ -260,39 +284,59 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  // 2. Category Filter Functionality
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const workbookCards = document.querySelectorAll('.workbook-card');
+  // 2. Category Filter Handling
+  const filterTabs = document.querySelectorAll('.filter-tab');
+  const productCards = document.querySelectorAll('.product-card');
 
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+  function applyFilter(filterValue) {
+    filterTabs.forEach(t => {
+      if (t.getAttribute('data-filter') === filterValue) {
+        t.classList.add('active');
+      } else {
+        t.classList.remove('active');
+      }
+    });
 
-      const filterValue = btn.getAttribute('data-filter');
+    productCards.forEach(card => {
+      const categories = card.getAttribute('data-category').split(' ');
+      if (filterValue === 'all' || categories.includes(filterValue)) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
 
-      workbookCards.forEach(card => {
-        const categories = card.getAttribute('data-category').split(' ');
-        if (filterValue === 'all' || categories.includes(filterValue)) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
-      });
+  filterTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const filterValue = tab.getAttribute('data-filter');
+      applyFilter(filterValue);
     });
   });
 
-  // 3. Interactive Gallery & Modal Lightbox
+  // Category Cards Click to filter & scroll
+  document.querySelectorAll('.cat-pill-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const filter = card.getAttribute('data-filter-trigger');
+      applyFilter(filter);
+      const shopSection = document.getElementById('shop');
+      if (shopSection) {
+        shopSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+
+  // 3. Look Inside Modal / Lightbox
   const modal = document.getElementById('workbookModal');
   const modalBody = document.getElementById('modalBody');
   const modalCloseBtn = document.getElementById('modalCloseBtn');
 
-  function openWorkbookModal(id) {
+  function openLookInsideModal(id) {
     const item = workbookCatalog[id];
     if (!item) return;
 
     const allImages = [
-      { src: item.cover, caption: "Official Cover" },
+      { src: item.cover, caption: "Cover Preview" },
       ...item.samples
     ];
 
@@ -303,7 +347,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="modal-gallery-visual">
           <div class="modal-main-img-wrap">
             <img id="modalMainImg" src="${item.cover}" alt="${item.title}" class="modal-main-img">
-            <div id="modalImgCaption" class="modal-img-caption">Official Cover</div>
+            <div id="modalImgCaption" class="modal-img-caption">Official Cover Preview</div>
           </div>
 
           <div class="modal-thumbnails-strip">
@@ -313,25 +357,25 @@ document.addEventListener('DOMContentLoaded', () => {
               </button>
             `).join('')}
           </div>
-          <p class="thumbnail-hint">💡 Click any thumbnail above to inspect the real activity worksheets</p>
+          <p class="thumbnail-hint">💡 Click any thumbnail above to inspect actual activity pages</p>
         </div>
 
-        <!-- Right: Educational Details -->
+        <!-- Right: Product & Educational Details -->
         <div class="modal-gallery-info">
           <div class="modal-badge-row">
-            <span class="meta-tag ${item.tagClass}">${item.category}</span>
-            <span class="page-count-badge">${item.pages}</span>
+            <span class="product-badge ${item.tagClass}">${item.badgeText}</span>
+            <span class="meta-pill">${item.category}</span>
           </div>
 
           <h3 class="modal-title">${item.title}</h3>
-          <p class="modal-subtitle">Target: <strong>${item.age}</strong> &bull; Print-Ready PDF Format</p>
+          <p class="modal-subtitle">Target Age: <strong>${item.age}</strong> &bull; <strong>${item.pages}</strong> &bull; ★★★★★ ${item.reviews}</p>
 
           <div class="modal-desc-box">
             <p>${item.description}</p>
           </div>
 
           <div class="modal-pillars-box">
-            <h4>🌱 Key Developmental &amp; Speech Milestones:</h4>
+            <h4>🌱 Key Learning &amp; Speech Milestones:</h4>
             <ul class="pillars-checklist">
               ${item.developmentPillars.map(p => `
                 <li><span class="check-bullet">✓</span> ${p}</li>
@@ -340,13 +384,8 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
 
           <div class="modal-cta-row">
-            <a href="https://payhip.com/BrightSproutsStudio" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-store-link">
-              <span>View in Payhip Store</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                <polyline points="15 3 21 3 21 9"></polyline>
-                <line x1="10" y1="14" x2="21" y2="3"></line>
-              </svg>
+            <a href="${item.payhipUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-store-modal">
+              <span>Get Instant PDF Download on Payhip 🛍️</span>
             </a>
           </div>
         </div>
@@ -377,16 +416,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Bind click on Preview buttons and Card frames
-  document.querySelectorAll('.btn-preview-samples, .workbook-card .cover-slot').forEach(el => {
+  // Bind click on "Look Inside" buttons and Quick View overlay
+  document.querySelectorAll('.btn-look-inside, .quick-view-overlay-btn').forEach(el => {
     el.addEventListener('click', (e) => {
-      const card = el.closest('.workbook-card');
-      if (card) {
-        const id = card.getAttribute('data-wb-id');
-        openWorkbookModal(id);
-      }
+      e.stopPropagation();
+      const id = el.getAttribute('data-id');
+      openLookInsideModal(id);
     });
   });
+
+  // Freebie Modal Trigger (opens birds workbook as free preview sample pack)
+  const freebieBtn = document.getElementById('freebieModalTrigger');
+  if (freebieBtn) {
+    freebieBtn.addEventListener('click', () => {
+      openLookInsideModal('birds');
+    });
+  }
 
   if (modalCloseBtn) {
     modalCloseBtn.addEventListener('click', () => {
@@ -398,7 +443,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Close modal when clicking outside dialog window
+  // Close modal when clicking on the backdrop
   modal.addEventListener('click', (e) => {
     const dialogDimensions = modal.getBoundingClientRect();
     if (
@@ -413,15 +458,29 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 4. PDF Export / Print Handler
-  const printBtn = document.getElementById('printBtn');
-  if (printBtn) {
-    printBtn.addEventListener('click', () => {
-      window.print();
-    });
-  }
+  // 4. FAQ Accordion Interaction
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const questionBtn = item.querySelector('.faq-question');
+    const icon = item.querySelector('.faq-toggle-icon');
 
-  // 5. Mobile Navigation Menu Toggle
+    questionBtn.addEventListener('click', () => {
+      const isOpen = item.classList.contains('active');
+
+      faqItems.forEach(i => {
+        i.classList.remove('active');
+        const iIcon = i.querySelector('.faq-toggle-icon');
+        if (iIcon) iIcon.innerHTML = '&#43;';
+      });
+
+      if (!isOpen) {
+        item.classList.add('active');
+        if (icon) icon.innerHTML = '&minus;';
+      }
+    });
+  });
+
+  // 5. Mobile Menu Toggle
   const mobileToggle = document.getElementById('mobileToggle');
   const navMenu = document.getElementById('navMenu');
   if (mobileToggle && navMenu) {
@@ -437,12 +496,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 6. Active Nav Link on Scroll Spy
-  const sections = document.querySelectorAll('.portfolio-page');
+  const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-link');
 
   window.addEventListener('scroll', () => {
     let current = '';
-    const scrollPosition = window.pageYOffset + 200;
+    const scrollPosition = window.pageYOffset + 250;
 
     sections.forEach(section => {
       const sectionTop = section.offsetTop;
