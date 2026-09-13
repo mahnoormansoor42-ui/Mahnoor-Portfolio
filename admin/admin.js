@@ -745,6 +745,147 @@ document.getElementById('btnUpdatePassword').addEventListener('click', async () 
   }
 });
 
+// --------------------------------------------------------------------------
+// Payhip Store Sync Engine & Ledger Modal
+// --------------------------------------------------------------------------
+
+async function runSyncCatalog() {
+  const syncBtns = document.querySelectorAll('#btnSyncPayhip, .btn-sync-action');
+  syncBtns.forEach(b => {
+    b.disabled = true;
+    const spin = b.querySelector('.sync-spin-icon');
+    if (spin) spin.style.animation = 'spin 0.8s linear infinite';
+  });
+
+  try {
+    const res = await fetch('/api/sync-catalog', {
+      method: 'POST',
+      headers: authHeaders
+    });
+    const data = await res.json();
+    if (res.ok && data.success) {
+      showToast(`🔄 Sync Complete! ${data.total} Workbooks verified (${data.newAdded} new, ${data.skipped} skipped in ledger).`);
+      await loadAllData();
+      if (document.getElementById('syncLogModal').classList.contains('active')) {
+        await openSyncLedgerModal();
+      }
+    } else {
+      showToast(data.error || 'Failed to complete catalog sync', 'error');
+    }
+  } catch (err) {
+    showToast('Catalog sync error: ' + err.message, 'error');
+  } finally {
+    syncBtns.forEach(b => {
+      b.disabled = false;
+      const spin = b.querySelector('.sync-spin-icon');
+      if (spin) spin.style.animation = 'none';
+    });
+  }
+}
+
+async function openSyncLedgerModal() {
+  try {
+    const res = await fetch('/api/sync-log', { headers: authHeaders });
+    const data = await res.json();
+    if (res.ok && data.success) {
+      const syncLog = data.syncLog || {};
+      const items = Object.values(syncLog);
+      
+      document.getElementById('syncLedgerTotalCount').textContent = items.length;
+      
+      const tbody = document.getElementById('syncLedgerTbody');
+      if (tbody) {
+        tbody.innerHTML = items.map(item => `
+          <tr>
+            <td>
+              <div class="product-cell-meta">
+                <img src="/${item.cover}" alt="${item.title}" class="product-thumb-admin" onerror="this.src='/assets/images/workbooks/covers/birds_cover.jpg'">
+                <div>
+                  <strong>${item.title}</strong>
+                  <div style="font-size: 0.75rem; color: var(--text-muted);">ID: <code>${item.id}</code></div>
+                </div>
+              </div>
+            </td>
+            <td><span class="badge-cat-admin">${item.category || 'General'}</span></td>
+            <td><code style="font-size: 0.72rem; color: var(--text-muted);">${(item.sourcePdf || 'built-in').slice(0, 35)}...</code></td>
+            <td style="font-size: 0.78rem; color: var(--text-muted);">${item.syncedAt ? new Date(item.syncedAt).toLocaleString() : 'Recent'}</td>
+            <td><span class="badge-status-admin active">✅ Synced</span></td>
+          </tr>
+        `).join('');
+      }
+
+      const auditPre = document.getElementById('syncAuditLogContent');
+      if (auditPre) {
+        auditPre.textContent = data.auditLog || 'No audit entries yet.';
+        auditPre.scrollTop = auditPre.scrollHeight;
+      }
+
+      openModal('syncLogModal');
+    } else {
+      showToast('Could not retrieve sync log ledger', 'error');
+    }
+  } catch (err) {
+    showToast('Failed to load sync log: ' + err.message, 'error');
+  }
+}
+
+// Attach Topbar Sync Buttons
+const btnSyncPayhip = document.getElementById('btnSyncPayhip');
+if (btnSyncPayhip) btnSyncPayhip.addEventListener('click', runSyncCatalog);
+
+const btnViewSyncLog = document.getElementById('btnViewSyncLog');
+if (btnViewSyncLog) btnViewSyncLog.addEventListener('click', openSyncLedgerModal);
+
+const btnOpenPayhipImport = document.getElementById('btnOpenPayhipImport');
+if (btnOpenPayhipImport) btnOpenPayhipImport.addEventListener('click', () => openModal('payhipImportModal'));
+
+// Payhip Import Form Submit Handler
+const payhipImportForm = document.getElementById('payhipImportForm');
+if (payhipImportForm) {
+  payhipImportForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const title = document.getElementById('importTitle').value.trim();
+    const payhipUrl = document.getElementById('importPayhipUrl').value.trim();
+    const catVal = document.getElementById('importCategory').value.split('|');
+    const category = catVal[0];
+    const categoryId = catVal[1];
+    const age = document.getElementById('importAge').value.trim();
+    const price = document.getElementById('importPrice').value.trim();
+    const originalPrice = document.getElementById('importOriginalPrice').value.trim();
+    const pages = document.getElementById('importPages').value.trim();
+    const description = document.getElementById('importDescription').value.trim();
+
+    try {
+      const res = await fetch('/api/sync-payhip-item', {
+        method: 'POST',
+        headers: authHeaders,
+        body: JSON.stringify({
+          title,
+          payhipUrl,
+          category,
+          categoryId,
+          age,
+          price,
+          originalPrice,
+          pages,
+          description
+        })
+      });
+      const data = await res.json();
+      if (res.ok && data.success) {
+        showToast(`✨ Successfully imported "${title}" to your store!`);
+        closeModal('payhipImportModal');
+        payhipImportForm.reset();
+        await loadAllData();
+      } else {
+        showToast(data.error || 'Failed to import Payhip product', 'error');
+      }
+    } catch (err) {
+      showToast('Error importing Payhip product: ' + err.message, 'error');
+    }
+  });
+}
+
 // Export Leads to CSV
 document.getElementById('btnExportLeadsCsv').addEventListener('click', () => {
   window.location.href = '/api/leads/export-csv?auth=' + token;

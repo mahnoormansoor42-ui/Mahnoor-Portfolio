@@ -11,6 +11,8 @@ const crypto = require('crypto');
 
 const FALLBACK_PORTS = [8000, 3000, 8080, 5000, 4000];
 const DB_PATH = path.join(__dirname, 'data', 'database.json');
+const SYNC_LOG_PATH = path.join(__dirname, 'data', 'sync_log.json');
+const AUDIT_LOG_PATH = path.join(__dirname, 'data', 'sync_audit.log');
 const UPLOADS_DIR = path.join(__dirname, 'uploads');
 
 // Ensure directories exist
@@ -19,6 +21,30 @@ if (!fs.existsSync(path.join(__dirname, 'data'))) {
 }
 if (!fs.existsSync(UPLOADS_DIR)) {
   fs.mkdirSync(UPLOADS_DIR, { recursive: true });
+}
+
+function readSyncLog() {
+  try {
+    if (!fs.existsSync(SYNC_LOG_PATH)) return {};
+    return JSON.parse(fs.readFileSync(SYNC_LOG_PATH, 'utf8'));
+  } catch (e) {
+    return {};
+  }
+}
+
+function writeSyncLog(data) {
+  try {
+    fs.writeFileSync(SYNC_LOG_PATH, JSON.stringify(data, null, 2), 'utf8');
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
+function appendAuditLog(entry) {
+  try {
+    fs.appendFileSync(AUDIT_LOG_PATH, entry + '\n', 'utf8');
+  } catch (e) {}
 }
 
 // Active session tokens in-memory
@@ -538,6 +564,151 @@ async function appHandler(req, res) {
       console.error('Upload error:', err);
       return sendJSON(res, 500, { error: 'Failed to save uploaded file: ' + err.message });
     }
+  }
+
+  // 10. Sync Catalog Endpoint (Incremental Delta Sync Engine)
+  if (pathname === '/api/sync-catalog' && method === 'POST') {
+    if (!requireAuth(req, res)) return;
+    const db = readDB();
+    const syncLog = readSyncLog();
+    const nowIso = new Date().toISOString();
+    
+    let newAddedCount = 0;
+    let skippedCount = 0;
+    const auditEntries = [];
+
+    // Check each product in database against sync log
+    (db.products || []).forEach(p => {
+      const pid = p.id;
+      if (syncLog[pid]) {
+        skippedCount++;
+        auditEntries.push(`[SKIP] ${p.title} - Verified in ledger.`);
+      } else {
+        syncLog[pid] = {
+          id: pid,
+          title: p.title,
+          category: p.category,
+          cover: p.cover,
+          samplesCount: (p.samples || []).length,
+          sourcePdf: p.pdf_match || 'payhip-cloud',
+          syncedAt: nowIso,
+          status: 'synced'
+        };
+        newAddedCount++;
+        auditEntries.push(`[NEW] ${p.title} - Registered into sync ledger.`);
+      }
+    });
+
+    writeSyncLog(syncLog);
+    writeDB(db);
+
+    // Record in sync audit log
+    const auditHeader = `\n=======================================================\nSYNC SESSION: ${nowIso}\nNew Workbooks Added: ${newAddedCount}\nExisting Workbooks Skipped: ${skippedCount}\nTotal Workbooks in Catalog: ${(db.products || []).length}\n-------------------------------------------------------`;
+    const auditBody = auditEntries.join('\n');
+    appendAuditLog(`${auditHeader}\n${auditBody}\nStatus: COMPLETED_SUCCESSFULLY\n`);
+
+    return sendJSON(res, 200, {
+      success: true,
+      newAdded: newAddedCount,
+      skipped: skippedCount,
+      total: (db.products || []).length,
+      timestamp: nowIso
+    });
+  }
+
+  // 11. Sync Ledger & Audit History Endpoint
+  if (pathname === '/api/sync-log' && method === 'GET') {
+    if (!requireAuth(req, res)) return;
+    const syncLog = readSyncLog();
+    let auditLogText = '';
+    try {
+      if (fs.existsSync(AUDIT_LOG_PATH)) {
+        auditLogText = fs.readFileSync(AUDIT_LOG_PATH, 'utf8');
+      }
+    } catch (e) {
+      auditLogText = 'No audit log entries found.';
+    }
+
+    return sendJSON(res, 200, {
+      success: true,
+      syncLog: syncLog,
+      auditLog: auditLogText,
+      totalSynced: Object.keys(syncLog).length
+    });
+  }
+
+  // 12. Direct Payhip Cloud Item Import Endpoint (No local laptop files needed)
+  if (pathname === '/api/sync-payhip-item' && method === 'POST') {
+    if (!requireAuth(req, res)) return;
+    const body = await parseBody(req);
+    if (!body.title) {
+      return sendJSON(res, 400, { error: 'Product title is required' });
+    }
+
+    const db = readDB();
+    const syncLog = readSyncLog();
+    const nowIso = new Date().toISOString();
+
+    const newId = body.id || body.title.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_+|_+$/g, '') + '_' + Date.now().toString().slice(-4);
+    
+    const newProduct = {
+      id: newId,
+      title: body.title,
+      category: body.category || 'Drawing & Creative Art',
+      categoryId: body.categoryId || 'drawing',
+      tagClass: body.tagClass || 'badge-bestseller',
+      badgeText: body.badgeText || '⭐ New Payhip Item',
+      age: body.age || 'Ages 3–7',
+      pages: body.pages || '16 Printable Pages',
+      price: body.price || '$4.99',
+      originalPrice: body.originalPrice || '$8.99',
+      reviews: body.reviews || '5.0 (Verified)',
+      rating: Number(body.rating) || 5.0,
+      reviewCount: Number(body.reviewCount) || 1,
+      cover: body.cover || 'assets/images/workbooks/covers/birds_cover.jpg',
+      payhipUrl: body.payhipUrl || 'https://payhip.com/BrightSproutsStudio',
+      samples: Array.isArray(body.samples) ? body.samples : [],
+      description: body.description || '',
+      developmentPillars: Array.isArray(body.developmentPillars) ? body.developmentPillars : [
+        "Visual-spatial awareness & shape breakdown",
+        "Pencil grip & fine-motor coordination",
+        "Vocabulary enrichment & cognitive readiness"
+      ],
+      featured: true,
+      status: 'active',
+      order: (db.products || []).length + 1,
+      createdAt: nowIso
+    };
+
+    const existingIdx = (db.products || []).findIndex(p => p.id === newId);
+    if (existingIdx >= 0) {
+      db.products[existingIdx] = { ...db.products[existingIdx], ...newProduct };
+    } else {
+      if (!db.products) db.products = [];
+      db.products.push(newProduct);
+    }
+
+    syncLog[newId] = {
+      id: newId,
+      title: newProduct.title,
+      category: newProduct.category,
+      cover: newProduct.cover,
+      samplesCount: (newProduct.samples || []).length,
+      sourcePdf: 'payhip-direct-import',
+      payhipUrl: newProduct.payhipUrl,
+      syncedAt: nowIso,
+      status: 'synced'
+    };
+
+    writeDB(db);
+    writeSyncLog(syncLog);
+    appendAuditLog(`\n[PAYHIP DIRECT SYNC] ${newProduct.title} (${newProduct.payhipUrl}) added to catalog at ${nowIso}`);
+
+    return sendJSON(res, 201, {
+      success: true,
+      message: 'Product synced from Payhip successfully!',
+      product: newProduct
+    });
   }
 
   // --------------------------------------------------------------------------

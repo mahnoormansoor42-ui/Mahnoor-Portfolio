@@ -1,0 +1,232 @@
+{
+  "birds": {
+    "id": "birds",
+    "title": "Let's Draw the Birds Together",
+    "category": "Drawing & Creative Art",
+    "cover": "assets/images/workbooks/covers/birds_cover.jpg",
+    "samplesCount": 3,
+    "sourcePdf": "Let’s Draw the Birds Together  Step-by-Step Bird Drawing Workbook for Kids  Draw, Color & Learn Bird Names.pdf",
+    "syncedAt": "2026-09-13T08:22:29.309755Z",
+    "status": "synced"
+  },
+  "sea_animals": {
+    "id": "sea_animals",
+    "title": "Let's Draw the Sea Animals Together",
+    "category": "Drawing & Creative Art",
+    "cover": "assets/images/workbooks/covers/sea_animals_cover.jpg",
+    "samplesCount": 3,
+    "sourcePdf": "Let’s Draw the Sea Animals Together  Step-by-Step  Drawing Workbook for Kids  Draw, Color & Learn Sea Animals Names.pdf",
+    "syncedAt": "2026-09-13T08:22:29.309755Z",
+    "status": "synced"
+  },
+  "pets": {
+    "id": "pets",
+    "title": "Let's Draw the Pet Animals Together",
+    "category": "Drawing & Creative Art",
+    "cover": "assets/images/workbooks/covers/pets_cover.jpg",
+    "samplesCount": 3,
+    "sourcePdf": "Let’s Draw the Pet Animals Together  Step-by-Step  Drawing Workbook for Kids  Draw, Color & Learn Pet Animals Names .pdf",
+    "syncedAt": "2026-09-13T08:22:29.309755Z",
+    "status": "synced"
+  },
+  "body_parts": {
+    "id": "body_parts",
+    "title": "Let's Draw & Learn Body Parts Together",
+    "category": "Speech & Early Learning",
+    "cover": "assets/images/workbooks/covers/body_parts_cover.jpg",
+    "samplesCount": 3,
+    "sourcePdf": "Draw, Speak & Discover My Body  Preschool Body Parts Drawing & Learning Workbook for Kids.pdf",
+    "syncedAt": "2026-09-13T08:22:29.309755Z",
+    "status": "synced"
+  },
+  "build_a_face": {
+    "id": "build_a_face",
+    "title": "Make My Face — Cut, Create & Complete",
+    "category": "Fine-Motor & Social Skills",
+    "cover": "assets/images/workbooks/covers/build_a_face_cover.jpg",
+    "samplesCount": 3,
+    "sourcePdf": "Make My Face — Cut, Create & Complete  Fun Face-Building Activity Book for Kids .pdf",
+    "syncedAt": "2026-09-13T08:22:29.309755Z",
+    "status": "synced"
+  },
+  "count_play_learn": {
+    "id": "count_play_learn",
+    "title": "Count, Play & Learn Numbers 1–10",
+    "category": "Numbers & Early Math",
+    "cover": "assets/images/workbooks/covers/count_play_learn_cover.jpg",
+    "samplesCount": 3,
+    "sourcePdf": "Count, Play & Learn Numbers 1–10  Preschool Counting Activity Workbook .pdf",
+    "syncedAt": "2026-09-13T08:22:29.309755Z",
+    "status": "synced"
+  },
+  "abc_learning": {
+    "id": "abc_learning",
+    "title": "ABC Little Learner A–Z Activity Book",
+    "category": "ABC & Alphabet Learning",
+    "cover": "assets/images/workbooks/covers/abc_learning_cover.jpg",
+    "samplesCount": 3,
+    "sourcePdf": "ABC Little Learner A–Z Activity Book  Preschool Alphabet Workbook .pdf",
+    "syncedAt": "2026-09-13T08:22:29.309755Z",
+    "status": "synced"
+  },
+  "fine_motor_tracing": {
+    "id": "fine_motor_tracing",
+    "title": "My First Fine Motor Skill Tracing Workbook",
+    "category": "Fine-Motor & Pre-Writing",
+    "cover": "assets/images/workbooks/covers/fine_motor_tracing_cover.jpg",
+    "samplesCount": 3,
+    "sourcePdf": "My First Fine Motor Skill Tracing Workbook Fun Finger Writing Activities for Little Hands .pdf",
+    "syncedAt": "2026-09-13T08:22:29.309755Z",
+    "status": "synced"
+  },
+  "little_hearts": {
+    "id": "little_hearts",
+    "title": "Little Hearts, Big Feelings: Emotional Learning",
+    "category": "Social-Emotional & Speech",
+    "cover": "assets/images/workbooks/covers/little_hearts_cover.jpg",
+    "samplesCount": 3,
+    "sourcePdf": "Little Hearts, Big Feelings An Emotional Learning Workbook for Kids  Feelings, Emotions & Social Skills Activities for Ages 3–7.pdf",
+    "syncedAt": "2026-09-13T08:22:29.309755Z",
+    "status": "synced"
+  },
+  "little_explorer": {
+    "id": "little_explorer",
+    "title": "My Curious World, Little Explorer",
+    "category": "Preschool Discovery",
+    "cover": "assets/images/workbooks/covers/little_explorer_cover.jpg",
+    "samplesCount": 3,
+    "sourcePdf": "My Curious World, Little Explorer  Preschool Learning Activity Workbook .pdf",
+    "syncedAt": "2026-09-13T08:22:29.309755Z",
+    "status": "synced"
+  },
+  "jungle_animals": {
+    "id": "jungle_animals",
+    "title": "Wildlife & Jungle Animal Drawing Workbook",
+    "category": "Drawing & Creative Art",
+    "cover": "assets/images/workbooks/covers/jungle_animals_cover.jpg",
+    "samplesCount": 3,
+    "sourcePdf": "Blue Colorful Illustration Kids Ebook Cover.pdf",
+    "syncedAt": "2026-09-13T08:22:29.309755Z",
+    "status": "synced"
+  },
+  "learning_colors": {
+    "id": "learning_colors",
+    "title": "Learning Colors & Creative Shapes Workbook",
+    "category": "Preschool Discovery",
+    "cover": "assets/images/workbooks/covers/learning_colors_cover.jpg",
+    "samplesCount": 3,
+    "sourcePdf": "built-in",
+    "syncedAt": "2026-09-13T08:22:29.309755Z",
+    "status": "synced"
+  },
+  "fun_with_fruits": {
+    "id": "fun_with_fruits",
+    "title": "Fun with Fruits — Coloring & Learning Activity Book",
+    "category": "Preschool Discovery",
+    "cover": "assets/images/workbooks/covers/fun_with_fruits_cover.jpg",
+    "samplesCount": 3,
+    "sourcePdf": "🍓 Fun with Fruits — A Fun Fruit Coloring Book for Kids .pdf",
+    "syncedAt": "2026-09-13T08:22:29.309755Z",
+    "status": "synced"
+  },
+  "daily_life_skills": {
+    "id": "daily_life_skills",
+    "title": "Daily Life Skills & Morning Routines for Kids",
+    "category": "Speech & Early Learning",
+    "cover": "assets/images/workbooks/covers/daily_life_skills_cover.jpg",
+    "samplesCount": 3,
+    "sourcePdf": "Daily LIfe Skill workbook.pdf",
+    "syncedAt": "2026-09-13T08:22:29.309755Z",
+    "status": "synced"
+  },
+  "finish_my_picture": {
+    "id": "finish_my_picture",
+    "title": "Finish My Picture — Creative Symmetry & Visual Closure",
+    "category": "Drawing & Creative Art",
+    "cover": "assets/images/workbooks/covers/finish_my_picture_cover.jpg",
+    "samplesCount": 3,
+    "sourcePdf": "Finish my picture .pdf",
+    "syncedAt": "2026-09-13T08:22:29.309755Z",
+    "status": "synced"
+  },
+  "good_manners": {
+    "id": "good_manners",
+    "title": "I Know My Good Manners! Everyday Conversations",
+    "category": "Social-Emotional & Speech",
+    "cover": "assets/images/workbooks/covers/good_manners_cover.jpg",
+    "samplesCount": 3,
+    "sourcePdf": "I KNOW MY GOOD MANNERS! — Everyday Conversations for Little Learners .pdf",
+    "syncedAt": "2026-09-13T08:22:29.309755Z",
+    "status": "synced"
+  },
+  "learn_phonics": {
+    "id": "learn_phonics",
+    "title": "Learn Phonics & Letter Sounds for Confident Reading",
+    "category": "ABC & Alphabet Learning",
+    "cover": "assets/images/workbooks/covers/learn_phonics_cover.jpg",
+    "samplesCount": 3,
+    "sourcePdf": "Learn Phonics, Discover Letter Sounds & begin Toward Confident early Reading .pdf",
+    "syncedAt": "2026-09-13T08:22:29.309755Z",
+    "status": "synced"
+  },
+  "little_detective": {
+    "id": "little_detective",
+    "title": "Little Detective — Language & Visual Discrimination",
+    "category": "Speech & Early Learning",
+    "cover": "assets/images/workbooks/covers/little_detective_cover.jpg",
+    "samplesCount": 3,
+    "sourcePdf": "Little Detective, Language Skill workbook.pdf",
+    "syncedAt": "2026-09-13T08:22:29.309755Z",
+    "status": "synced"
+  },
+  "little_problem_solver": {
+    "id": "little_problem_solver",
+    "title": "Little Problem Solver — Logic, Sequencing & Puzzles",
+    "category": "Numbers & Early Math",
+    "cover": "assets/images/workbooks/covers/little_problem_solver_cover.jpg",
+    "samplesCount": 3,
+    "sourcePdf": "Little problem Solver .pdf",
+    "syncedAt": "2026-09-13T08:22:29.309755Z",
+    "status": "synced"
+  },
+  "matching_sorting": {
+    "id": "matching_sorting",
+    "title": "Matching & Sorting Early Concept Preschool Workbook",
+    "category": "Preschool Discovery",
+    "cover": "assets/images/workbooks/covers/matching_sorting_cover.jpg",
+    "samplesCount": 3,
+    "sourcePdf": "Matching & Sorting  preschool workbook .pdf",
+    "syncedAt": "2026-09-13T08:22:29.309755Z",
+    "status": "synced"
+  },
+  "shape_hunt": {
+    "id": "shape_hunt",
+    "title": "Shape Hunt — Learn, Trace & Spot Everyday Shapes",
+    "category": "Numbers & Early Math",
+    "cover": "assets/images/workbooks/covers/shape_hunt_cover.jpg",
+    "samplesCount": 3,
+    "sourcePdf": "Shape Hunt learn about Shapes .pdf",
+    "syncedAt": "2026-09-13T08:22:29.309755Z",
+    "status": "synced"
+  },
+  "bedtime_stories": {
+    "id": "bedtime_stories",
+    "title": "Sweet Dreams, Little One — 4 Gentle Bedtime Stories",
+    "category": "Social-Emotional & Speech",
+    "cover": "assets/images/workbooks/covers/bedtime_stories_cover.jpg",
+    "samplesCount": 3,
+    "sourcePdf": "Sweet Dreams, Little One — 4 Gentle Bedtime Stories for Kids .pdf",
+    "syncedAt": "2026-09-13T08:22:29.309755Z",
+    "status": "synced"
+  },
+  "playful_drawing": {
+    "id": "playful_drawing",
+    "title": "Playful Kids Drawing & Creative Art Adventure",
+    "category": "Drawing & Creative Art",
+    "cover": "assets/images/workbooks/covers/playful_drawing_cover.jpg",
+    "samplesCount": 3,
+    "sourcePdf": "Blue Yellow and White Playful Kids Drawing eBook.pdf",
+    "syncedAt": "2026-09-13T08:22:29.309755Z",
+    "status": "synced"
+  }
+}

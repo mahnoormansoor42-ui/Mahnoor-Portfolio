@@ -113,6 +113,19 @@
       </div>
 
       <div class="topbar-right">
+        <button id="btnSyncPayhip" class="btn-sync-action" title="Run instant incremental sync check">
+          <span class="sync-spin-icon">🔄</span>
+          <span>Auto-Sync All Workbooks</span>
+        </button>
+
+        <button id="btnViewSyncLog" class="btn-secondary" title="View Sync Log Ledger & Audit History">
+          <span>📋 Sync Ledger</span>
+        </button>
+
+        <button id="btnOpenPayhipImport" class="btn-secondary" title="Import new product directly from Payhip">
+          <span>🌐 Import Payhip Link</span>
+        </button>
+
         <button id="btnQuickAddProduct" class="btn-primary-action">
           <span>+ Add New Workbook</span>
         </button>
@@ -673,6 +686,148 @@
         <button type="button" class="btn-secondary" onclick="closeModal('deleteModal')">Cancel</button>
         <button type="button" id="btnConfirmDelete" class="btn-primary-action" style="background: var(--danger);">Delete Permanently</button>
       </div>
+    </div>
+  </div>
+
+  <!-- 6. Sync Log Ledger & Audit History Modal -->
+  <div id="syncLogModal" class="modal-overlay">
+    <div class="modal-card" style="max-width: 860px; max-height: 90vh;">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 1.5rem;">📋</span>
+          <div>
+            <h3 class="modal-title-text">Sync Log Ledger &amp; Audit Trail</h3>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Self-contained cloud catalog sync tracking (prevents redundant processing)</span>
+          </div>
+        </div>
+        <button class="modal-close-btn" onclick="closeModal('syncLogModal')">&times;</button>
+      </div>
+
+      <div class="modal-body" style="overflow-y: auto; max-height: calc(85vh - 130px); padding: 20px;">
+        <!-- Status Banner -->
+        <div class="sync-ledger-stats-row" style="display: flex; gap: 16px; margin-bottom: 20px;">
+          <div class="kpi-card" style="flex: 1; padding: 14px;">
+            <span class="kpi-label">Total Synced In Ledger</span>
+            <strong class="kpi-val" id="syncLedgerTotalCount" style="font-size: 1.6rem; color: var(--primary);">0</strong>
+          </div>
+          <div class="kpi-card" style="flex: 1; padding: 14px;">
+            <span class="kpi-label">Ledger Engine Status</span>
+            <strong style="color: var(--primary); font-size: 1.1rem; display: flex; align-items: center; gap: 6px; margin-top: 4px;">
+              <span class="pulse-dot" style="width: 8px; height: 8px; background: #16A34A; border-radius: 50%; display: inline-block;"></span>
+              Active &amp; Optimized
+            </strong>
+          </div>
+          <div class="kpi-card" style="flex: 1; padding: 14px;">
+            <span class="kpi-label">Payhip Live Store</span>
+            <a href="https://payhip.com/BrightSproutsStudio" target="_blank" style="color: var(--accent-blue); font-size: 0.85rem; text-decoration: underline; margin-top: 6px; display: inline-block;">BrightSproutsStudio ↗</a>
+          </div>
+        </div>
+
+        <h4 style="margin-bottom: 10px; font-size: 0.95rem; color: var(--text-main);">Synced Workbooks in Database</h4>
+        <div class="table-wrapper" style="max-height: 280px; margin-bottom: 24px;">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Workbook</th>
+                <th>Category</th>
+                <th>Source</th>
+                <th>Synced At</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="syncLedgerTbody">
+              <!-- Populated dynamically -->
+            </tbody>
+          </table>
+        </div>
+
+        <h4 style="margin-bottom: 10px; font-size: 0.95rem; color: var(--text-main);">Raw Audit Trail Log (<code style="color: var(--primary);">data/sync_audit.log</code>)</h4>
+        <pre id="syncAuditLogContent" style="background: #0F172A; color: #A7F3D0; font-family: monospace; font-size: 0.78rem; padding: 14px; border-radius: var(--radius-md); max-height: 200px; overflow-y: auto; white-space: pre-wrap; line-height: 1.4;"></pre>
+      </div>
+
+      <div class="modal-footer" style="justify-content: space-between;">
+        <button type="button" class="btn-sync-action" onclick="runSyncCatalog()">
+          <span>🔄 Run Incremental Sync Now</span>
+        </button>
+        <button type="button" class="btn-secondary" onclick="closeModal('syncLogModal')">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. Direct Payhip URL Importer Modal -->
+  <div id="payhipImportModal" class="modal-overlay">
+    <div class="modal-card" style="max-width: 620px;">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 1.5rem;">🌐</span>
+          <div>
+            <h3 class="modal-title-text">Import Direct from Payhip Store</h3>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Add new products to your live site directly from Payhip without local PC files</span>
+          </div>
+        </div>
+        <button class="modal-close-btn" onclick="closeModal('payhipImportModal')">&times;</button>
+      </div>
+
+      <form id="payhipImportForm">
+        <div class="modal-body">
+          <div class="form-group-admin">
+            <label class="form-label-admin">Payhip Product Link / URL *</label>
+            <input type="url" id="importPayhipUrl" class="form-input-admin" placeholder="https://payhip.com/b/XXXX or https://payhip.com/BrightSproutsStudio" required value="https://payhip.com/BrightSproutsStudio">
+          </div>
+
+          <div class="form-group-admin">
+            <label class="form-label-admin">Workbook Title *</label>
+            <input type="text" id="importTitle" class="form-input-admin" placeholder="e.g. Toddler Morning Routine Activity Book" required>
+          </div>
+
+          <div class="modal-grid-2">
+            <div class="form-group-admin">
+              <label class="form-label-admin">Category *</label>
+              <select id="importCategory" class="form-select-admin" required>
+                <option value="Drawing & Creative Art|drawing">Drawing &amp; Creative Art</option>
+                <option value="Speech & Early Learning|speech">Speech &amp; Early Learning</option>
+                <option value="Fine-Motor & Pre-Writing|fine-motor">Fine-Motor &amp; Pre-Writing</option>
+                <option value="Numbers & Early Math|numbers">Numbers &amp; Early Math</option>
+                <option value="ABC & Alphabet Learning|abc">ABC &amp; Alphabet Learning</option>
+                <option value="Social-Emotional & Speech|emotional">Social-Emotional &amp; Speech</option>
+                <option value="Preschool Discovery|discovery">Preschool Discovery</option>
+              </select>
+            </div>
+            <div class="form-group-admin">
+              <label class="form-label-admin">Target Age</label>
+              <input type="text" id="importAge" class="form-input-admin" placeholder="e.g. Ages 3–7" value="Ages 3–7">
+            </div>
+          </div>
+
+          <div class="modal-grid-2">
+            <div class="form-group-admin">
+              <label class="form-label-admin">Price *</label>
+              <input type="text" id="importPrice" class="form-input-admin" placeholder="$4.99" value="$4.99" required>
+            </div>
+            <div class="form-group-admin">
+              <label class="form-label-admin">Original / Compare Price</label>
+              <input type="text" id="importOriginalPrice" class="form-input-admin" placeholder="$8.99" value="$8.99">
+            </div>
+          </div>
+
+          <div class="form-group-admin">
+            <label class="form-label-admin">Printable Pages</label>
+            <input type="text" id="importPages" class="form-input-admin" placeholder="e.g. 20 Printable Pages" value="20 Printable Pages">
+          </div>
+
+          <div class="form-group-admin">
+            <label class="form-label-admin">Description</label>
+            <textarea id="importDescription" class="form-textarea-admin" rows="3" placeholder="Engaging therapist-crafted printable activities..."></textarea>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn-secondary" onclick="closeModal('payhipImportModal')">Cancel</button>
+          <button type="submit" class="btn-primary-action">
+            <span>✨ Import &amp; Add to Catalog</span>
+          </button>
+        </div>
+      </form>
     </div>
   </div>
 

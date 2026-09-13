@@ -19,15 +19,15 @@
       "samples": [
         {
           "src": "assets/images/workbooks/samples/birds_sample_1.jpg",
-          "caption": "Step-by-Step Bird Construction"
+          "caption": "Activity Sheet 1"
         },
         {
           "src": "assets/images/workbooks/samples/birds_sample_2.jpg",
-          "caption": "Coloring & Feature Detailing"
+          "caption": "Activity Sheet 2"
         },
         {
           "src": "assets/images/workbooks/samples/birds_sample_3.jpg",
-          "caption": "Species Name & Word Practice"
+          "caption": "Activity Sheet 3"
         }
       ],
       "description": "A step-by-step bird drawing workbook guiding young children to draw charming garden and songbirds using simple geometric shapes, progressive lines, and coloring prompts.",
@@ -39,8 +39,9 @@
       ],
       "featured": true,
       "status": "active",
-      "order": 1,
-      "createdAt": "2026-09-11T07:37:45.751Z"
+      "order": 13,
+      "createdAt": "2026-09-13T08:22:29.309755Z",
+      "pdf_match": "bird"
     },
     {
       "id": "sea_animals",
@@ -61,15 +62,15 @@
       "samples": [
         {
           "src": "assets/images/workbooks/samples/sea_animals_sample_1.jpg",
-          "caption": "Ocean Creature Line Guide"
+          "caption": "Activity Sheet 1"
         },
         {
           "src": "assets/images/workbooks/samples/sea_animals_sample_2.jpg",
-          "caption": "Step-by-Step Marine Drawing"
+          "caption": "Activity Sheet 2"
         },
         {
           "src": "assets/images/workbooks/samples/sea_animals_sample_3.jpg",
-          "caption": "Sea Life Identification"
+          "caption": "Activity Sheet 3"
         }
       ],
       "description": "An ocean-themed drawing guide featuring dolphins, turtles, octopuses, and reef fish, breaking down aquatic shapes into intuitive steps for little hands.",
@@ -81,8 +82,9 @@
       ],
       "featured": true,
       "status": "active",
-      "order": 2,
-      "createdAt": "2026-09-11T07:37:45.752Z"
+      "order": 13,
+      "createdAt": "2026-09-13T08:22:29.309755Z",
+      "pdf_match": "sea animal"
     },
     {
       "id": "pets",
@@ -103,15 +105,15 @@
       "samples": [
         {
           "src": "assets/images/workbooks/samples/pets_sample_1.jpg",
-          "caption": "Puppy & Kitten Drawing Guides"
+          "caption": "Activity Sheet 1"
         },
         {
           "src": "assets/images/workbooks/samples/pets_sample_2.jpg",
-          "caption": "Facial Expressions & Paws"
+          "caption": "Activity Sheet 2"
         },
         {
           "src": "assets/images/workbooks/samples/pets_sample_3.jpg",
-          "caption": "Pet Name Learning Sheet"
+          "caption": "Activity Sheet 3"
         }
       ],
       "description": "Features beloved family pets (puppies, kittens, bunnies, hamsters) with engaging step-by-step drawing demonstrations that build confidence.",
@@ -123,8 +125,9 @@
       ],
       "featured": true,
       "status": "active",
-      "order": 3,
-      "createdAt": "2026-09-11T07:37:45.752Z"
+      "order": 13,
+      "createdAt": "2026-09-13T08:22:29.309755Z",
+      "pdf_match": "pet animal"
     },
     {
       "id": "body_parts",
@@ -145,15 +148,15 @@
       "samples": [
         {
           "src": "assets/images/workbooks/samples/body_parts_sample_1.jpg",
-          "caption": "Facial Features & Symmetry"
+          "caption": "Activity Sheet 1"
         },
         {
           "src": "assets/images/workbooks/samples/body_parts_sample_2.jpg",
-          "caption": "Hands, Feet & Movement Lines"
+          "caption": "Activity Sheet 2"
         },
         {
           "src": "assets/images/workbooks/samples/body_parts_sample_3.jpg",
-          "caption": "Body Schema & Vocabulary"
+          "caption": "Activity Sheet 3"
         }
       ],
       "description": "Combines fundamental anatomical vocabulary with guided drawing of facial features, hands, feet, and gestures to reinforce body schema and speech concepts.",
@@ -165,8 +168,9 @@
       ],
       "featured": true,
       "status": "active",
-      "order": 4,
-      "createdAt": "2026-09-11T07:37:45.752Z"
+      "order": 13,
+      "createdAt": "2026-09-13T08:22:29.309755Z",
+      "pdf_match": "body part"
     },
     {
       "id": "build_a_face",
@@ -187,15 +191,15 @@
       "samples": [
         {
           "src": "assets/images/workbooks/samples/build_a_face_sample_1.jpg",
-          "caption": "Cutout Face Base & Options"
+          "caption": "Activity Sheet 1"
         },
         {
           "src": "assets/images/workbooks/samples/build_a_face_sample_2.jpg",
-          "caption": "Emotion Eyes & Smile Cutouts"
+          "caption": "Activity Sheet 2"
         },
         {
           "src": "assets/images/workbooks/samples/build_a_face_sample_3.jpg",
-          "caption": "Custom Character Assembly"
+          "caption": "Activity Sheet 3"
         }
       ],
       "description": "Hands-on cut-and-paste activity pages where children assemble different facial expressions, hair styles, and accessories to learn about emotions.",
@@ -207,8 +211,9 @@
       ],
       "featured": true,
       "status": "active",
-      "order": 5,
-      "createdAt": "2026-09-11T07:37:45.752Z"
+      "order": 13,
+      "createdAt": "2026-09-13T08:22:29.309755Z",
+      "pdf_match": "make my face"
     },
     {
       "id": "count_play_learn",
@@ -229,15 +234,15 @@
       "samples": [
         {
           "src": "assets/images/workbooks/samples/count_play_learn_sample_1.jpg",
-          "caption": "Number Tracing & Path Guidance"
+          "caption": "Activity Sheet 1"
         },
         {
           "src": "assets/images/workbooks/samples/count_play_learn_sample_2.jpg",
-          "caption": "Object Counting Challenges"
+          "caption": "Activity Sheet 2"
         },
         {
           "src": "assets/images/workbooks/samples/count_play_learn_sample_3.jpg",
-          "caption": "One-to-One Correspondence Games"
+          "caption": "Activity Sheet 3"
         }
       ],
       "description": "Visual math workbook introducing number recognition 1–10, one-to-one counting correspondence, and fun object grouping.",
@@ -249,8 +254,9 @@
       ],
       "featured": true,
       "status": "active",
-      "order": 6,
-      "createdAt": "2026-09-11T07:37:45.752Z"
+      "order": 13,
+      "createdAt": "2026-09-13T08:22:29.309755Z",
+      "pdf_match": "count, play"
     },
     {
       "id": "abc_learning",
@@ -271,15 +277,15 @@
       "samples": [
         {
           "src": "assets/images/workbooks/samples/abc_learning_sample_1.jpg",
-          "caption": "Uppercase & Lowercase Tracing"
+          "caption": "Activity Sheet 1"
         },
         {
           "src": "assets/images/workbooks/samples/abc_learning_sample_2.jpg",
-          "caption": "Phonics Illustration & Coloring"
+          "caption": "Activity Sheet 2"
         },
         {
           "src": "assets/images/workbooks/samples/abc_learning_sample_3.jpg",
-          "caption": "Letter Search & Sound Match"
+          "caption": "Activity Sheet 3"
         }
       ],
       "description": "Complete alphabet learning workbook with large uppercase and lowercase letters, guided directional arrows, and cheerful phonics illustrations.",
@@ -291,8 +297,9 @@
       ],
       "featured": true,
       "status": "active",
-      "order": 7,
-      "createdAt": "2026-09-11T07:37:45.752Z"
+      "order": 13,
+      "createdAt": "2026-09-13T08:22:29.309755Z",
+      "pdf_match": "abc little learner"
     },
     {
       "id": "fine_motor_tracing",
@@ -313,15 +320,15 @@
       "samples": [
         {
           "src": "assets/images/workbooks/samples/fine_motor_tracing_sample_1.jpg",
-          "caption": "Straight & Slanted Tracing Paths"
+          "caption": "Activity Sheet 1"
         },
         {
           "src": "assets/images/workbooks/samples/fine_motor_tracing_sample_2.jpg",
-          "caption": "Curves, Waves & Loop Exercises"
+          "caption": "Activity Sheet 2"
         },
         {
           "src": "assets/images/workbooks/samples/fine_motor_tracing_sample_3.jpg",
-          "caption": "Pencil Mazes & Hand Control"
+          "caption": "Activity Sheet 3"
         }
       ],
       "description": "Calibrated line tracing workbook featuring straight lines, zig-zags, waves, arches, and spiral patterns that prepare fingers for handwriting.",
@@ -333,8 +340,9 @@
       ],
       "featured": true,
       "status": "active",
-      "order": 8,
-      "createdAt": "2026-09-11T07:37:45.752Z"
+      "order": 13,
+      "createdAt": "2026-09-13T08:22:29.309755Z",
+      "pdf_match": "fine motor skill tracing"
     },
     {
       "id": "little_hearts",
@@ -355,15 +363,15 @@
       "samples": [
         {
           "src": "assets/images/workbooks/samples/little_hearts_sample_1.jpg",
-          "caption": "Emotion Vocabulary & Identifying Feelings"
+          "caption": "Activity Sheet 1"
         },
         {
           "src": "assets/images/workbooks/samples/little_hearts_sample_2.jpg",
-          "caption": "What Makes Me Feel... Prompts"
+          "caption": "Activity Sheet 2"
         },
         {
           "src": "assets/images/workbooks/samples/little_hearts_sample_3.jpg",
-          "caption": "Calm Down Strategies & Reflection"
+          "caption": "Activity Sheet 3"
         }
       ],
       "description": "Therapist-informed emotional learning workbook helping children recognize, express, and regulate emotions through meaningful scenarios and conversations.",
@@ -375,8 +383,9 @@
       ],
       "featured": true,
       "status": "active",
-      "order": 9,
-      "createdAt": "2026-09-11T07:37:45.752Z"
+      "order": 13,
+      "createdAt": "2026-09-13T08:22:29.309755Z",
+      "pdf_match": "little hearts"
     },
     {
       "id": "little_explorer",
@@ -397,15 +406,15 @@
       "samples": [
         {
           "src": "assets/images/workbooks/samples/little_explorer_sample_1.jpg",
-          "caption": "Nature & World Observation Sheet"
+          "caption": "Activity Sheet 1"
         },
         {
           "src": "assets/images/workbooks/samples/little_explorer_sample_2.jpg",
-          "caption": "Pattern Matching & Sorting"
+          "caption": "Activity Sheet 2"
         },
         {
           "src": "assets/images/workbooks/samples/little_explorer_sample_3.jpg",
-          "caption": "Creative Exploration Activities"
+          "caption": "Activity Sheet 3"
         }
       ],
       "description": "Playful discovery workbook filled with interactive observation prompts, sorting games, and cognitive reasoning activities.",
@@ -417,8 +426,9 @@
       ],
       "featured": true,
       "status": "active",
-      "order": 10,
-      "createdAt": "2026-09-11T07:37:45.752Z"
+      "order": 13,
+      "createdAt": "2026-09-13T08:22:29.309755Z",
+      "pdf_match": "little explorer"
     },
     {
       "id": "jungle_animals",
@@ -428,7 +438,7 @@
       "tagClass": "badge-cute",
       "badgeText": "🦁 Safari Art",
       "age": "Ages 4–8",
-      "pages": "22 Printable Pages",
+      "pages": "21 Printable Pages",
       "price": "$5.49",
       "originalPrice": "$9.99",
       "reviews": "5.0 (25 reviews)",
@@ -439,15 +449,15 @@
       "samples": [
         {
           "src": "assets/images/workbooks/samples/jungle_animals_sample_1.jpg",
-          "caption": "Lion & Tiger Step-by-Step Art"
+          "caption": "Activity Sheet 1"
         },
         {
           "src": "assets/images/workbooks/samples/jungle_animals_sample_2.jpg",
-          "caption": "Jungle Animals Habitat Coloring"
+          "caption": "Activity Sheet 2"
         },
         {
           "src": "assets/images/workbooks/samples/jungle_animals_sample_3.jpg",
-          "caption": "Animal Drawing & Pre-Writing Paths"
+          "caption": "Activity Sheet 3"
         }
       ],
       "description": "Exciting safari and jungle animal drawing guides connecting animal anatomy with beginner-friendly art steps.",
@@ -459,8 +469,9 @@
       ],
       "featured": true,
       "status": "active",
-      "order": 11,
-      "createdAt": "2026-09-11T07:37:45.752Z"
+      "order": 13,
+      "createdAt": "2026-09-13T08:22:29.309755Z",
+      "pdf_match": "blue colorful illustration"
     },
     {
       "id": "learning_colors",
@@ -481,15 +492,15 @@
       "samples": [
         {
           "src": "assets/images/workbooks/samples/learning_colors_sample_1.jpg",
-          "caption": "Primary & Secondary Colors Sheet"
+          "caption": "Activity Sheet 1"
         },
         {
           "src": "assets/images/workbooks/samples/learning_colors_sample_2.jpg",
-          "caption": "Color Sorting & Matching Game"
+          "caption": "Activity Sheet 2"
         },
         {
           "src": "assets/images/workbooks/samples/learning_colors_sample_3.jpg",
-          "caption": "Color By Number Practice"
+          "caption": "Activity Sheet 3"
         }
       ],
       "description": "Visual recognition worksheets pairing basic color theory with playful illustration and sensory discovery.",
@@ -501,8 +512,471 @@
       ],
       "featured": true,
       "status": "active",
-      "order": 12,
-      "createdAt": "2026-09-11T07:37:45.752Z"
+      "order": 13,
+      "createdAt": "2026-09-13T08:22:29.309755Z",
+      "pdf_match": "learning colors"
+    },
+    {
+      "id": "fun_with_fruits",
+      "pdf_match": "fruit",
+      "title": "Fun with Fruits — Coloring & Learning Activity Book",
+      "category": "Preschool Discovery",
+      "categoryId": "discovery",
+      "tagClass": "badge-cute",
+      "badgeText": "🍓 Fruit Fun",
+      "age": "Ages 2.5–6",
+      "pages": "21 Printable Pages",
+      "price": "$4.99",
+      "originalPrice": "$8.99",
+      "reviews": "5.0 (14 reviews)",
+      "rating": 5,
+      "payhipUrl": "https://payhip.com/BrightSproutsStudio",
+      "description": "Delightful fruit-themed coloring and learning pages teaching healthy food vocabulary, color recognition, and controlled coloring boundaries.",
+      "developmentPillars": [
+        "Food vocabulary & healthy eating concepts",
+        "Color identification (Red, Green, Yellow, Purple)",
+        "Boundary awareness & controlled strokes",
+        "Sensory exploration & curiosity"
+      ],
+      "cover": "assets/images/workbooks/covers/fun_with_fruits_cover.jpg",
+      "samples": [
+        {
+          "src": "assets/images/workbooks/samples/fun_with_fruits_sample_1.jpg",
+          "caption": "Activity Sheet 1"
+        },
+        {
+          "src": "assets/images/workbooks/samples/fun_with_fruits_sample_2.jpg",
+          "caption": "Activity Sheet 2"
+        },
+        {
+          "src": "assets/images/workbooks/samples/fun_with_fruits_sample_3.jpg",
+          "caption": "Activity Sheet 3"
+        }
+      ],
+      "status": "active",
+      "featured": true,
+      "order": 13,
+      "createdAt": "2026-09-13T08:22:29.309755Z"
+    },
+    {
+      "id": "daily_life_skills",
+      "pdf_match": "daily life skill",
+      "title": "Daily Life Skills & Morning Routines for Kids",
+      "category": "Speech & Early Learning",
+      "categoryId": "speech",
+      "tagClass": "badge-therapy",
+      "badgeText": "☀️ Life Skills",
+      "age": "Ages 3–7",
+      "pages": "14 Printable Pages",
+      "price": "$4.99",
+      "originalPrice": "$8.99",
+      "reviews": "5.0 (16 reviews)",
+      "rating": 5,
+      "payhipUrl": "https://payhip.com/BrightSproutsStudio",
+      "description": "Therapist-created visual routine guides and life skill worksheets helping children master hand washing, teeth brushing, getting dressed, and morning schedules.",
+      "developmentPillars": [
+        "Daily routine sequencing & independence",
+        "Self-care & personal hygiene awareness",
+        "Expressive speech describing daily steps",
+        "Executive functioning & time predictability"
+      ],
+      "cover": "assets/images/workbooks/covers/daily_life_skills_cover.jpg",
+      "samples": [
+        {
+          "src": "assets/images/workbooks/samples/daily_life_skills_sample_1.jpg",
+          "caption": "Activity Sheet 1"
+        },
+        {
+          "src": "assets/images/workbooks/samples/daily_life_skills_sample_2.jpg",
+          "caption": "Activity Sheet 2"
+        },
+        {
+          "src": "assets/images/workbooks/samples/daily_life_skills_sample_3.jpg",
+          "caption": "Activity Sheet 3"
+        }
+      ],
+      "status": "active",
+      "featured": true,
+      "order": 14,
+      "createdAt": "2026-09-13T08:22:29.309755Z"
+    },
+    {
+      "id": "finish_my_picture",
+      "pdf_match": "finish my picture",
+      "title": "Finish My Picture — Creative Symmetry & Visual Closure",
+      "category": "Drawing & Creative Art",
+      "categoryId": "drawing",
+      "tagClass": "badge-popular",
+      "badgeText": "🎨 Symmetry Art",
+      "age": "Ages 3.5–8",
+      "pages": "22 Printable Pages",
+      "price": "$5.49",
+      "originalPrice": "$9.99",
+      "reviews": "5.0 (21 reviews)",
+      "rating": 5,
+      "payhipUrl": "https://payhip.com/BrightSproutsStudio",
+      "description": "Half-drawn picture prompts where children complete the other half of animals, vehicles, and objects, building visual symmetry, observation, and creative problem solving.",
+      "developmentPillars": [
+        "Visual closure & spatial symmetry",
+        "Mirror-image drawing & hand stability",
+        "Detail observation & proportion control",
+        "Creative storytelling through completion"
+      ],
+      "cover": "assets/images/workbooks/covers/finish_my_picture_cover.jpg",
+      "samples": [
+        {
+          "src": "assets/images/workbooks/samples/finish_my_picture_sample_1.jpg",
+          "caption": "Activity Sheet 1"
+        },
+        {
+          "src": "assets/images/workbooks/samples/finish_my_picture_sample_2.jpg",
+          "caption": "Activity Sheet 2"
+        },
+        {
+          "src": "assets/images/workbooks/samples/finish_my_picture_sample_3.jpg",
+          "caption": "Activity Sheet 3"
+        }
+      ],
+      "status": "active",
+      "featured": true,
+      "order": 15,
+      "createdAt": "2026-09-13T08:22:29.309755Z"
+    },
+    {
+      "id": "good_manners",
+      "pdf_match": "good manners",
+      "title": "I Know My Good Manners! Everyday Conversations",
+      "category": "Social-Emotional & Speech",
+      "categoryId": "emotional",
+      "tagClass": "badge-therapy",
+      "badgeText": "🤝 Social Skills",
+      "age": "Ages 3–7",
+      "pages": "20 Printable Pages",
+      "price": "$5.49",
+      "originalPrice": "$9.99",
+      "reviews": "5.0 (31 reviews)",
+      "rating": 5,
+      "payhipUrl": "https://payhip.com/BrightSproutsStudio",
+      "description": "Charming real-world social scenarios teaching polite conversation prompts (Please, Thank You, Excuse Me), turn-taking, sharing, and kind peer interactions.",
+      "developmentPillars": [
+        "Social-pragmatic communication & etiquette",
+        "Polite vocabulary in real conversations",
+        "Empathy & considering peers' feelings",
+        "Turn-taking and classroom social confidence"
+      ],
+      "cover": "assets/images/workbooks/covers/good_manners_cover.jpg",
+      "samples": [
+        {
+          "src": "assets/images/workbooks/samples/good_manners_sample_1.jpg",
+          "caption": "Activity Sheet 1"
+        },
+        {
+          "src": "assets/images/workbooks/samples/good_manners_sample_2.jpg",
+          "caption": "Activity Sheet 2"
+        },
+        {
+          "src": "assets/images/workbooks/samples/good_manners_sample_3.jpg",
+          "caption": "Activity Sheet 3"
+        }
+      ],
+      "status": "active",
+      "featured": true,
+      "order": 16,
+      "createdAt": "2026-09-13T08:22:29.309755Z"
+    },
+    {
+      "id": "learn_phonics",
+      "pdf_match": "learn phonics",
+      "title": "Learn Phonics & Letter Sounds for Confident Reading",
+      "category": "ABC & Alphabet Learning",
+      "categoryId": "abc",
+      "tagClass": "badge-bestseller",
+      "badgeText": "🔤 Phonics Focus",
+      "age": "Ages 4–7",
+      "pages": "23 Printable Pages",
+      "price": "$5.99",
+      "originalPrice": "$11.99",
+      "reviews": "5.0 (27 reviews)",
+      "rating": 5,
+      "payhipUrl": "https://payhip.com/BrightSproutsStudio",
+      "description": "Phonological awareness workbook connecting letter shapes to their phonetic sounds, short vowels, consonant blends, and early word blending.",
+      "developmentPillars": [
+        "Phonemic awareness & auditory discrimination",
+        "Letter-sound correspondence (Phonics)",
+        "Beginning sound identification",
+        "Early kindergarten reading readiness"
+      ],
+      "cover": "assets/images/workbooks/covers/learn_phonics_cover.jpg",
+      "samples": [
+        {
+          "src": "assets/images/workbooks/samples/learn_phonics_sample_1.jpg",
+          "caption": "Activity Sheet 1"
+        },
+        {
+          "src": "assets/images/workbooks/samples/learn_phonics_sample_2.jpg",
+          "caption": "Activity Sheet 2"
+        },
+        {
+          "src": "assets/images/workbooks/samples/learn_phonics_sample_3.jpg",
+          "caption": "Activity Sheet 3"
+        }
+      ],
+      "status": "active",
+      "featured": true,
+      "order": 17,
+      "createdAt": "2026-09-13T08:22:29.309755Z"
+    },
+    {
+      "id": "little_detective",
+      "pdf_match": "little detective",
+      "title": "Little Detective — Language & Visual Discrimination",
+      "category": "Speech & Early Learning",
+      "categoryId": "speech",
+      "tagClass": "badge-popular",
+      "badgeText": "🔍 Top Rated",
+      "age": "Ages 4–8",
+      "pages": "30 Printable Pages",
+      "price": "$5.99",
+      "originalPrice": "$11.99",
+      "reviews": "5.0 (35 reviews)",
+      "rating": 5,
+      "payhipUrl": "https://payhip.com/BrightSproutsStudio",
+      "description": "Engaging 'I Spy' and search-and-find deduction sheets where children identify hidden clues, categorize objects, and explain their reasoning using full sentences.",
+      "developmentPillars": [
+        "Visual discrimination & foreground/background separation",
+        "Descriptive language & expressive vocabulary",
+        "Attention to detail & sustained focus",
+        "Deductive cognitive reasoning"
+      ],
+      "cover": "assets/images/workbooks/covers/little_detective_cover.jpg",
+      "samples": [
+        {
+          "src": "assets/images/workbooks/samples/little_detective_sample_1.jpg",
+          "caption": "Activity Sheet 1"
+        },
+        {
+          "src": "assets/images/workbooks/samples/little_detective_sample_2.jpg",
+          "caption": "Activity Sheet 2"
+        },
+        {
+          "src": "assets/images/workbooks/samples/little_detective_sample_3.jpg",
+          "caption": "Activity Sheet 3"
+        }
+      ],
+      "status": "active",
+      "featured": true,
+      "order": 18,
+      "createdAt": "2026-09-13T08:22:29.309755Z"
+    },
+    {
+      "id": "little_problem_solver",
+      "pdf_match": "little problem solver",
+      "title": "Little Problem Solver — Logic, Sequencing & Puzzles",
+      "category": "Numbers & Early Math",
+      "categoryId": "numbers",
+      "tagClass": "badge-math",
+      "badgeText": "🧩 Logic & Math",
+      "age": "Ages 4–8",
+      "pages": "29 Printable Pages",
+      "price": "$5.99",
+      "originalPrice": "$11.99",
+      "reviews": "5.0 (23 reviews)",
+      "rating": 5,
+      "payhipUrl": "https://payhip.com/BrightSproutsStudio",
+      "description": "Brain-building puzzles, sequential picture ordering (What happens next?), maze navigation, and logical pattern matching.",
+      "developmentPillars": [
+        "Sequential thinking & narrative structure",
+        "Logical reasoning & problem deduction",
+        "Spatial planning & maze navigation",
+        "Patience and persistence with multi-step tasks"
+      ],
+      "cover": "assets/images/workbooks/covers/little_problem_solver_cover.jpg",
+      "samples": [
+        {
+          "src": "assets/images/workbooks/samples/little_problem_solver_sample_1.jpg",
+          "caption": "Activity Sheet 1"
+        },
+        {
+          "src": "assets/images/workbooks/samples/little_problem_solver_sample_2.jpg",
+          "caption": "Activity Sheet 2"
+        },
+        {
+          "src": "assets/images/workbooks/samples/little_problem_solver_sample_3.jpg",
+          "caption": "Activity Sheet 3"
+        }
+      ],
+      "status": "active",
+      "featured": true,
+      "order": 19,
+      "createdAt": "2026-09-13T08:22:29.309755Z"
+    },
+    {
+      "id": "matching_sorting",
+      "pdf_match": "matching & sorting",
+      "title": "Matching & Sorting Early Concept Preschool Workbook",
+      "category": "Preschool Discovery",
+      "categoryId": "discovery",
+      "tagClass": "badge-cute",
+      "badgeText": "📦 Early Skills",
+      "age": "Ages 2.5–5",
+      "pages": "23 Printable Pages",
+      "price": "$4.99",
+      "originalPrice": "$8.99",
+      "reviews": "4.9 (19 reviews)",
+      "rating": 4.9,
+      "payhipUrl": "https://payhip.com/BrightSproutsStudio",
+      "description": "Foundational cognitive sorting by size (Big vs. Small), category (Animals vs. Vehicles), and color pairs to establish preschool categorization skills.",
+      "developmentPillars": [
+        "Concept classification & attribute grouping",
+        "Comparative vocabulary (Bigger/Smaller, Heavy/Light)",
+        "Visual discrimination & pair matching",
+        "Cognitive flexibility"
+      ],
+      "cover": "assets/images/workbooks/covers/matching_sorting_cover.jpg",
+      "samples": [
+        {
+          "src": "assets/images/workbooks/samples/matching_sorting_sample_1.jpg",
+          "caption": "Activity Sheet 1"
+        },
+        {
+          "src": "assets/images/workbooks/samples/matching_sorting_sample_2.jpg",
+          "caption": "Activity Sheet 2"
+        },
+        {
+          "src": "assets/images/workbooks/samples/matching_sorting_sample_3.jpg",
+          "caption": "Activity Sheet 3"
+        }
+      ],
+      "status": "active",
+      "featured": true,
+      "order": 20,
+      "createdAt": "2026-09-13T08:22:29.309755Z"
+    },
+    {
+      "id": "shape_hunt",
+      "pdf_match": "shape hunt",
+      "title": "Shape Hunt — Learn, Trace & Spot Everyday Shapes",
+      "category": "Numbers & Early Math",
+      "categoryId": "numbers",
+      "tagClass": "badge-math",
+      "badgeText": "📐 Shapes & Math",
+      "age": "Ages 3–6",
+      "pages": "16 Printable Pages",
+      "price": "$4.99",
+      "originalPrice": "$8.99",
+      "reviews": "5.0 (15 reviews)",
+      "rating": 5,
+      "payhipUrl": "https://payhip.com/BrightSproutsStudio",
+      "description": "Explore circles, squares, triangles, rectangles, ovals, and stars through shape tracing paths and real-world environment shape searches.",
+      "developmentPillars": [
+        "Geometric 2D shape identification",
+        "Fine-motor shape tracing & corner control",
+        "Visual-spatial environment mapping",
+        "Pre-math spatial awareness"
+      ],
+      "cover": "assets/images/workbooks/covers/shape_hunt_cover.jpg",
+      "samples": [
+        {
+          "src": "assets/images/workbooks/samples/shape_hunt_sample_1.jpg",
+          "caption": "Activity Sheet 1"
+        },
+        {
+          "src": "assets/images/workbooks/samples/shape_hunt_sample_2.jpg",
+          "caption": "Activity Sheet 2"
+        },
+        {
+          "src": "assets/images/workbooks/samples/shape_hunt_sample_3.jpg",
+          "caption": "Activity Sheet 3"
+        }
+      ],
+      "status": "active",
+      "featured": true,
+      "order": 21,
+      "createdAt": "2026-09-13T08:22:29.309755Z"
+    },
+    {
+      "id": "bedtime_stories",
+      "pdf_match": "sweet dreams",
+      "title": "Sweet Dreams, Little One — 4 Gentle Bedtime Stories",
+      "category": "Social-Emotional & Speech",
+      "categoryId": "emotional",
+      "tagClass": "badge-therapy",
+      "badgeText": "🌙 Bedtime Story",
+      "age": "Ages 2–7",
+      "pages": "17 Printable Pages",
+      "price": "$5.49",
+      "originalPrice": "$9.99",
+      "reviews": "5.0 (33 reviews)",
+      "rating": 5,
+      "payhipUrl": "https://payhip.com/BrightSproutsStudio",
+      "description": "Four beautifully illustrated calming stories designed for bedtime wind-down, teaching deep breathing, gentle reflection, and listening comprehension.",
+      "developmentPillars": [
+        "Auditory listening comprehension & story recall",
+        "Emotional regulation & calming bedtime routines",
+        "Expressive conversation & bonding",
+        "Mindful breathing & sleep relaxation"
+      ],
+      "cover": "assets/images/workbooks/covers/bedtime_stories_cover.jpg",
+      "samples": [
+        {
+          "src": "assets/images/workbooks/samples/bedtime_stories_sample_1.jpg",
+          "caption": "Activity Sheet 1"
+        },
+        {
+          "src": "assets/images/workbooks/samples/bedtime_stories_sample_2.jpg",
+          "caption": "Activity Sheet 2"
+        },
+        {
+          "src": "assets/images/workbooks/samples/bedtime_stories_sample_3.jpg",
+          "caption": "Activity Sheet 3"
+        }
+      ],
+      "status": "active",
+      "featured": true,
+      "order": 22,
+      "createdAt": "2026-09-13T08:22:29.309755Z"
+    },
+    {
+      "id": "playful_drawing",
+      "pdf_match": "playful kids drawing",
+      "title": "Playful Kids Drawing & Creative Art Adventure",
+      "category": "Drawing & Creative Art",
+      "categoryId": "drawing",
+      "tagClass": "badge-popular",
+      "badgeText": "🎨 Drawing Fun",
+      "age": "Ages 3–7",
+      "pages": "21 Printable Pages",
+      "price": "$4.99",
+      "originalPrice": "$8.99",
+      "reviews": "5.0 (20 reviews)",
+      "rating": 5,
+      "payhipUrl": "https://payhip.com/BrightSproutsStudio",
+      "description": "Joyful step-by-step drawing exercises breaking down rockets, castles, trees, and cute characters into beginner strokes.",
+      "developmentPillars": [
+        "Basic object construction from shapes",
+        "Fluid hand motions and pencil grip",
+        "Artistic imagination & coloring freedom",
+        "Boosted drawing confidence"
+      ],
+      "cover": "assets/images/workbooks/covers/playful_drawing_cover.jpg",
+      "samples": [
+        {
+          "src": "assets/images/workbooks/samples/playful_drawing_sample_1.jpg",
+          "caption": "Activity Sheet 1"
+        },
+        {
+          "src": "assets/images/workbooks/samples/playful_drawing_sample_2.jpg",
+          "caption": "Activity Sheet 2"
+        },
+        {
+          "src": "assets/images/workbooks/samples/playful_drawing_sample_3.jpg",
+          "caption": "Activity Sheet 3"
+        }
+      ],
+      "status": "active",
+      "featured": true,
+      "order": 23,
+      "createdAt": "2026-09-13T08:22:29.309755Z"
     }
   ],
   "categories": [
@@ -652,10 +1126,21 @@
     }
   ],
   "analytics": {
-    "pageViews": 142,
+    "pageViews": 144,
     "lookInsideViews": 68,
     "payhipClicks": 35,
     "leadsCount": 1,
-    "events": []
+    "events": [
+      {
+        "event": "pageview",
+        "targetId": null,
+        "timestamp": "2026-09-13T07:38:39.990Z"
+      },
+      {
+        "event": "pageview",
+        "targetId": null,
+        "timestamp": "2026-09-13T07:40:28.692Z"
+      }
+    ]
   }
 }
