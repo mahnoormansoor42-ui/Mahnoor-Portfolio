@@ -515,48 +515,6 @@
       "createdAt": "2026-09-13T08:22:29.309755Z"
     },
     {
-      "id": "finish_my_picture",
-      "pdf_match": "finish my picture",
-      "title": "Finish My Picture — Creative Symmetry & Visual Closure",
-      "category": "Drawing & Creative Art",
-      "categoryId": "drawing",
-      "tagClass": "badge-popular",
-      "badgeText": "🎨 Symmetry Art",
-      "age": "Ages 3.5–8",
-      "pages": "22 Printable Pages",
-      "price": "$5.49",
-      "originalPrice": "$9.99",
-      "reviews": "5.0 (21 reviews)",
-      "rating": 5,
-      "payhipUrl": "https://payhip.com/BrightSproutsStudio",
-      "description": "Half-drawn picture prompts where children complete the other half of animals, vehicles, and objects, building visual symmetry, observation, and creative problem solving.",
-      "developmentPillars": [
-        "Visual closure & spatial symmetry",
-        "Mirror-image drawing & hand stability",
-        "Detail observation & proportion control",
-        "Creative storytelling through completion"
-      ],
-      "cover": "assets/images/workbooks/covers/finish_my_picture_cover.jpg",
-      "samples": [
-        {
-          "src": "assets/images/workbooks/samples/finish_my_picture_sample_1.jpg",
-          "caption": "Activity Sheet 1"
-        },
-        {
-          "src": "assets/images/workbooks/samples/finish_my_picture_sample_2.jpg",
-          "caption": "Activity Sheet 2"
-        },
-        {
-          "src": "assets/images/workbooks/samples/finish_my_picture_sample_3.jpg",
-          "caption": "Activity Sheet 3"
-        }
-      ],
-      "status": "active",
-      "featured": true,
-      "order": 15,
-      "createdAt": "2026-09-13T08:22:29.309755Z"
-    },
-    {
       "id": "good_manners",
       "pdf_match": "good manners",
       "title": "I Know My Good Manners! Everyday Conversations",
@@ -974,6 +932,48 @@
       "featured": true,
       "status": "active",
       "order": 2,
+      "createdAt": "2026-09-13T08:21:26.456Z"
+    },
+    {
+      "id": "finish_my_picture",
+      "title": "Finish My Picture — Creative Symmetry & Visual Closure",
+      "category": "Drawing & Creative Art",
+      "categoryId": "drawing",
+      "tagClass": "badge-popular",
+      "badgeText": "🎨 Symmetry Art",
+      "age": "Ages 3.5–8",
+      "pages": "22 Printable Pages",
+      "price": "$5.49",
+      "originalPrice": "$9.99",
+      "reviews": "5.0 (21 reviews)",
+      "rating": 5,
+      "reviewCount": 25,
+      "cover": "assets/images/workbooks/covers/finish_my_picture_cover.jpg",
+      "payhipUrl": "https://payhip.com/BrightSproutsStudio",
+      "samples": [
+        {
+          "src": "assets/images/workbooks/samples/finish_my_picture_sample_1.jpg",
+          "caption": "Activity Sheet 1"
+        },
+        {
+          "src": "assets/images/workbooks/samples/finish_my_picture_sample_2.jpg",
+          "caption": "Activity Sheet 2"
+        },
+        {
+          "src": "assets/images/workbooks/samples/finish_my_picture_sample_3.jpg",
+          "caption": "Activity Sheet 3"
+        }
+      ],
+      "description": "Half-drawn picture prompts where children complete the other half of animals, vehicles, and objects, building visual symmetry, observation, and creative problem solving.",
+      "developmentPillars": [
+        "Visual closure & spatial symmetry",
+        "Mirror-image drawing & hand stability",
+        "Detail observation & proportion control",
+        "Creative storytelling through completion"
+      ],
+      "featured": true,
+      "status": "active",
+      "order": 15,
       "createdAt": "2026-09-13T08:21:26.456Z"
     }
   ],
