@@ -1126,7 +1126,7 @@
     }
   ],
   "analytics": {
-    "pageViews": 144,
+    "pageViews": 147,
     "lookInsideViews": 68,
     "payhipClicks": 35,
     "leadsCount": 1,
@@ -1140,6 +1140,21 @@
         "event": "pageview",
         "targetId": null,
         "timestamp": "2026-09-13T07:40:28.692Z"
+      },
+      {
+        "event": "pageview",
+        "targetId": null,
+        "timestamp": "2026-09-13T09:01:15.256Z"
+      },
+      {
+        "event": "pageview",
+        "targetId": null,
+        "timestamp": "2026-09-13T09:01:15.873Z"
+      },
+      {
+        "event": "pageview",
+        "targetId": null,
+        "timestamp": "2026-09-13T09:02:57.935Z"
       }
     ]
   }

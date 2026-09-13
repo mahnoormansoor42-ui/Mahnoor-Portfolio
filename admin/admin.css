@@ -200,52 +200,82 @@ body {
    Top Navbar
    -------------------------------------------------------------------------- */
 .admin-topbar {
-  height: 70px;
+  min-height: 70px;
   background: var(--bg-surface);
   border-bottom: 1px solid var(--border-color);
-  padding: 0 32px;
+  padding: 12px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: sticky;
   top: 0;
   z-index: 90;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
 .topbar-left {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
+  flex-shrink: 0;
 }
 
 .page-title {
   font-family: var(--font-heading);
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   font-weight: 700;
   color: var(--text-main);
+  white-space: nowrap;
 }
 
 .topbar-right {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.btn-topbar-secondary {
+  background: #F8FAFC;
+  color: #334155;
+  border: 1px solid #CBD5E1;
+  padding: 8px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.btn-topbar-secondary:hover {
+  background: #E2E8F0;
+  color: #0F172A;
+  border-color: #94A3B8;
+  transform: translateY(-1px);
 }
 
 .btn-primary-action {
   background: var(--primary);
   color: #FFFFFF;
   border: none;
-  padding: 10px 20px;
+  padding: 8px 16px;
   border-radius: var(--radius-full);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 700;
   font-family: inherit;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   box-shadow: 0 4px 12px rgba(22, 163, 74, 0.25);
   transition: var(--transition);
+  white-space: nowrap;
 }
 
 .btn-primary-action:hover {
@@ -258,6 +288,11 @@ body {
   align-items: center;
   gap: 10px;
   background: var(--bg-app);
+  padding: 4px 12px 4px 6px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-color);
+  flex-shrink: 0;
+}
   padding: 6px 14px 6px 8px;
   border-radius: var(--radius-full);
   border: 1px solid var(--border-color);
