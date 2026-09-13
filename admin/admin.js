@@ -17,7 +17,7 @@ const state = {
 // Strict Authentication Guard
 const token = localStorage.getItem('bss_admin_token');
 if (!token) {
-  window.location.replace('login.html');
+  window.location.replace('/admin/login.html?restricted=1');
 }
 
 const authHeaders = {
@@ -37,15 +37,14 @@ fetch('/api/auth/verify', { headers: authHeaders })
     } else {
       localStorage.removeItem('bss_admin_token');
       localStorage.removeItem('bss_admin_user');
-      window.location.replace('login.html');
+      window.location.replace('/admin/login.html?restricted=1');
     }
   })
   .catch(() => {
-    // If backend offline, check local token presence
     if (token) {
       document.body.style.opacity = '1';
     } else {
-      window.location.replace('login.html');
+      window.location.replace('/admin/login.html?restricted=1');
     }
   });
 

@@ -3,203 +3,324 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Login — Bright Sprout Studio</title>
+  <title>Admin Authentication — Bright Sprout Studio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="admin.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Quicksand:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/admin/admin.css">
   <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
     body {
       display: flex;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
       background: radial-gradient(circle at 10% 20%, #FFF4E6 0%, #FAF6EE 50%, #E8F5E9 100%);
-      padding: 20px;
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      padding: 24px;
+      color: #1E293B;
+    }
+    .login-container {
+      width: 100%;
+      max-width: 450px;
     }
     .login-card {
-      width: 100%;
-      max-width: 440px;
       background: #FFFFFF;
-      border-radius: 24px;
-      padding: 40px 36px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.07), 0 1px 3px rgba(0, 0, 0, 0.05);
+      border-radius: 28px;
+      padding: 44px 38px;
+      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08), 0 2px 6px rgba(15, 23, 42, 0.04);
       border: 1px solid #ECE7DE;
       text-align: center;
+      transition: transform 0.2s ease;
     }
-    .login-brand-icon {
-      width: 64px;
-      height: 64px;
+    .login-card.shake {
+      animation: shake 0.4s ease-in-out;
+    }
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-8px); }
+      40%, 80% { transform: translateX(8px); }
+    }
+    .brand-avatar {
+      width: 68px;
+      height: 68px;
       background: #E8F8EE;
-      border-radius: 20px;
+      border-radius: 22px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 2rem;
+      font-size: 2.2rem;
       margin-bottom: 20px;
-      border: 1px solid #C4EED1;
-      box-shadow: 0 4px 12px rgba(46, 125, 50, 0.12);
+      border: 1.5px solid #C4EED1;
+      box-shadow: 0 8px 18px rgba(22, 163, 74, 0.15);
     }
     .login-title {
       font-family: 'Quicksand', sans-serif;
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: #2D3748;
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: #0F172A;
       margin-bottom: 6px;
     }
-    .login-sub {
-      font-size: 0.9rem;
-      color: #718096;
-      margin-bottom: 28px;
+    .login-subtitle {
+      font-size: 0.92rem;
+      color: #64748B;
+      line-height: 1.45;
+      margin-bottom: 26px;
     }
+
+    /* Banners */
+    .notice-box {
+      display: none;
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-align: left;
+      margin-bottom: 20px;
+      line-height: 1.4;
+      align-items: center;
+      gap: 10px;
+    }
+    .notice-restricted {
+      background: #FEF3C7;
+      color: #92400E;
+      border: 1px solid #FDE68A;
+    }
+    .notice-error {
+      background: #FEF2F2;
+      color: #B91C1C;
+      border: 1px solid #FECACA;
+    }
+    .notice-success {
+      background: #F0FDF4;
+      color: #15803D;
+      border: 1px solid #BBF7D0;
+    }
+
     .login-form {
       text-align: left;
       display: flex;
       flex-direction: column;
       gap: 18px;
     }
-    .form-group {
+    .input-group {
       display: flex;
       flex-direction: column;
       gap: 6px;
     }
-    .form-label {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: #4A5568;
+    .input-label {
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: #334155;
     }
-    .form-input {
+    .input-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .input-field {
       width: 100%;
-      padding: 12px 16px;
-      border-radius: 12px;
-      border: 1.5px solid #E2E8F0;
+      padding: 13px 16px;
+      border-radius: 14px;
+      border: 1.5px solid #CBD5E1;
       font-size: 0.95rem;
       font-family: inherit;
+      background: #F8FAFC;
       transition: all 0.2s ease;
-      background: #FDFBF7;
+      color: #0F172A;
     }
-    .form-input:focus {
+    .input-field:focus {
       outline: none;
-      border-color: #2E7D32;
+      border-color: #16A34A;
       background: #FFFFFF;
-      box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.15);
+      box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.12);
     }
-    .btn-login {
-      margin-top: 10px;
+    .pwd-toggle-btn {
+      position: absolute;
+      right: 14px;
+      background: none;
+      border: none;
+      color: #64748B;
+      cursor: pointer;
+      font-size: 1.1rem;
+      padding: 4px;
+    }
+    .btn-submit {
+      margin-top: 8px;
       width: 100%;
       padding: 14px;
-      background: #2E7D32;
+      background: #16A34A;
       color: #FFFFFF;
       border: none;
       border-radius: 14px;
       font-size: 1rem;
       font-weight: 700;
       cursor: pointer;
-      box-shadow: 0 4px 14px rgba(46, 125, 50, 0.3);
+      box-shadow: 0 6px 16px rgba(22, 163, 74, 0.28);
       transition: all 0.2s ease;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
+      font-family: inherit;
     }
-    .btn-login:hover {
-      background: #256628;
+    .btn-submit:hover {
+      background: #15803D;
       transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(22, 163, 74, 0.35);
     }
-    .alert-error {
-      background: #FFF5F5;
-      color: #C53030;
-      padding: 12px;
-      border-radius: 10px;
-      font-size: 0.88rem;
-      border: 1px solid #FEB2B2;
-      margin-bottom: 16px;
-      display: none;
+    .btn-submit:active {
+      transform: translateY(0);
     }
-    .login-helper {
+    .btn-submit:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+
+    .credentials-hint {
       margin-top: 24px;
-      padding: 12px;
-      background: #F7FAFC;
-      border-radius: 10px;
-      font-size: 0.82rem;
-      color: #718096;
-      border: 1px dashed #CBD5E0;
+      padding: 14px 16px;
+      background: #F8FAFC;
+      border-radius: 14px;
+      font-size: 0.83rem;
+      color: #64748B;
+      border: 1px dashed #CBD5E1;
+      text-align: left;
+      line-height: 1.5;
     }
-    .back-link {
-      display: inline-block;
-      margin-top: 20px;
+    .credentials-hint code {
+      background: #E2E8F0;
+      color: #0F172A;
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-family: monospace;
       font-size: 0.88rem;
-      color: #4A5568;
+    }
+    .back-store-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 22px;
+      font-size: 0.88rem;
+      color: #475569;
       text-decoration: none;
       font-weight: 600;
+      transition: color 0.2s ease;
     }
-    .back-link:hover {
-      color: #2E7D32;
+    .back-store-btn:hover {
+      color: #16A34A;
       text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-  <div class="login-card">
-    <div class="login-brand-icon">🌱</div>
-    <h1 class="login-title">Studio Admin Portal</h1>
-    <p class="login-sub">Sign in to manage your workbooks, leads, and store content</p>
+  <div class="login-container">
+    <div class="login-card" id="loginCard">
+      
+      <div class="brand-avatar">🌱</div>
+      <h1 class="login-title">Studio Admin Portal</h1>
+      <p class="login-subtitle">Sign in to manage workbooks, orders, leads, and store copy.</p>
 
-    <div id="loginAlert" class="alert-error"></div>
-
-    <form id="loginForm" class="login-form">
-      <div class="form-group">
-        <label for="username" class="form-label">Username</label>
-        <input type="text" id="username" class="form-input" placeholder="admin" value="admin" required autofocus>
+      <!-- Decent Alerts / Notices -->
+      <div id="noticeRestricted" class="notice-box notice-restricted">
+        <span>🔒</span>
+        <span><strong>Access Restricted:</strong> Please enter your administrator credentials to continue to the Dashboard.</span>
       </div>
 
-      <div class="form-group">
-        <label for="password" class="form-label">Password</label>
-        <input type="password" id="password" class="form-input" placeholder="••••••••" value="password123" required>
+      <div id="noticeError" class="notice-box notice-error">
+        <span>⚠️</span>
+        <span id="errorMessageText">Invalid credentials. Please verify and try again.</span>
       </div>
 
-      <button type="submit" id="loginBtn" class="btn-login">
-        <span>Sign In to Dashboard →</span>
-      </button>
-    </form>
+      <form id="adminLoginForm" class="login-form">
+        <div class="input-group">
+          <label for="usernameInput" class="input-label">Admin Username</label>
+          <div class="input-wrap">
+            <input type="text" id="usernameInput" class="input-field" placeholder="admin" value="admin" required autofocus autocomplete="username">
+          </div>
+        </div>
 
-    <div class="login-helper">
-      💡 <strong>Default Local Credentials:</strong><br>
-      User: <code>admin</code> &bull; Password: <code>password123</code>
+        <div class="input-group">
+          <label for="passwordInput" class="input-label">Admin Password</label>
+          <div class="input-wrap">
+            <input type="password" id="passwordInput" class="input-field" placeholder="••••••••" value="password123" required autocomplete="current-password">
+            <button type="button" id="togglePasswordBtn" class="pwd-toggle-btn" title="Show / Hide Password">👁️</button>
+          </div>
+        </div>
+
+        <button type="submit" id="submitBtn" class="btn-submit">
+          <span>Sign In to Dashboard →</span>
+        </button>
+      </form>
+
+      <div class="credentials-hint">
+        💡 <strong>Default Administrator Access:</strong><br>
+        User: <code>admin</code> &bull; Password: <code>password123</code>
+      </div>
+
+      <a href="/" class="back-store-btn">← Back to Public Storefront</a>
+
     </div>
-
-    <a href="../index.html" class="back-link">← Return to Public Storefront</a>
   </div>
 
   <script>
-    const form = document.getElementById('loginForm');
-    const alertBox = document.getElementById('loginAlert');
-    const loginBtn = document.getElementById('loginBtn');
+    const form = document.getElementById('adminLoginForm');
+    const card = document.getElementById('loginCard');
+    const noticeRestricted = document.getElementById('noticeRestricted');
+    const noticeError = document.getElementById('noticeError');
+    const errorText = document.getElementById('errorMessageText');
+    const submitBtn = document.getElementById('submitBtn');
+    const passwordInput = document.getElementById('passwordInput');
+    const togglePasswordBtn = document.getElementById('togglePasswordBtn');
 
-    // If already logged in, redirect to dashboard
+    // Check URL query parameters for restricted access notices
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('restricted') || urlParams.has('unauthorized')) {
+      noticeRestricted.style.display = 'flex';
+    }
+
+    // Toggle password visibility
+    togglePasswordBtn.addEventListener('click', () => {
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        togglePasswordBtn.textContent = '🙈';
+      } else {
+        passwordInput.type = 'password';
+        togglePasswordBtn.textContent = '👁️';
+      }
+    });
+
+    // If already logged in with valid token, redirect immediately
     const existingToken = localStorage.getItem('bss_admin_token');
     if (existingToken) {
       fetch('/api/auth/verify', {
         headers: { 'Authorization': 'Bearer ' + existingToken }
       })
-      .then(res => res.json())
+      .then(r => r.json())
       .then(data => {
-        if (data.valid) {
-          window.location.href = 'index.html';
+        if (data && data.valid) {
+          window.location.replace('/admin/index.html');
         }
       })
       .catch(() => {});
     }
 
+    // Handle Form Submit
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      alertBox.style.display = 'none';
-      loginBtn.disabled = true;
-      loginBtn.innerHTML = '<span>Signing in... ⏳</span>';
+      noticeError.style.display = 'none';
+      noticeRestricted.style.display = 'none';
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span>Verifying credentials... ⏳</span>';
 
-      const username = document.getElementById('username').value.trim();
-      const password = document.getElementById('password').value.trim();
+      const username = document.getElementById('usernameInput').value.trim();
+      const password = passwordInput.value.trim();
 
       try {
         const response = await fetch('/api/auth/login', {
@@ -213,18 +334,23 @@
         if (response.ok && data.success) {
           localStorage.setItem('bss_admin_token', data.token);
           localStorage.setItem('bss_admin_user', JSON.stringify(data.user));
-          window.location.href = 'index.html';
+          submitBtn.innerHTML = '<span>Success! Redirecting... ✅</span>';
+          setTimeout(() => {
+            window.location.replace('/admin/index.html');
+          }, 300);
         } else {
-          alertBox.textContent = data.error || 'Invalid username or password.';
-          alertBox.style.display = 'block';
-          loginBtn.disabled = false;
-          loginBtn.innerHTML = '<span>Sign In to Dashboard →</span>';
+          errorText.textContent = data.error || 'Invalid username or password. Please try again.';
+          noticeError.style.display = 'flex';
+          card.classList.add('shake');
+          setTimeout(() => card.classList.remove('shake'), 500);
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<span>Sign In to Dashboard →</span>';
         }
       } catch (err) {
-        alertBox.textContent = 'Server connection error. Please make sure the server is running.';
-        alertBox.style.display = 'block';
-        loginBtn.disabled = false;
-        loginBtn.innerHTML = '<span>Sign In to Dashboard →</span>';
+        errorText.textContent = 'Server connection error. Please make sure the backend server is running.';
+        noticeError.style.display = 'flex';
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<span>Sign In to Dashboard →</span>';
       }
     });
   </script>

@@ -11,7 +11,7 @@
     (function() {
       var token = localStorage.getItem('bss_admin_token');
       if (!token) {
-        window.location.replace('login.html');
+        window.location.replace('/admin/login.html?restricted=1');
       }
     })();
   </script>
@@ -22,7 +22,7 @@
       transition: opacity 0.2s ease-in;
     }
   </style>
-  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="/admin/admin.css">
 </head>
 <body>
 
