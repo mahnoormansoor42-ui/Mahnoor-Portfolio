@@ -892,11 +892,17 @@ document.getElementById('btnExportLeadsCsv').addEventListener('click', () => {
 });
 
 // Logout
-document.getElementById('btnLogout').addEventListener('click', () => {
+function performLogout() {
   localStorage.removeItem('bss_admin_token');
   localStorage.removeItem('bss_admin_user');
   window.location.href = 'login.html';
-});
+}
+
+const btnLogout = document.getElementById('btnLogout');
+if (btnLogout) btnLogout.addEventListener('click', performLogout);
+
+const btnSidebarLogout = document.getElementById('btnSidebarLogout');
+if (btnSidebarLogout) btnSidebarLogout.addEventListener('click', performLogout);
 
 // Event Listeners for Filter / Search Inputs
 document.getElementById('productSearchInput').addEventListener('input', renderProducts);

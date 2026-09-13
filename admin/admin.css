@@ -293,10 +293,6 @@ body {
   border: 1px solid var(--border-color);
   flex-shrink: 0;
 }
-  padding: 6px 14px 6px 8px;
-  border-radius: var(--radius-full);
-  border: 1px solid var(--border-color);
-}
 
 .admin-avatar {
   width: 32px;
@@ -328,17 +324,49 @@ body {
 }
 
 .btn-logout {
-  background: none;
-  border: none;
-  color: var(--text-muted);
+  background: #FEE2E2;
+  border: 1px solid #FECACA;
+  color: #DC2626;
+  border-radius: var(--radius-full);
+  padding: 4px 10px;
+  font-size: 0.78rem;
+  font-weight: 700;
   cursor: pointer;
-  padding: 4px 8px;
-  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
   transition: var(--transition);
+  margin-left: 4px;
 }
 
 .btn-logout:hover {
-  color: var(--danger);
+  background: #DC2626;
+  color: #FFFFFF;
+  border-color: #DC2626;
+}
+
+.btn-sidebar-logout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: rgba(239, 68, 68, 0.15);
+  color: #FCA5A5;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: var(--radius-md);
+  font-size: 0.86rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  font-family: inherit;
+  transition: var(--transition);
+}
+
+.btn-sidebar-logout:hover {
+  background: #EF4444;
+  color: #FFFFFF;
+  border-color: #EF4444;
 }
 
 /* --------------------------------------------------------------------------
