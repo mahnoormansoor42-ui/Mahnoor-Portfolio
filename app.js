@@ -297,18 +297,82 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   };
 
-  // 2. Fetch Live Dynamic Products from API if running backend
+  // 2. Fetch Live Dynamic Data from API (if backend is active)
   try {
-    const apiProducts = await fetch('/api/products').then(r => r.ok ? r.json() : null);
+    const [apiProducts, apiSettings, apiReviews, apiFaqs] = await Promise.all([
+      fetch('/api/products').then(r => r.ok ? r.json() : null).catch(() => null),
+      fetch('/api/settings').then(r => r.ok ? r.json() : null).catch(() => null),
+      fetch('/api/reviews').then(r => r.ok ? r.json() : null).catch(() => null),
+      fetch('/api/faqs').then(r => r.ok ? r.json() : null).catch(() => null)
+    ]);
+
     if (Array.isArray(apiProducts) && apiProducts.length > 0) {
       const dynamicCatalog = {};
       apiProducts.forEach(p => {
         dynamicCatalog[p.id] = p;
       });
       workbookCatalog = dynamicCatalog;
+      renderStorefrontProducts(apiProducts);
+    }
+
+    if (apiSettings) {
+      if (apiSettings.announcement) {
+        const banner = document.querySelector('.top-announcement-bar');
+        const textEl = document.querySelector('.announcement-text');
+        const linkEl = document.querySelector('.announcement-link');
+        if (banner) banner.style.display = apiSettings.announcement.enabled ? 'block' : 'none';
+        if (textEl && apiSettings.announcement.text) textEl.textContent = apiSettings.announcement.text;
+        if (linkEl && apiSettings.announcement.linkText) {
+          linkEl.textContent = apiSettings.announcement.linkText;
+          if (apiSettings.announcement.linkUrl) linkEl.href = apiSettings.announcement.linkUrl;
+        }
+      }
+      if (apiSettings.hero) {
+        const headline = document.querySelector('.hero-headline');
+        const subheadline = document.querySelector('.hero-description');
+        if (headline && apiSettings.hero.headline) headline.innerHTML = apiSettings.hero.headline;
+        if (subheadline && apiSettings.hero.subheadline) subheadline.textContent = apiSettings.hero.subheadline;
+      }
+    }
+
+    if (Array.isArray(apiReviews) && apiReviews.length > 0) {
+      const reviewsGrid = document.querySelector('.reviews-grid');
+      if (reviewsGrid) {
+        reviewsGrid.innerHTML = apiReviews.slice(0, 6).map(r => `
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-quote">“${r.comment}”</p>
+            <div class="reviewer-meta">
+              <div class="reviewer-avatar">${r.avatar || '🌸'}</div>
+              <div>
+                <strong>${r.author}</strong>
+                <span>${r.role || 'Verified Buyer'} &bull; <em>${r.workbook || 'Collection'}</em></span>
+              </div>
+            </div>
+          </div>
+        `).join('');
+      }
+    }
+
+    if (Array.isArray(apiFaqs) && apiFaqs.length > 0) {
+      const faqList = document.querySelector('.faq-accordion-list');
+      if (faqList) {
+        faqList.innerHTML = apiFaqs.map(f => `
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>${f.question}</span>
+              <span class="faq-toggle-icon">&#43;</span>
+            </button>
+            <div class="faq-answer">
+              <p>${f.answer}</p>
+            </div>
+          </div>
+        `).join('');
+        bindFaqEvents();
+      }
     }
   } catch (e) {
-    // Graceful offline fallback
+    // Seamless offline fallback
   }
 
   // Track Page View
@@ -319,6 +383,51 @@ document.addEventListener('DOMContentLoaded', async () => {
       body: JSON.stringify({ event: 'pageview' })
     }).catch(() => {});
   } catch (e) {}
+
+  function renderStorefrontProducts(products) {
+    const grid = document.getElementById('productsGrid');
+    if (!grid) return;
+
+    grid.innerHTML = products.filter(p => p.status !== 'draft').map(p => `
+      <div class="product-card" data-category="${p.categoryId || 'drawing'}" data-wb-id="${p.id}">
+        <div class="product-media-wrap">
+          <span class="product-badge ${p.tagClass || 'badge-bestseller'}">${p.badgeText || '⭐ Featured'}</span>
+          <img src="${p.cover}" alt="${p.title} Cover" class="product-cover-img" loading="lazy" onerror="this.src='assets/images/workbooks/covers/birds_cover.jpg'">
+          <button class="quick-view-overlay-btn" data-id="${p.id}">
+            <span>Look Inside 🔍</span>
+          </button>
+        </div>
+        <div class="product-body">
+          <div class="product-rating-row">
+            <span class="product-stars">★★★★★</span>
+            <span class="product-rating-num">${p.reviews || '5.0 (Verified)'}</span>
+          </div>
+          <h3 class="product-title">${p.title}</h3>
+          <p class="product-card-desc">${p.description ? p.description.slice(0, 110) + '...' : ''}</p>
+          <div class="product-tags-row">
+            <span class="tag-pill tag-age">🎯 ${p.age}</span>
+            <span class="tag-pill tag-pages">📄 ${p.pages}</span>
+          </div>
+          <div class="product-footer-row">
+            <div class="product-pricing">
+              <span class="price-current">${p.price || '$4.99'}</span>
+              ${p.originalPrice ? `<span class="price-original">${p.originalPrice}</span>` : ''}
+            </div>
+            <div class="product-actions-group">
+              <button class="btn btn-look-inside" data-id="${p.id}" title="Preview Pages">
+                <span>Look Inside 🔍</span>
+              </button>
+              <a href="${p.payhipUrl || 'https://payhip.com/BrightSproutsStudio'}" target="_blank" rel="noopener noreferrer" class="btn btn-buy-payhip btn-track-payhip" title="Buy on Payhip">
+                <span>Buy 🛍️</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    `).join('');
+
+    bindProductButtonEvents();
+  }
 
   // 3. Category Filter Handling
   const filterTabs = document.querySelectorAll('.filter-tab');
@@ -461,14 +570,17 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   }
 
-  // Bind click on "Look Inside" buttons and Quick View overlay
-  document.querySelectorAll('.btn-look-inside, .quick-view-overlay-btn').forEach(el => {
-    el.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const id = el.getAttribute('data-id');
-      openLookInsideModal(id);
+  function bindProductButtonEvents() {
+    document.querySelectorAll('.btn-look-inside, .quick-view-overlay-btn').forEach(el => {
+      el.onclick = (e) => {
+        e.stopPropagation();
+        const id = el.getAttribute('data-id');
+        openLookInsideModal(id);
+      };
     });
-  });
+  }
+
+  bindProductButtonEvents();
 
   // Track Payhip Clicks
   document.addEventListener('click', (e) => {
@@ -544,26 +656,31 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
 
   // 6. FAQ Accordion Interaction
-  const faqItems = document.querySelectorAll('.faq-item');
-  faqItems.forEach(item => {
-    const questionBtn = item.querySelector('.faq-question');
-    const icon = item.querySelector('.faq-toggle-icon');
+  function bindFaqEvents() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      const questionBtn = item.querySelector('.faq-question');
+      const icon = item.querySelector('.faq-toggle-icon');
+      if (!questionBtn) return;
 
-    questionBtn.addEventListener('click', () => {
-      const isOpen = item.classList.contains('active');
+      questionBtn.onclick = () => {
+        const isOpen = item.classList.contains('active');
 
-      faqItems.forEach(i => {
-        i.classList.remove('active');
-        const iIcon = i.querySelector('.faq-toggle-icon');
-        if (iIcon) iIcon.innerHTML = '&#43;';
-      });
+        faqItems.forEach(i => {
+          i.classList.remove('active');
+          const iIcon = i.querySelector('.faq-toggle-icon');
+          if (iIcon) iIcon.innerHTML = '&#43;';
+        });
 
-      if (!isOpen) {
-        item.classList.add('active');
-        if (icon) icon.innerHTML = '&minus;';
-      }
+        if (!isOpen) {
+          item.classList.add('active');
+          if (icon) icon.innerHTML = '&minus;';
+        }
+      };
     });
-  });
+  }
+
+  bindFaqEvents();
 
   // 7. Mobile Menu Toggle
   const mobileToggle = document.getElementById('mobileToggle');
