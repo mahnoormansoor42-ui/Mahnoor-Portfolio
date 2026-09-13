@@ -839,50 +839,14 @@ if (btnViewSyncLog) btnViewSyncLog.addEventListener('click', openSyncLedgerModal
 const btnOpenPayhipImport = document.getElementById('btnOpenPayhipImport');
 if (btnOpenPayhipImport) btnOpenPayhipImport.addEventListener('click', () => openModal('payhipImportModal'));
 
-// Payhip Import Form Submit Handler
+// Payhip Import Form Submit Handler (100% Automated Sync)
 const payhipImportForm = document.getElementById('payhipImportForm');
 if (payhipImportForm) {
   payhipImportForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const title = document.getElementById('importTitle').value.trim();
-    const payhipUrl = document.getElementById('importPayhipUrl').value.trim();
-    const catVal = document.getElementById('importCategory').value.split('|');
-    const category = catVal[0];
-    const categoryId = catVal[1];
-    const age = document.getElementById('importAge').value.trim();
-    const price = document.getElementById('importPrice').value.trim();
-    const originalPrice = document.getElementById('importOriginalPrice').value.trim();
-    const pages = document.getElementById('importPages').value.trim();
-    const description = document.getElementById('importDescription').value.trim();
-
-    try {
-      const res = await fetch('/api/sync-payhip-item', {
-        method: 'POST',
-        headers: authHeaders,
-        body: JSON.stringify({
-          title,
-          payhipUrl,
-          category,
-          categoryId,
-          age,
-          price,
-          originalPrice,
-          pages,
-          description
-        })
-      });
-      const data = await res.json();
-      if (res.ok && data.success) {
-        showToast(`✨ Successfully imported "${title}" to your store!`);
-        closeModal('payhipImportModal');
-        payhipImportForm.reset();
-        await loadAllData();
-      } else {
-        showToast(data.error || 'Failed to import Payhip product', 'error');
-      }
-    } catch (err) {
-      showToast('Error importing Payhip product: ' + err.message, 'error');
-    }
+    closeModal('payhipImportModal');
+    showToast('⚡ Connecting to Payhip store & syncing catalog...');
+    await runSyncCatalog();
   });
 }
 

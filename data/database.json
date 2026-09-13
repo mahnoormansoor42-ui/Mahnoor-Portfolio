@@ -1,49 +1,6 @@
 {
   "products": [
     {
-      "id": "sea_animals",
-      "title": "Let's Draw the Sea Animals Together",
-      "category": "Drawing & Creative Art",
-      "categoryId": "drawing",
-      "tagClass": "badge-popular",
-      "badgeText": "🐬 Popular",
-      "age": "Ages 3–7",
-      "pages": "15 Printable Pages",
-      "price": "$4.99",
-      "originalPrice": "$8.99",
-      "reviews": "5.0 (34 reviews)",
-      "rating": 5,
-      "reviewCount": 34,
-      "cover": "assets/images/workbooks/covers/sea_animals_cover.jpg",
-      "payhipUrl": "https://payhip.com/BrightSproutsStudio",
-      "samples": [
-        {
-          "src": "assets/images/workbooks/samples/sea_animals_sample_1.jpg",
-          "caption": "Activity Sheet 1"
-        },
-        {
-          "src": "assets/images/workbooks/samples/sea_animals_sample_2.jpg",
-          "caption": "Activity Sheet 2"
-        },
-        {
-          "src": "assets/images/workbooks/samples/sea_animals_sample_3.jpg",
-          "caption": "Activity Sheet 3"
-        }
-      ],
-      "description": "An ocean-themed drawing guide featuring dolphins, turtles, octopuses, and reef fish, breaking down aquatic shapes into intuitive steps for little hands.",
-      "developmentPillars": [
-        "Curved line tracing & fluid hand motions",
-        "Marine life exploration & vocabulary expansion",
-        "Shape construction & proportion calibration",
-        "Low-frustration artistic self-expression"
-      ],
-      "featured": true,
-      "status": "active",
-      "order": 13,
-      "createdAt": "2026-09-13T08:22:29.309755Z",
-      "pdf_match": "sea animal"
-    },
-    {
       "id": "pets",
       "title": "Let's Draw the Pet Animals Together",
       "category": "Drawing & Creative Art",
@@ -975,6 +932,48 @@
       "featured": true,
       "status": "active",
       "order": 1,
+      "createdAt": "2026-09-13T08:21:26.456Z"
+    },
+    {
+      "id": "sea_animals",
+      "title": "Let's Draw the Sea Animals Together",
+      "category": "Drawing & Creative Art",
+      "categoryId": "drawing",
+      "tagClass": "badge-popular",
+      "badgeText": "🐬 Popular",
+      "age": "Ages 3–7",
+      "pages": "15 Printable Pages",
+      "price": "$4.99",
+      "originalPrice": "$8.99",
+      "reviews": "5.0 (34 reviews)",
+      "rating": 5,
+      "reviewCount": 25,
+      "cover": "assets/images/workbooks/covers/sea_animals_cover.jpg",
+      "payhipUrl": "https://payhip.com/BrightSproutsStudio",
+      "samples": [
+        {
+          "src": "assets/images/workbooks/samples/sea_animals_sample_1.jpg",
+          "caption": "Activity Sheet 1"
+        },
+        {
+          "src": "assets/images/workbooks/samples/sea_animals_sample_2.jpg",
+          "caption": "Activity Sheet 2"
+        },
+        {
+          "src": "assets/images/workbooks/samples/sea_animals_sample_3.jpg",
+          "caption": "Activity Sheet 3"
+        }
+      ],
+      "description": "An ocean-themed drawing guide featuring dolphins, turtles, octopuses, and reef fish, breaking down aquatic shapes into intuitive steps for little hands.",
+      "developmentPillars": [
+        "Curved line tracing & fluid hand motions",
+        "Marine life exploration & vocabulary expansion",
+        "Shape construction & proportion calibration",
+        "Low-frustration artistic self-expression"
+      ],
+      "featured": true,
+      "status": "active",
+      "order": 2,
       "createdAt": "2026-09-13T08:21:26.456Z"
     }
   ],

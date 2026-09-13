@@ -759,77 +759,48 @@
     </div>
   </div>
 
-  <!-- 7. Direct Payhip URL Importer Modal -->
+  <!-- 7. One-Click Smart Payhip Cloud Sync Modal -->
   <div id="payhipImportModal" class="modal-overlay">
-    <div class="modal-card" style="max-width: 620px;">
+    <div class="modal-card" style="max-width: 580px;">
       <div class="modal-header">
         <div style="display: flex; align-items: center; gap: 10px;">
-          <span style="font-size: 1.5rem;">🌐</span>
+          <span style="font-size: 1.5rem;">⚡</span>
           <div>
-            <h3 class="modal-title-text">Import Direct from Payhip Store</h3>
-            <span style="font-size: 0.8rem; color: var(--text-muted);">Add new products to your live site directly from Payhip without local PC files</span>
+            <h3 class="modal-title-text">Auto-Sync from Payhip Store</h3>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">100% Automated • Scrapes &amp; syncs new products directly into your store</span>
           </div>
         </div>
         <button class="modal-close-btn" onclick="closeModal('payhipImportModal')">&times;</button>
       </div>
 
       <form id="payhipImportForm">
-        <div class="modal-body">
-          <div class="form-group-admin">
-            <label class="form-label-admin">Payhip Product Link / URL *</label>
-            <input type="url" id="importPayhipUrl" class="form-input-admin" placeholder="https://payhip.com/b/XXXX or https://payhip.com/BrightSproutsStudio" required value="https://payhip.com/BrightSproutsStudio">
-          </div>
-
-          <div class="form-group-admin">
-            <label class="form-label-admin">Workbook Title *</label>
-            <input type="text" id="importTitle" class="form-input-admin" placeholder="e.g. Toddler Morning Routine Activity Book" required>
-          </div>
-
-          <div class="modal-grid-2">
-            <div class="form-group-admin">
-              <label class="form-label-admin">Category *</label>
-              <select id="importCategory" class="form-select-admin" required>
-                <option value="Drawing & Creative Art|drawing">Drawing &amp; Creative Art</option>
-                <option value="Speech & Early Learning|speech">Speech &amp; Early Learning</option>
-                <option value="Fine-Motor & Pre-Writing|fine-motor">Fine-Motor &amp; Pre-Writing</option>
-                <option value="Numbers & Early Math|numbers">Numbers &amp; Early Math</option>
-                <option value="ABC & Alphabet Learning|abc">ABC &amp; Alphabet Learning</option>
-                <option value="Social-Emotional & Speech|emotional">Social-Emotional &amp; Speech</option>
-                <option value="Preschool Discovery|discovery">Preschool Discovery</option>
-              </select>
-            </div>
-            <div class="form-group-admin">
-              <label class="form-label-admin">Target Age</label>
-              <input type="text" id="importAge" class="form-input-admin" placeholder="e.g. Ages 3–7" value="Ages 3–7">
-            </div>
-          </div>
-
-          <div class="modal-grid-2">
-            <div class="form-group-admin">
-              <label class="form-label-admin">Price *</label>
-              <input type="text" id="importPrice" class="form-input-admin" placeholder="$4.99" value="$4.99" required>
-            </div>
-            <div class="form-group-admin">
-              <label class="form-label-admin">Original / Compare Price</label>
-              <input type="text" id="importOriginalPrice" class="form-input-admin" placeholder="$8.99" value="$8.99">
+        <div class="modal-body" style="padding: 24px;">
+          <div class="sync-store-banner" style="background: #F0FDF4; border: 1px solid #BBF7D0; padding: 16px; border-radius: var(--radius-md); margin-bottom: 20px;">
+            <div style="display: flex; align-items: flex-start; gap: 12px;">
+              <span style="font-size: 1.4rem;">🛍️</span>
+              <div>
+                <strong style="color: #15803D; font-size: 0.95rem;">Connected Store: BrightSproutsStudio</strong>
+                <p style="font-size: 0.82rem; color: #166534; margin-top: 4px; line-height: 1.4;">
+                  Any newly published workbooks on your Payhip store will be automatically detected, indexed, and added to your catalog with complete images and pricing.
+                </p>
+              </div>
             </div>
           </div>
 
           <div class="form-group-admin">
-            <label class="form-label-admin">Printable Pages</label>
-            <input type="text" id="importPages" class="form-input-admin" placeholder="e.g. 20 Printable Pages" value="20 Printable Pages">
-          </div>
-
-          <div class="form-group-admin">
-            <label class="form-label-admin">Description</label>
-            <textarea id="importDescription" class="form-textarea-admin" rows="3" placeholder="Engaging therapist-crafted printable activities..."></textarea>
+            <label class="form-label-admin">Payhip Store or Product URL</label>
+            <input type="url" id="importPayhipUrl" class="form-input-admin" placeholder="https://payhip.com/BrightSproutsStudio" required value="https://payhip.com/BrightSproutsStudio" style="font-weight: 600; color: #1E293B;">
+            <span style="font-size: 0.78rem; color: var(--text-muted); margin-top: 6px; display: block;">
+              💡 Pointing to your live Payhip store. Click below to run a 100% automatic sync.
+            </span>
           </div>
         </div>
 
-        <div class="modal-footer">
+        <div class="modal-footer" style="background: var(--bg-app); border-top: 1px solid var(--border-color); padding: 16px 24px;">
           <button type="button" class="btn-secondary" onclick="closeModal('payhipImportModal')">Cancel</button>
-          <button type="submit" class="btn-primary-action">
-            <span>✨ Import &amp; Add to Catalog</span>
+          <button type="submit" class="btn-sync-action" style="padding: 10px 22px; font-size: 0.92rem;">
+            <span class="sync-spin-icon">⚡</span>
+            <span>Auto-Fetch &amp; Sync Products</span>
           </button>
         </div>
       </form>
