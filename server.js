@@ -544,7 +544,10 @@ async function appHandler(req, res) {
   // STATIC FILE SERVING
   // --------------------------------------------------------------------------
 
-  if (pathname === '/admin' || pathname === '/admin/') {
+  if (pathname === '/admin') {
+    res.writeHead(301, { 'Location': '/admin/' });
+    return res.end();
+  } else if (pathname === '/admin/') {
     pathname = '/admin/index.html';
   } else if (pathname === '/admin/login' || pathname === '/admin/login/') {
     pathname = '/admin/login.html';

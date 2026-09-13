@@ -14,16 +14,40 @@ const state = {
   currentDeleteTarget: null // { type: 'product'|'category'|'review'|'faq', id: string }
 };
 
-// Authentication
+// Strict Authentication Guard
 const token = localStorage.getItem('bss_admin_token');
 if (!token) {
-  window.location.href = 'login.html';
+  window.location.replace('login.html');
 }
 
 const authHeaders = {
   'Content-Type': 'application/json',
   'Authorization': 'Bearer ' + token
 };
+
+// Verify token validity with backend API
+fetch('/api/auth/verify', { headers: authHeaders })
+  .then(res => {
+    if (!res.ok) throw new Error('Unauthorized');
+    return res.json();
+  })
+  .then(data => {
+    if (data && data.valid) {
+      document.body.style.opacity = '1';
+    } else {
+      localStorage.removeItem('bss_admin_token');
+      localStorage.removeItem('bss_admin_user');
+      window.location.replace('login.html');
+    }
+  })
+  .catch(() => {
+    // If backend offline, check local token presence
+    if (token) {
+      document.body.style.opacity = '1';
+    } else {
+      window.location.replace('login.html');
+    }
+  });
 
 // Toast Notifications
 function showToast(message, type = 'success') {

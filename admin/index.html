@@ -6,7 +6,22 @@
   <title>Studio Admin Dashboard — Bright Sprout Studio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Quicksand:wght@600;700;800&display=swap" rel="stylesheet">
+  <script>
+    // Strict Guard: Prevent any access or render without valid login token
+    (function() {
+      var token = localStorage.getItem('bss_admin_token');
+      if (!token) {
+        window.location.replace('login.html');
+      }
+    })();
+  </script>
+  <style>
+    /* Hide page completely until authentication is validated */
+    body {
+      opacity: 0;
+      transition: opacity 0.2s ease-in;
+    }
+  </style>
   <link rel="stylesheet" href="admin.css">
 </head>
 <body>
