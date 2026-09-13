@@ -625,29 +625,46 @@ async function appHandler(req, res) {
     const syncLog = readSyncLog();
     const nowIso = new Date().toISOString();
     
+    // Read Master Catalog Definitions (Source of truth)
+    let masterCatalog = [];
+    const masterPath = path.join(__dirname, 'data', 'master_catalog.json');
+    if (fs.existsSync(masterPath)) {
+      try {
+        masterCatalog = JSON.parse(fs.readFileSync(masterPath, 'utf8'));
+      } catch (e) {}
+    }
+
     let newAddedCount = 0;
     let skippedCount = 0;
     const auditEntries = [];
 
-    // Check each product in database against sync log
-    (db.products || []).forEach(p => {
-      const pid = p.id;
-      if (syncLog[pid]) {
+    if (!db.products) db.products = [];
+    const currentProductMap = new Map();
+    db.products.forEach(p => currentProductMap.set(p.id, p));
+
+    // 1. Check all master catalog items against database
+    masterCatalog.forEach(item => {
+      const pid = item.id;
+      if (currentProductMap.has(pid)) {
         skippedCount++;
-        auditEntries.push(`[SKIP] ${p.title} - Verified in ledger.`);
+        auditEntries.push(`[SKIP] ${item.title} - Already up-to-date in catalog.`);
       } else {
+        // Missing in database -> Auto-restore and sync into catalog!
+        db.products.push(item);
+        currentProductMap.set(pid, item);
         syncLog[pid] = {
           id: pid,
-          title: p.title,
-          category: p.category,
-          cover: p.cover,
-          samplesCount: (p.samples || []).length,
-          sourcePdf: p.pdf_match || 'payhip-cloud',
+          title: item.title,
+          category: item.category,
+          cover: item.cover,
+          samplesCount: (item.samples || []).length,
+          sourcePdf: item.pdf_match || 'payhip-store',
+          payhipUrl: item.payhipUrl || 'https://payhip.com/BrightSproutsStudio',
           syncedAt: nowIso,
           status: 'synced'
         };
         newAddedCount++;
-        auditEntries.push(`[NEW] ${p.title} - Registered into sync ledger.`);
+        auditEntries.push(`[RESTORED & SYNCED] ${item.title} - Auto-synced and restored to catalog.`);
       }
     });
 
@@ -655,7 +672,7 @@ async function appHandler(req, res) {
     writeDB(db);
 
     // Record in sync audit log
-    const auditHeader = `\n=======================================================\nSYNC SESSION: ${nowIso}\nNew Workbooks Added: ${newAddedCount}\nExisting Workbooks Skipped: ${skippedCount}\nTotal Workbooks in Catalog: ${(db.products || []).length}\n-------------------------------------------------------`;
+    const auditHeader = `\n=======================================================\nSYNC SESSION: ${nowIso}\nNew Workbooks Restored/Added: ${newAddedCount}\nExisting Workbooks Skipped: ${skippedCount}\nTotal Workbooks in Catalog: ${(db.products || []).length}\n-------------------------------------------------------`;
     const auditBody = auditEntries.join('\n');
     appendAuditLog(`${auditHeader}\n${auditBody}\nStatus: COMPLETED_SUCCESSFULLY\n`);
 

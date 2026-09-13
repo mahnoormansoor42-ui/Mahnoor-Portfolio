@@ -1,49 +1,6 @@
 {
   "products": [
     {
-      "id": "birds",
-      "title": "Let's Draw the Birds Together",
-      "category": "Drawing & Creative Art",
-      "categoryId": "drawing",
-      "tagClass": "badge-bestseller",
-      "badgeText": "⭐ Bestseller",
-      "age": "Ages 3–7",
-      "pages": "17 Printable Pages",
-      "price": "$4.99",
-      "originalPrice": "$8.99",
-      "reviews": "5.0 (28 reviews)",
-      "rating": 5,
-      "reviewCount": 28,
-      "cover": "assets/images/workbooks/covers/birds_cover.jpg",
-      "payhipUrl": "https://payhip.com/BrightSproutsStudio",
-      "samples": [
-        {
-          "src": "assets/images/workbooks/samples/birds_sample_1.jpg",
-          "caption": "Activity Sheet 1"
-        },
-        {
-          "src": "assets/images/workbooks/samples/birds_sample_2.jpg",
-          "caption": "Activity Sheet 2"
-        },
-        {
-          "src": "assets/images/workbooks/samples/birds_sample_3.jpg",
-          "caption": "Activity Sheet 3"
-        }
-      ],
-      "description": "A step-by-step bird drawing workbook guiding young children to draw charming garden and songbirds using simple geometric shapes, progressive lines, and coloring prompts.",
-      "developmentPillars": [
-        "Visual-spatial awareness & shape breakdown",
-        "Pencil grip & controlled directional strokes",
-        "Bird species recognition & vocabulary enrichment",
-        "Creative coloring & artistic confidence"
-      ],
-      "featured": true,
-      "status": "active",
-      "order": 13,
-      "createdAt": "2026-09-13T08:22:29.309755Z",
-      "pdf_match": "bird"
-    },
-    {
       "id": "sea_animals",
       "title": "Let's Draw the Sea Animals Together",
       "category": "Drawing & Creative Art",
@@ -977,6 +934,48 @@
       "featured": true,
       "order": 23,
       "createdAt": "2026-09-13T08:22:29.309755Z"
+    },
+    {
+      "id": "birds",
+      "title": "Let's Draw the Birds Together",
+      "category": "Drawing & Creative Art",
+      "categoryId": "drawing",
+      "tagClass": "badge-bestseller",
+      "badgeText": "⭐ Bestseller",
+      "age": "Ages 3–7",
+      "pages": "17 Printable Pages",
+      "price": "$4.99",
+      "originalPrice": "$8.99",
+      "reviews": "5.0 (28 reviews)",
+      "rating": 5,
+      "reviewCount": 25,
+      "cover": "assets/images/workbooks/covers/birds_cover.jpg",
+      "payhipUrl": "https://payhip.com/BrightSproutsStudio",
+      "samples": [
+        {
+          "src": "assets/images/workbooks/samples/birds_sample_1.jpg",
+          "caption": "Activity Sheet 1"
+        },
+        {
+          "src": "assets/images/workbooks/samples/birds_sample_2.jpg",
+          "caption": "Activity Sheet 2"
+        },
+        {
+          "src": "assets/images/workbooks/samples/birds_sample_3.jpg",
+          "caption": "Activity Sheet 3"
+        }
+      ],
+      "description": "A step-by-step bird drawing workbook guiding young children to draw charming garden and songbirds using simple geometric shapes, progressive lines, and coloring prompts.",
+      "developmentPillars": [
+        "Visual-spatial awareness & shape breakdown",
+        "Pencil grip & controlled directional strokes",
+        "Bird species recognition & vocabulary enrichment",
+        "Creative coloring & artistic confidence"
+      ],
+      "featured": true,
+      "status": "active",
+      "order": 1,
+      "createdAt": "2026-09-13T08:21:26.456Z"
     }
   ],
   "categories": [
